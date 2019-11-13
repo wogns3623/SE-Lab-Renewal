@@ -11,7 +11,6 @@ const Home = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/About">About</Link></li>
         <li><Link to="/Etc">Etc</Link></li>
-        <li><Link to="/Etc">승호짱</Link></li>
       </ol>
     </div>
   );
