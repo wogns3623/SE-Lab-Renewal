@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import Header from 'component/header/Header.js';
 
-const Home = () => {
-  return (
-    <div>
-      <h2>
-        Home
-      </h2>
-      <ol>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/About">About</Link></li>
-        <li><Link to="/Etc">Etc</Link></li>
-      </ol>
-    </div>
-  );
-};
+class Home extends Component {
+  render() {
+     return (
+      <Fragment>
+        <Header></Header>
+        <main>
+          <h1>
+            Home
+          </h1>
+        </main>
+      </Fragment>
+     );
+  }
+}
 
 export default Home;

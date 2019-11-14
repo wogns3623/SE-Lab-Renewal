@@ -1,0 +1,11 @@
+.NavBtn{
+	padding: 0 8px;
+	font-size: 18px;
+	font-weight: 400;
+	color: white;
+	display: block;
+}
+
+.NavBtn.activeHover:hover {
+	background-color: #70c8e9;
+}

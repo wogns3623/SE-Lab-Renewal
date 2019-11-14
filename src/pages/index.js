@@ -1,3 +1,2 @@
 export { default as Home } from './Home';
-export { default as About } from './About';
-export { default as Etc } from './Etc';
+export { default as Research } from './Research';
