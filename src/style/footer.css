@@ -1,4 +1,4 @@
-footer[role="contentinfo"] {
+footer {
   height: 30px;
   width: 1145px;
   margin: 0 auto;
@@ -7,7 +7,7 @@ footer[role="contentinfo"] {
   line-height: 30px;
 }
 
-footer[role="contentinfo"] .container {
+footer .container {
   position: fixed;
   bottom: 0px;
   width: 1145px;
@@ -17,7 +17,8 @@ footer[role="contentinfo"] .container {
   background-color: rgb(214, 214, 214);
 }
 
-footer[role="contentinfo"] p {
+footer p {
+  margin: 0px;
   font-size: 9pt;
   text-align: center;
   font-weight: 100;
