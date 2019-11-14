@@ -8,6 +8,8 @@ header {
 }
 
 header nav{
+  position: fixed;
+  top: 0px;
 	width: 1125px;
   height: 52px;
   padding: 0px 10px;

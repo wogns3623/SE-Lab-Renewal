@@ -14,9 +14,9 @@ class NavBtn extends Component {
   render() {
     return (
       <NavLink
-        className={"NavBtn" + (this.props.activeHover ? " activeHover" : "")}
+        className={'NavBtn' + (this.props.activeHover ? ' activeHover' : '')}
         exact={this.props.exact}
-        to={"/"+this.props.href}
+        to={'/'+this.props.href}
         activeStyle={this.props.activeHover ? this.props.activeStyle : {}}>
         {
           this.props.children === undefined

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import PageTamplate from 'component/PageTemplate.js';
 
-class Home extends Component {
+class Notice extends Component {
   render() {
     return (
-      <PageTamplate className='Home'>
+      <PageTamplate className='Notice'>
       </PageTamplate>
     );
   }
 }
 
-export default Home;
+export default Notice;
