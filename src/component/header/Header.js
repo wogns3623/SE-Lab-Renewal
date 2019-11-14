@@ -11,8 +11,8 @@ class Header extends Component {
         <div className='container'>
           <nav role='navigation'>
             <Logo></Logo>
-            <Menu className='pull-left' list={['notice', 'members', 'research', 'publications', 'courses', 'gallery']}></Menu>
-            <Menu className='pull-right' list={['contact', 'login']}></Menu>
+            <Menu className='pull-left' itemList={['notice', 'members', 'research', 'publications', 'courses', 'gallery']}></Menu>
+            <Menu className='pull-right' itemList={['contact', 'login']}></Menu>
 
           </nav>
         </div>

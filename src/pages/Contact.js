@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/PageTemplate.js';
+import PageTamplate from 'component/common/PageTemplate.js';
 
 class Contact extends Component {
   render() {

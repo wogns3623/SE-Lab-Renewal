@@ -4,54 +4,60 @@
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(https://fonts.googleapis.com/css?family=Abel);
 
-html{
-	overflow-y: scroll;
+html {
+  overflow-y: scroll;
 }
 
 body {
-	background-color: #f2f2f2;
+  background-color: #f2f2f2;
   font-family: "Roboto", "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   margin: 0px;
 }
 
-main{
+main {
   width: 1145px;
   margin: 0 auto;
 }
 
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 h1 {
-	font-size: 60px;
-	color: #00abd9;
-	margin: 20px 0 5px 0;
+  font-size: 60px;
+  color: #00abd9;
+  margin: 20px 0 5px 0;
 }
 
 h2 {
-	color: rgb(156, 156, 156);
-	margin: 10px 0;
-	font-weight: bold;
-	font-size: 30px;
+  color: rgb(156, 156, 156);
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .container {
-	padding: 0;
-	margin: 0 auto;
-	width:auto;
+  padding: 0;
+  margin: 0 auto;
+  width: auto;
 }
 
 .contents {
-	font-size: 15px;
-	width: 1145px;
-	margin: 0 auto;
-	margin-bottom: 40px
+  font-size: 15px;
+  width: 1145px;
+  margin: 0 auto;
+  margin-bottom: 40px
 }
 
 .pull-left {
@@ -62,7 +68,7 @@ h2 {
   float: right;
 }
 
-.inline-list > li {
+.inline-list>li {
   display: inline-block;
 }
 
@@ -73,6 +79,6 @@ h2 {
 
 /* for the disabled */
 .assistive-text {
-	text-indent: -9999px;
-	font-size: 0;
+  text-indent: -9999px;
+  font-size: 0;
 }
