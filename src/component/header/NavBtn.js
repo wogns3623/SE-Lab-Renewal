@@ -4,7 +4,6 @@ import 'style/navBtn.css'
 
 class NavBtn extends Component {
   static defaultProps = {
-    name: "notFound",
     exact: false,
     activeHover: true,
     activeStyle: {
@@ -17,11 +16,11 @@ class NavBtn extends Component {
       <NavLink
         className={'NavBtn' + (this.props.activeHover ? ' activeHover' : '')}
         exact={this.props.exact}
-        to={'/'+this.props.name}
+        to={'/'+this.props.href}
         activeStyle={this.props.activeHover ? this.props.activeStyle : {}}>
         {
           this.props.children === undefined
-          ? this.props.name.toUpperCase()
+          ? this.props.href.toUpperCase()
           : this.props.children
         }
       </NavLink>

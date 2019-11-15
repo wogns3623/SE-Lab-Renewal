@@ -5,6 +5,34 @@ import Logo from 'component/header/Logo.js'
 import 'style/header.css';
 
 class Header extends Component {
+  state = {
+    menu: [
+      {
+        href: 'notice'
+      },
+      {
+        href: 'members'
+      },
+      {
+        href: 'research'
+      },
+      {
+        href: 'publications'
+      },
+      {
+        href: 'courses'
+      },
+      {
+        href: 'gallery'
+      },
+      {
+        href: 'contact'
+      },
+      {
+        href: 'login'
+      },
+    ]
+  }
   render() {
     return (
       <header role='banner'>
@@ -13,10 +41,10 @@ class Header extends Component {
             <Logo></Logo>
             <Menu
               className='pull-left'
-              items={['notice', 'members', 'research', 'publications', 'courses', 'gallery']}></Menu>
+              items={this.state.menu.slice(0, 6)}></Menu>
             <Menu
               className='pull-right'
-               items={['contact', 'login']}></Menu>
+               items={this.state.menu.slice(6)}></Menu>
 
           </nav>
         </div>

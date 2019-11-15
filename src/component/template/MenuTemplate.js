@@ -11,10 +11,10 @@ class MenuTemplate extends Component {
     return (
       <div className={'Menu '+this.props.className}>
         {
-          this.props.items.map((itemName, index) => {
+          this.props.items.map((itemInfo, index) => {
             return (
               <div className='Item' key={index}>
-                <this.props.itemComponent name={itemName}>
+                <this.props.itemComponent {...itemInfo}>
                 </this.props.itemComponent>
               </div>
             );
