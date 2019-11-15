@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/common/PageTemplate.js';
-import Subject from 'component/research/Subject.js'
+import PageTamplate from 'component/template/PageTemplate.js';
+// import Tab from 'component/tab/Tab.js';
+import Subject from 'component/research/Subject.js';
 import 'style/research.css';
 
 class Research extends Component {
@@ -85,6 +86,7 @@ class Research extends Component {
         <div className='container'>
           <div className='contents'>
             <h1>RESEARCH</h1>
+            {/* todo: tab component 분리 & 아래 tabs 컴포넌트와 연결 */}
             <div id='tab'>
               <div className='first-tab' data-tab='research'>Introduction</div>
               <div className='last-tab deactive' data-tab='project'>Project</div>

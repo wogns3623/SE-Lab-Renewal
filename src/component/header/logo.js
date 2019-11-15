@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <div className='Logo pull-left'>
-        <NavBtn href='' exact={true} activeHover={false}>
+        <NavBtn name='' exact={true} activeHover={false}>
           <img src={logoImg} alt='SE Lab logo'></img>
         </NavBtn>
       </div>

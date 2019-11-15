@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/common/PageTemplate.js';
+import PageTamplate from 'component/template/PageTemplate.js';
 
 class Courses extends Component {
   render() {
