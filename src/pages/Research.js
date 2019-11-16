@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
 import PageTamplate from 'component/template/PageTemplate.js';
-// import Tab from 'component/tab/Tab.js';
+import TabTemplate from 'component/template/TabTemplate.js';
 import Subject from 'component/research/Subject.js';
 import 'style/research.css';
 
 class Research extends Component {
   state = {
+    tabList: [
+      {
+        name: 'Introduction'
+      },
+      {
+        name: 'Project'
+      }
+    ],
     research: [
       {
         title: 'Web & Web security',
@@ -86,19 +94,12 @@ class Research extends Component {
         <div className='container'>
           <div className='contents'>
             <h1>RESEARCH</h1>
-            {/* todo: tab component 분리 & 아래 tabs 컴포넌트와 연결 */}
-            <div id='tab'>
-              <div className='first-tab' data-tab='research'>Introduction</div>
-              <div className='last-tab deactive' data-tab='project'>Project</div>
-            </div>
-            <div id='hl'></div>
-            <div id='research' className='tabs'>
-              {
-                this.state.research.map(research => <Subject {...research}></Subject>)
-              }
-            </div>
-            <div id='project' className='tabs display_none'>
-            </div>
+            <TabTemplate tabList={this.state.tabList} research={this.state.research}>
+              {[
+                this.state.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
+                (<h2 key='0'>공사중</h2>)
+              ]}
+            </TabTemplate>
           </div>
         </div>
       </PageTamplate>

@@ -4,7 +4,7 @@ class PageTemplate extends Component {
   render() {
     return (
       <div className="ErrorContent">
-        <h2>OOPS!</h2>
+        <h1>OOPS!</h1>
         <p>
           This page's content is not ready yet :(<br></br>
           Sorry!

@@ -8,28 +8,28 @@ class Header extends Component {
   state = {
     menu: [
       {
-        href: 'notice'
+        name: 'notice'
       },
       {
-        href: 'members'
+        name: 'members'
       },
       {
-        href: 'research'
+        name: 'research'
       },
       {
-        href: 'publications'
+        name: 'publications'
       },
       {
-        href: 'courses'
+        name: 'courses'
       },
       {
-        href: 'gallery'
+        name: 'gallery'
       },
       {
-        href: 'contact'
+        name: 'contact'
       },
       {
-        href: 'login'
+        name: 'login'
       },
     ]
   }

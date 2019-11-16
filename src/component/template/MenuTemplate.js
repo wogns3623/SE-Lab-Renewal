@@ -5,7 +5,8 @@ import 'style/menu.css';
 class MenuTemplate extends Component {
   static defaultProps = {
     className: "",
-    items: []
+    items: [],
+    itemOnClickFunc: () => {}
   }
   render() {
     return (
@@ -13,7 +14,9 @@ class MenuTemplate extends Component {
         {
           this.props.items.map((itemInfo, index) => {
             return (
-              <div className='Item' key={index}>
+              <div className={'Item '+(itemInfo.className!==undefined?itemInfo.className:itemInfo.name)}
+                key={index}
+                onClick={() => this.props.itemOnClickFunc(index)}>
                 <this.props.itemComponent {...itemInfo}>
                 </this.props.itemComponent>
               </div>

@@ -16,11 +16,11 @@ class NavBtn extends Component {
       <NavLink
         className={'NavBtn' + (this.props.activeHover ? ' activeHover' : '')}
         exact={this.props.exact}
-        to={'/'+this.props.href}
+        to={'/'+this.props.name}
         activeStyle={this.props.activeHover ? this.props.activeStyle : {}}>
         {
           this.props.children === undefined
-          ? this.props.href.toUpperCase()
+          ? this.props.name.toUpperCase()
           : this.props.children
         }
       </NavLink>

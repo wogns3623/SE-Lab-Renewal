@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import 'style/subject.css';
 
-class Research extends Component {
+class Subject extends Component {
   render() {
     
     return (
@@ -12,7 +12,7 @@ class Research extends Component {
           <img src={this.props.image.src} width={this.props.image.width} alt={this.props.image.alt}></img>
         </div>
         <ul>
-          {this.props.info.map(info => (<li>{info}</li>))}
+          {this.props.info.map((info, index) => (<li  key={index}>{info}</li>))}
         </ul>
         <br></br>
       </div>
@@ -20,4 +20,4 @@ class Research extends Component {
   }
 }
 
-export default Research;
+export default Subject;
