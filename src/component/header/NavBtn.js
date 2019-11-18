@@ -7,7 +7,7 @@ class NavBtn extends Component {
     exact: false,
     activeHover: true,
     activeStyle: {
-      backgroundColor: '#70c8e9',
+      backgroundColor: '#1a242f',
     }
   }
 
