@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import PageTamplate from 'component/template/PageTemplate.js';
 
-class Home extends Component {
+class Gallery extends Component {
   render() {
     return (
-      <PageTamplate className='Home'>
+      <PageTamplate className='Gallery'>
       </PageTamplate>
     );
   }
 }
 
-export default Home;
+export default Gallery;
