@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import styles from '../style/Home.scss';
-
+import '../style/Home.scss';
 
 import PageTamplate from 'component/template/PageTemplate.js';
 
 class Home extends Component {
   render() {
     return (
-      <div className={styles.body}>
-        <PageTamplate className='Home'>
-        </PageTamplate>
-
-        <div>
+      <PageTamplate className='Home'>
+        <div className='body'>
           It's my home town !
         </div>
-      </div>
+      </PageTamplate>
     );
   }
 }
