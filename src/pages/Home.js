@@ -16,9 +16,6 @@ class Home extends Component {
             <p>We Service <span>Notice, Members, Courses, Login</span>, etc.</p>
             <p>Please give me a <span>A+</span>!</p>
           </div>
-          <div className="row">
-            asd
-          </div>
         </div>
       </PageTamplate>
     );
