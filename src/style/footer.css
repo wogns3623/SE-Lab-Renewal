@@ -2,13 +2,11 @@ footer {
   width: 100%;
   /*min-width: 1280px;  width(.container) */
   line-height: 65px;
-  overflow: hidden;
 }
 
 footer .container {
   bottom: 0px;
-  width: 100%;	
-  /* width: 1300px; */
+  width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
   z-index: 1;
