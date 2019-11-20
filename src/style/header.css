@@ -1,20 +1,18 @@
 header {
-	height: 52px;
-	width: 1145px;
-	margin: 0 auto;
+	width: 100%;
 	/*min-width: 1280px;  width(.container) */
-	/*background-color: #00abd9; #3399CC; */
-	line-height: 52px;
+	line-height: 65px;
+	background-color: #2c3e50;
+	position: sticky;
+	top: 0;
+	margin-bottom: 10px;
+	z-index: 1;
 }
 
 header nav{
-  position: fixed;
-  top: 0px;
-	width: 1125px;
-  height: 52px;
-  padding: 0px 10px;
-	z-index: 1;
-	position: absolute;
-	background-color: #00abd9;
-	border-radius: 0px 0px 5px 5px;
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 65px;
+	background-color: #2c3e50;
 }
