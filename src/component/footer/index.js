@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <footer>
         <div className="container">
-          <p>COPYRIGHT 2014 SELAB, ALL RIGHTS RESERVED. COMPUTER SCIENECE AND ENGINEERING, HANYANG UNIV. LOCATION: ENGINEERING BUILDING #3, ROOM 421. T +82-31-400-4754</p>
+          <p>Ⓒ Copyright 2019 by <a href="https://selab.hanyang.ac.kr">SELab</a>, All Rights Reserved. Computer Science & Engineering, Hanyang Univ. Location: ERICA Support Center (Room #617)</p>
         </div>
       </footer>
     );

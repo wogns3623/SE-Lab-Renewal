@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Header from 'component/header/Header.js';
-import Footer from 'component/footer/Footer.js';
+import Header from 'component/header';
+import Footer from 'component/footer';
 import ErrorContent from 'component/common/ErrorContent.js';
 
 class PageTemplate extends Component {

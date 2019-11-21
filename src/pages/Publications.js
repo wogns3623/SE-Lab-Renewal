@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+<<<<<<< HEAD
 import PageTamplate from 'component/template/PageTemplate.js';
 import Modified_tap from 'component/publications/Modified_tap.js';
 
+=======
+import PageTemplate from 'component/template/PageTemplate.js';
+>>>>>>> upstream/master
 
 class Publications extends Component {
   state = {
@@ -70,6 +74,7 @@ class Publications extends Component {
   }
   render() {
     return (
+<<<<<<< HEAD
       <PageTamplate className='Publications'>
         <div>
           <h1>
@@ -79,6 +84,10 @@ class Publications extends Component {
           </Modified_tap>
         </div>
       </PageTamplate>
+=======
+      <PageTemplate className='Publications'>
+      </PageTemplate>
+>>>>>>> upstream/master
     );
   }
 }

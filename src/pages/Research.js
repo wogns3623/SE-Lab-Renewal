@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/template/PageTemplate.js';
+import PageTemplate from 'component/template/PageTemplate.js';
 import TabTemplate from 'component/template/TabTemplate.js';
 import Subject from 'component/research/Subject.js';
 import 'style/research.css';
@@ -90,11 +90,11 @@ class Research extends Component {
   }
   render() {
     return (
-      <PageTamplate className='Research'>
+      <PageTemplate className='Research'>
         <div className='container'>
           <div className='contents'>
             <h1>RESEARCH</h1>
-            <TabTemplate tabList={this.state.tabList} research={this.state.research}>
+            <TabTemplate tabList={this.state.tabList}>
               {[
                 this.state.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
                 (<h2 key='0'>공사중</h2>)
@@ -102,7 +102,7 @@ class Research extends Component {
             </TabTemplate>
           </div>
         </div>
-      </PageTamplate>
+      </PageTemplate>
     );
   }
 }
