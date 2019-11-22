@@ -4,7 +4,7 @@ import TabMenu from 'component/tab/TabMenu.js';
 import 'style/tab.css';
 import Table from 'component/publications/table.js';
 
-class Modified_tap extends Component {
+class ModifiedTap extends Component {
   state = {
     currentTab: 0,
   }
@@ -63,4 +63,4 @@ class Modified_tap extends Component {
   }
 }
 
-export default Modified_tap;
+export default ModifiedTap;

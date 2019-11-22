@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { PassThrough } from 'stream';
-
-
 
 class Table extends Component{
     render(){

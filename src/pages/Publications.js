@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PageTamplate from 'component/template/PageTemplate.js';
-import Modified_tap from 'component/publications/Modified_tap.js';
+import ModifiedTap from 'component/publications/ModifiedTap.js';
 
 
 class Publications extends Component {
@@ -75,8 +75,8 @@ class Publications extends Component {
           <h1>
             PUBLICATIONS
           </h1>
-          <Modified_tap tabList={this.state.tabList} contents = {this.state.ALL}>
-          </Modified_tap>
+          <ModifiedTap tabList={this.state.tabList} contents = {this.state.ALL}>
+          </ModifiedTap>
         </div>
       </PageTamplate>
     );
