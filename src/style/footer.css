@@ -1,15 +1,10 @@
 footer {
   width: 100%;
-  /*min-width: 1280px;  width(.container) */
+  min-width: 1300px;
   line-height: 65px;
-}
-
-footer .container {
   bottom: 0px;
-  width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
-  z-index: 1;
   background-color: rgb(214, 214, 214);
 }
 
