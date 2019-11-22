@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import { Home, Notice, Members, Research, Publications, Courses, Gallery, Contact, Login } from 'pages';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <Route exact path="/" component={Home}/>
         <Route path="/notice" component={Notice}/>
         <Route path="/members" component={Members}/>
@@ -15,7 +15,7 @@ class App extends Component {
         <Route path="/gallery" component={Gallery}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/login" component={Login}/>
-      </div>
+      </BrowserRouter>
     );
   }
 }
