@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import PageTemplate from 'component/template/PageTemplate.js';
 import Row from 'component/notice/Row.js'
-import 'style/notice.css';
-import { SymbolDef, AST_DWLoop } from 'terser';
+// import 'style/notice.css';
 
 class Notice extends Component {
   state = {

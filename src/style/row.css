@@ -1,37 +1,36 @@
 /* Component관련 css 같음 */
-
-.contents #information {
+.Row #information {
 	position: relative;
 	overflow: hidden;
 }
 
-.contents ul {
+.Row ul {
 	clear: both;
 	overflow: hidden;
 }
 
-.contents li {
+.Row li {
 	list-style: none;
 }
 
-.contents li.title{
+.Row li.title{
 	width: 800px;
 	border-right: 1px solid #dfdfdf;
 	text-align: center;
 }
 
-.contents li.name{
+.Row li.name{
 	width: 160px;
 	border-right: 1px solid #dfdfdf;
 	text-align: center;
 }
 
-.contents li.time{
+.Row li.time{
 	width: 160px;
 	text-align: center;
 }
 
-.contents .header li {
+.Row .header li {
 	background-color: #8bcbe3;
 	height: 40px;
 	font-size: 20px;
@@ -40,34 +39,34 @@
 	border-bottom: 3px solid #dfdfdf;
 }
 
-.contents  li {
+.Row  li {
 	background-color: white;
 }
 
-.contents :nth-child(odd) li {
+.Row :nth-child(odd) li {
 	background-color: #edf7fa;
 }
 
-.contents  li.title {
+.Row  li.title {
 	width: 800px;
 	padding-left: 35px;
 	text-align: left;
 }
 
-.contents  .information {
+.Row  .information {
 	height: 40px;
 	line-height: 40px;
 	cursor: pointer;
 }
 
-.contents {
+.Row {
 	background-color: #dfdfdf;
 	width: 100%;
 	line-height: 40px;
 	padding-left: 6%;
 }
 
-.contents p {
+.Row p {
 	word-break: break-all;
 	width: 90%;
 }
