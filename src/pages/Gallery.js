@@ -20,6 +20,16 @@ class Gallery extends Component {
           {title: '회식',
           address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
           {title: '회식',
+          address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
+          {title: '회식',
+          address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
+          {title: '회식',
+          address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
+          {title: '회식',
+          address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
+          {title: '회식',
+          address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'},
+          {title: '회식',
           address: 'https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg'}
         ]
       },
@@ -48,8 +58,8 @@ class Gallery extends Component {
     console.log(this.state.tabList)
     return (
       <PageTemplate className='Gallery'>
-        <div>
-          <h1>
+        <div className="table">
+          <h1 id="headname">
             Gallery
           </h1>
           <GalleryTab tabList={this.state.tabList} contents = {this.state.ALL}>

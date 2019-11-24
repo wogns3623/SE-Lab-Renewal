@@ -35,11 +35,15 @@ class GalleryTab extends Component {
         <div className={"title" + title}>
           {item.name}
         </div>
-        <tr>
-            {[
-                item.list.map((ICinfo, index) => <GalleryTable {...ICinfo} key={index}></GalleryTable>)
-            ]}
-        </tr>
+        <table>
+            <tr>
+                <th>
+                    {[
+                        item.list.map((ICinfo, index) => <GalleryTable {...ICinfo} key={index}></GalleryTable>)
+                    ]}
+                </th>
+            </tr>
+        </table>
       </div>
     );
   }
