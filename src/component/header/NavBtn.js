@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import 'style/navBtn.css'
+import 'style/NavBtn.css'
 
 class NavBtn extends Component {
   static defaultProps = {
     exact: false,
     activeHover: true,
     activeStyle: {
-      backgroundColor: '#70c8e9',
+      backgroundColor: '#1a242f',
     }
   }
 

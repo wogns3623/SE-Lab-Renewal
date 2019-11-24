@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PageTemplate from 'component/template/PageTemplate.js';
 import TabTemplate from 'component/template/TabTemplate.js';
 import Subject from 'component/research/Subject.js';
-import 'style/research.css';
+import 'style/Research.css';
 
 class Research extends Component {
   state = {
@@ -94,7 +94,7 @@ class Research extends Component {
         <div className='container'>
           <div className='contents'>
             <h1>RESEARCH</h1>
-            <TabTemplate tabList={this.state.tabList} research={this.state.research}>
+            <TabTemplate tabList={this.state.tabList}>
               {[
                 this.state.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
                 (<h2 key='0'>공사중</h2>)

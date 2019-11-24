@@ -9,13 +9,13 @@ html {
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #fFFFFF;
   font-family: "Roboto", "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   margin: 0px;
 }
 
 main {
-  width: 1145px;
+  width: 1300px;
   margin: 0 auto;
 }
 
@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(156, 156, 156);
+  color: #2c3e50;
   margin: 10px 0;
   font-weight: bold;
   font-size: 30px;

@@ -1,0 +1,16 @@
+li, ul{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+.title{
+    background-color: rgb(60, 66, 156);
+}
+
+.a:nth-child(even){background-color: bisque;}
+/* .list{
+    background: bisque;
+    margin: 5px;
+} */
+.even{
+    background-color: blue;
+}
