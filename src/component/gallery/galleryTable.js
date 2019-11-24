@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'style/gallery.css';
+import 'style/Gallery.css';
 
 class galleryTable extends Component{
     render(){
