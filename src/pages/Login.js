@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/template/PageTemplate.js';
+import PageTemplate from 'component/template/PageTemplate.js';
 
 class Login extends Component {
   render() {
     return (
-      <PageTamplate className='Login'>
-      </PageTamplate>
+      <PageTemplate className='Login'>
+      </PageTemplate>
     );
   }
 }

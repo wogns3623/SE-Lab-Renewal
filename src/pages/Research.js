@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PageTamplate from 'component/template/PageTemplate.js';
+import PageTemplate from 'component/template/PageTemplate.js';
 import TabTemplate from 'component/template/TabTemplate.js';
 import Subject from 'component/research/Subject.js';
 import 'style/research.css';
@@ -90,7 +90,7 @@ class Research extends Component {
   }
   render() {
     return (
-      <PageTamplate className='Research'>
+      <PageTemplate className='Research'>
         <div className='container'>
           <div className='contents'>
             <h1>RESEARCH</h1>
@@ -102,7 +102,7 @@ class Research extends Component {
             </TabTemplate>
           </div>
         </div>
-      </PageTamplate>
+      </PageTemplate>
     );
   }
 }

@@ -4,7 +4,6 @@ import 'style/subject.css';
 
 class Subject extends Component {
   render() {
-    
     return (
       <div className='Subject'>
         <h3>{this.props.title}</h3>
