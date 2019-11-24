@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TabMenu from 'component/tab/TabMenu.js';
 import 'style/Tab.css';
+import 'style/gallery.css';
 import GalleryTable from 'component/gallery/GalleryTable.js';
 
 class GalleryTab extends Component {
@@ -19,32 +20,25 @@ class GalleryTab extends Component {
 
   disable = (item, index) =>{
     index = index + 1;
-    console.log(this.state.currentTab, index)
+    const cT = this.state.currentTab;
+    const tL = this.props.tabList;
     let isActive = ' deactive';
-    let title = ' deactive';
-    if(this.state.currentTab===index || this.state.currentTab===0){
+    console.log(tL[cT].name, item.id);
+    
+    if(cT===0||tL[cT].name===item.id){
       isActive = '';
     }
-    // if (this.state.currentTab === 0) {
-    //   title = ''
-    // }
 
     return (
-      <div className={item.name+isActive} key={index}>
-        <div className={"title" + title}>
-          {item.name}
-        </div>
-        <tr>
-            {[
-                item.list.map((ICinfo, index) => <GalleryTable {...ICinfo} key={index}></GalleryTable>)
-            ]}
-        </tr>
-      </div>
+        <GalleryTable
+            className={isActive}
+            {...item}
+            key={index}>
+        </GalleryTable>
     );
   }
 
   render() {
-      console.log(this.props.tabList)
     return (
       <div className='Tab'>
         <TabMenu items={this.props.tabList.map((tab, index) => {
