@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PageTemplate from 'component/template/PageTemplate.js';
 import TabTemplate from 'component/template/TabTemplate.js';
 import Subject from 'component/research/Subject.js';
-import 'style/research.css';
+import 'style/Research.css';
 
 class Research extends Component {
   state = {

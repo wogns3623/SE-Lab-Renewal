@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import PageTamplate from 'component/template/PageTemplate.js';
 import ModifiedTap from 'component/publications/ModifiedTap.js';
 
+import 'style/Publications.css'
+
 
 class Publications extends Component {
   state = {
