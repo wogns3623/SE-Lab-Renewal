@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 import PageTemplate from 'component/template/PageTemplate.js';
 import ProfileBox from 'component/members/ProfileBox.js';
-import ProfileContents from 'component/members/ProfileContents.js';
 
-import 'style/members.css';
+import 'style/Members.css';
 
 
 class Members extends Component {

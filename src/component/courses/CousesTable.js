@@ -4,34 +4,44 @@ class CoursesTable extends Component{
   data
   render() {
     return(
-      <div className="CourseTable">
-        <table className="first_table">
+      <div className='CourseTable'>
+        <table className='first_table'>
           <tr>
-            <th className="coursenum" colspan="2">Undergraduate Courses</th>
+            <th className='coursenum' colspan='2'>{this.props.tableName}</th>
+          </tr>
+          {this.props.courseList.map((item, index) => {
+            let isActive = {};
+            if(item.)
+            return(
+              <tr {...isActive} key>
+                <td className='coursenum'>{item.id}</td>
+                <td className='course'>{item.name}</td>
+              </tr>
+            );
+          })}
+          <tr>
+            <td className='coursenum' data-href='cse107'>CSE107</td>
+            <td className='course' data-href='cse107'>Logical Fundamentals of Programming</td>
           </tr>
           <tr>
-            <td className="coursenum" data-href="cse107">CSE107</td>
-            <td className="course" data-href="cse107">Logical Fundamentals of Programming</td>
+            <td className='coursenum'>CSE117</td>
+            <td className='course'>Programming Fundamentals</td>
           </tr>
           <tr>
-            <td className="coursenum">CSE117</td>
-            <td className="course">Programming Fundamentals</td>
+            <td className='coursenum'>CSE322</td>
+            <td className='course'>Web Programming</td>
           </tr>
           <tr>
-            <td className="coursenum">CSE322</td>
-            <td className="course">Web Programming</td>
+            <td className='coursenum active' data-href='cse326'>CSE326</td>
+            <td className='course active' data-href='cse326'>Web Application Development</td>
           </tr>
           <tr>
-            <td className="coursenum active" data-href="cse326">CSE326</td>
-            <td className="course active" data-href="cse326">Web Application Development</td>
-          </tr>
-          <tr>
-            <td className="coursenum" data-href="cse406">CSE406</td>
-            <td className="course" data-href="cse406">Software Engineering</td>
+            <td className='coursenum' data-href='cse406'>CSE406</td>
+            <td className='course' data-href='cse406'>Software Engineering</td>
           </tr>
         </table>
-        <div className="over">
-          <table className="second_table">
+        <div className='over'>
+          <table className='second_table'>
             <tr>
               <th>2019-2</th>
               <th>2019-1</th>
@@ -59,21 +69,21 @@ class CoursesTable extends Component{
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
             </tr>
@@ -95,7 +105,7 @@ class CoursesTable extends Component{
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
             </tr>
             {/* Web */}
@@ -114,7 +124,7 @@ class CoursesTable extends Component{
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td></td>
@@ -122,28 +132,28 @@ class CoursesTable extends Component{
             {/*  Web App  */}
             <tr>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td></td>
@@ -155,19 +165,19 @@ class CoursesTable extends Component{
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
               <td></td>
@@ -175,7 +185,7 @@ class CoursesTable extends Component{
               <td></td>
               <td></td>
               <td>
-                <div className="circle"></div>
+                <div className='circle'></div>
               </td>
               <td></td>
             </tr>

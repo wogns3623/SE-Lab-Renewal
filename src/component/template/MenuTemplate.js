@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import 'style/menu.css';
+import 'style/Menu.css';
 
 class MenuTemplate extends Component {
   static defaultProps = {
