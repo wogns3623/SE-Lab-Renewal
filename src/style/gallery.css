@@ -1,39 +1,14 @@
+.Gallery .Tab .Contents{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Gallery .Tab .Contents .Item{
+    margin-right: 5px;
+    margin-top : 5px;
+}
+
 img{
     width: 155pt;
     height: auto;
-
-}
-.table{
-    width: 100%;
-    table-layout: fixed;
-    display: inline;
-
-}
-tr{
-    width: 100%;
-    table-layout: fixed;
-    background-color: #d3edf5;
-    /* float: left; */
-
-}
-
-th, td {
-  text-align: left;
-  max-width: 100%;
-  display: table-cell;
-  float: left;
-  background-color: #d3edf5;
-
-}
-
-/* .Gallery{
-    background-color: #d3edf5;
-} */
-
-#headname{
-    background-color: #ffffff;
-}
-
-.Tab{
-    background-color: #ffffff;
 }
