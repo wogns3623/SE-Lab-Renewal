@@ -91,17 +91,13 @@ class Research extends Component {
   render() {
     return (
       <PageTemplate className='Research'>
-        <div className='container'>
-          <div className='contents'>
-            <h1>RESEARCH</h1>
-            <TabTemplate tabList={this.state.tabList}>
-              {[
-                this.state.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
-                (<h2 key='0'>공사중</h2>)
-              ]}
-            </TabTemplate>
-          </div>
-        </div>
+        <h1>RESEARCH</h1>
+        <TabTemplate tabList={this.state.tabList}>
+          {[
+            this.state.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
+            (<h2 key='0'>공사중</h2>)
+          ]}
+        </TabTemplate>
       </PageTemplate>
     );
   }
