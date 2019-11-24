@@ -31,9 +31,9 @@ class ModifiedTap extends Component {
 
     return (
       <div className={item.name+isActive} key={index}>
-          <div className={"title" + title}>
-            {item.name}
-          </div>
+        <div className={"title" + title}>
+          {item.name}
+        </div>
         <ul>
             {[
                 item.list.map((ICinfo, index) => <Table {...ICinfo} key={index}></Table>)
