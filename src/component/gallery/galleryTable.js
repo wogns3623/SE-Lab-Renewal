@@ -6,9 +6,7 @@ class galleryTable extends Component{
             <div className='table'>
                 <tr>  
                     <a href={this.props.address}>
-                        <img src={this.props.address}></img>
-                        <br>
-                        </br>
+                        <img src={this.props.address} alt=''></img><br/>
                         {this.props.title}
                     </a>
                 </tr>

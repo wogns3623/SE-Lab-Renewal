@@ -3,11 +3,11 @@
   border-spacing: 0px;
 }
 
-.Courses #course_table{
+.Courses .CoursesTable{
 	margin-bottom: 20px;
 }
 
-.Courses #first_table{
+.Courses .info{
 	float: left;
 	border-right: 1px solid #dfdfdf;
 }
@@ -28,7 +28,7 @@
 	background-color: #edf7fa;
 	text-align: center;
 }
-.Courses #second_table th{
+.Courses .second_table th{
 	min-width: 70px;
 }
 
@@ -73,18 +73,18 @@
 	display: inline-block;
 }
 
-.Courses #over{
+.Courses .over{
 	overflow: auto;
 }
 
-.Courses #second_table{
+.Courses .second_table{
 	table-layout:fixed;
 }
 
-.Courses #first_table th:first-of-type{
+.Courses .info th:first-of-type{
 	border-radius: 3px 0px 0px 0px;
 }
 
-.Courses #second_table th:last-of-type{
+.Courses .second_table th:last-of-type{
 	border-radius: 0px 3px 0px 0px;
 }
