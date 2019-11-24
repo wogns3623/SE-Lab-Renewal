@@ -1,0 +1,73 @@
+/* Component관련 css 같음 */
+
+.contents #information {
+	position: relative;
+	overflow: hidden;
+}
+
+.contents ul {
+	clear: both;
+	overflow: hidden;
+}
+
+.contents li {
+	list-style: none;
+}
+
+.contents li.title{
+	width: 800px;
+	border-right: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.contents li.name{
+	width: 160px;
+	border-right: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.contents li.time{
+	width: 160px;
+	text-align: center;
+}
+
+.contents .header li {
+	background-color: #8bcbe3;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	color: white;
+	border-bottom: 3px solid #dfdfdf;
+}
+
+.contents  li {
+	background-color: white;
+}
+
+.contents :nth-child(odd) li {
+	background-color: #edf7fa;
+}
+
+.contents  li.title {
+	width: 800px;
+	padding-left: 35px;
+	text-align: left;
+}
+
+.contents  .information {
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.contents {
+	background-color: #dfdfdf;
+	width: 100%;
+	line-height: 40px;
+	padding-left: 6%;
+}
+
+.contents p {
+	word-break: break-all;
+	width: 90%;
+}
