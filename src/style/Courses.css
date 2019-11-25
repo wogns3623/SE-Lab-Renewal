@@ -1,0 +1,90 @@
+.Courses table{
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.Courses .CoursesTable{
+	margin-bottom: 20px;
+}
+
+.Courses .info{
+	float: left;
+	border-right: 1px solid #dfdfdf;
+}
+
+.Courses table th{
+	height: 45px;
+	vertical-align: middle;
+	background-color: #8bcbe3;
+	color: white;
+	border-bottom: 3px solid #dfdfdf;
+	text-align: center;
+}
+
+.Courses table td{
+	height: 40px;
+	vertical-align: middle;
+	padding: 0px;
+	background-color: #edf7fa;
+	text-align: center;
+}
+.Courses .second_table th{
+	min-width: 70px;
+}
+
+.Courses .course{
+	width: 310px;
+	border-right: 2px solid #dfdfdf;
+}
+
+.Courses .coursenum{
+	width: 70px;
+}
+
+.Courses table tr td{
+	border-bottom: 1px solid #dfdfdf;
+	border-right: 1px solid #dfdfdf;
+}
+
+.Courses td:last-child{
+	border-right: none;
+}
+
+.Courses .active{
+	background-color: #63D5F7 !important;
+	cursor: pointer;
+}
+
+.Courses .hovered{
+	background-color: #83D9FF !important;
+}
+
+.Courses tr:nth-child(odd) td{
+	background-color: white;
+}
+
+.Courses .circle {
+	width: 20px;
+	height: 20px;
+	background-color: #65D4D2;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	display: inline-block;
+}
+
+.Courses .over{
+	overflow: auto;
+}
+
+.Courses .second_table{
+	table-layout:fixed;
+}
+
+.Courses .info th:first-of-type{
+	border-radius: 3px 0px 0px 0px;
+}
+
+.Courses .second_table th:last-of-type{
+	border-radius: 0px 3px 0px 0px;
+}

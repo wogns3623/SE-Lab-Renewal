@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import TabMenu from 'component/tab/TabMenu.js';
-import 'style/tab.css';
 import Table from 'component/publications/table.js';
+import 'style/Tab.css';
 
 class ModifiedTap extends Component {
   state = {
@@ -31,9 +31,9 @@ class ModifiedTap extends Component {
 
     return (
       <div className={item.name+isActive} key={index}>
-          <div className={"title" + title}>
-            {item.name}
-          </div>
+        <div className={"title" + title}>
+          {item.name}
+        </div>
         <ul>
             {[
                 item.list.map((ICinfo, index) => <Table {...ICinfo} key={index}></Table>)

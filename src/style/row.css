@@ -1,0 +1,72 @@
+/* Component관련 css 같음 */
+.Row #information {
+	position: relative;
+	overflow: hidden;
+}
+
+.Row ul {
+	clear: both;
+	overflow: hidden;
+}
+
+.Row li {
+	list-style: none;
+}
+
+.Row li.title{
+	width: 800px;
+	border-right: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.Row li.name{
+	width: 160px;
+	border-right: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.Row li.time{
+	width: 160px;
+	text-align: center;
+}
+
+.Row .header li {
+	background-color: #8bcbe3;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	color: white;
+	border-bottom: 3px solid #dfdfdf;
+}
+
+.Row  li {
+	background-color: white;
+}
+
+.Row :nth-child(odd) li {
+	background-color: #edf7fa;
+}
+
+.Row  li.title {
+	width: 800px;
+	padding-left: 35px;
+	text-align: left;
+}
+
+.Row  .information {
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.Row {
+	background-color: #dfdfdf;
+	width: 100%;
+	line-height: 40px;
+	padding-left: 6%;
+}
+
+.Row p {
+	word-break: break-all;
+	width: 90%;
+}

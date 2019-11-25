@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Menu from 'component/header/NavMenu.js';
 import Logo from 'component/header/Logo.js'
-import 'style/header.css';
+import 'style/Header.css';
 
 class Header extends Component {
   state = {

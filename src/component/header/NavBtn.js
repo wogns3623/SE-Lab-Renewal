@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import 'style/navBtn.css'
+import 'style/NavBtn.css'
 
 class NavBtn extends Component {
   static defaultProps = {

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import TabMenu from 'component/tab/TabMenu.js';
 import 'style/Tab.css';
+import 'style/Gallery.css';
+import GalleryTable from 'component/gallery/GalleryTable.js';
 
-class TabTemplate extends Component {
+class GalleryTab extends Component {
   state = {
     currentTab: 0,
   }
@@ -12,6 +14,28 @@ class TabTemplate extends Component {
     this.setState({
       currentTab: index
     })
+  }
+
+
+
+  disable = (item, index) =>{
+    index = index + 1;
+    const cT = this.state.currentTab;
+    const tL = this.props.tabList;
+    let isActive = ' deactive';
+    console.log(tL[cT].name, item.id);
+    
+    if(cT===0||tL[cT].name===item.id){
+      isActive = '';
+    }
+
+    return (
+        <GalleryTable
+            className={isActive}
+            {...item}
+            key={index}>
+        </GalleryTable>
+    );
   }
 
   render() {
@@ -27,19 +51,11 @@ class TabTemplate extends Component {
         <div id='hl'></div>
 
         <div className="Contents">
-          {this.props.tabList.map((item, index) => {
-            console.log(this.state.currentTab, index)
-            return (
-              <div className={item.name+(this.state.currentTab===index?'':' deactive')}
-                key={index}>
-                {this.props.children[index]}
-              </div>
-            );
-          })}
+          {this.props.contents.map(this.disable)}
         </div>
       </div>
     );
   }
 }
 
-export default TabTemplate;
+export default GalleryTab;

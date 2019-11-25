@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import PageTamplate from 'component/template/PageTemplate.js';
 import ModifiedTap from 'component/publications/ModifiedTap.js';
 
+import 'style/Publications.css'
+
 
 class Publications extends Component {
   state = {
@@ -24,10 +26,10 @@ class Publications extends Component {
           {
             title: "Mohsin Javaid Siddiqui, Xintao Li, Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, \"Comparative Analysis of GUI Development for Android Application by utilizing MDA Approach,\" In Proc. International workshop on convergence information technology 2017, 2017, pp.151-154.",
             address: 'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Mohsin0.pdf'
-          },
+          }
         ]
       },
-    {
+      {
       name:"International Journal",
       list: [
         {
@@ -65,8 +67,8 @@ class Publications extends Component {
         address:"https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Isma0.pdf"
         }
       ]
-    }
-  ]
+     }
+    ]
   }
   render() {
     return (
