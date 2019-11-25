@@ -1,0 +1,10 @@
+#hl{
+	height: 5px;
+  padding: 0px;
+	background-color: #70c8e9;
+  clear: both;
+}
+
+.Contents div.deactive{
+  display: none;
+}
