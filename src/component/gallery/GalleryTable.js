@@ -6,7 +6,7 @@ class GalleryTable extends Component{
         return (
             <div className={'Item '+this.props.className}>
                 <a href={this.props.address}>
-                    <img src={this.props.address}></img>
+                    <img src={this.props.address} alt=''></img>
                     <br>
                     </br>
                     {this.props.title}
