@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import 'style/Gallery.css';
 
-class galleryTable extends Component{
+class GalleryTable extends Component{
     render(){
         return (
             <div className={'Item '+this.props.className}>
                 <a href={this.props.address}>
-                    <img src={this.props.address}></img>
+                    <img src={this.props.address} alt=''></img>
                     <br>
                     </br>
                     {this.props.title}
@@ -16,4 +16,4 @@ class galleryTable extends Component{
     }
 }
 
-export default galleryTable;
+export default GalleryTable;

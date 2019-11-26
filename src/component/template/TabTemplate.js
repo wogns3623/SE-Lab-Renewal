@@ -28,7 +28,6 @@ class TabTemplate extends Component {
 
         <div className="Contents">
           {this.props.tabList.map((item, index) => {
-            console.log(this.state.currentTab, index)
             return (
               <div className={item.name+(this.state.currentTab===index?'':' deactive')}
                 key={index}>

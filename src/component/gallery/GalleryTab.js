@@ -23,8 +23,7 @@ class GalleryTab extends Component {
     const cT = this.state.currentTab;
     const tL = this.props.tabList;
     let isActive = ' deactive';
-    console.log(tL[cT].name, item.id);
-    
+     
     if(cT===0||tL[cT].name===item.id){
       isActive = '';
     }

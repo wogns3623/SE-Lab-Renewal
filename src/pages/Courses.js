@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import PageTemplate from 'component/template/PageTemplate.js';
-import 'style/Courses.css';
 import courseInfo from 'component/courses/courseInfo.json';
 import CourseTable from '../component/courses/CouseTable';
 
