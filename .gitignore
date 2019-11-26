@@ -68,6 +68,7 @@ typings/
 
 # testing
 /coverage
+/pages/Test.js
 
 # production
 /build
