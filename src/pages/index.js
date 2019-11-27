@@ -7,3 +7,4 @@ export { default as Courses } from './Courses';
 export { default as Gallery } from './Gallery';
 export { default as Contact } from './Contact';
 export { default as Login } from './Login';
+export { default as Test } from "./Test";

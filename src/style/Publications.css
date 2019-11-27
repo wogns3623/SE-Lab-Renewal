@@ -1,16 +1,28 @@
 li, ul{
     list-style-type: none;
     padding-inline-start: 0px;
+    margin: 0px;
 }
 .title{
-    background-color: rgb(60, 66, 156);
+    background-color: #d3edf5;
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16pt;
+    color: coral;
+}
+li{
+    padding: 10px;
 }
 
-.a:nth-child(even){background-color: bisque;}
+
 /* .list{
     background: bisque;
     margin: 5px;
 } */
-.even{
-    background-color: blue;
+.list:nth-child(odd){
+    background: #EDF7FA;
+}
+.list:nth-child(even){
+    background: #FFFFFF ;
 }

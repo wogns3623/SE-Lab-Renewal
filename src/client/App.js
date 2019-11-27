@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
-import { Home, Notice, Members, Research, Publications, Courses, Gallery, Contact, Login } from 'pages';
+import { Home, Notice, Members, Research, Publications, Courses, Gallery, Contact, Login, Test } from 'pages';
 
 class App extends Component {
   render() {
@@ -15,6 +15,7 @@ class App extends Component {
         <Route path="/gallery" component={Gallery}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/login" component={Login}/>
+        <Route path="/test" component={Test}/>
       </BrowserRouter>
     );
   }
