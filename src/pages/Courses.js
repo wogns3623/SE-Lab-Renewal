@@ -5,6 +5,8 @@ import PageTemplate from "component/common/template/PageTemplate.js";
 import CourseHome from "component/courses";
 import { CSE326 } from "component/courses/pages";
 
+import "style/cse326.css";
+
 class Courses extends Component {
   render() {
     // console.log(this.props)
