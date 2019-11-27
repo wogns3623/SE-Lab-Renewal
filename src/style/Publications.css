@@ -1,9 +1,11 @@
-li, ul{
+.Publications li,
+.Publications ul {
     list-style-type: none;
     padding-inline-start: 0px;
     margin: 0px;
 }
-.title{
+
+.title {
     background-color: #d3edf5;
     margin: 0px;
     padding: 10px;
@@ -11,7 +13,8 @@ li, ul{
     font-size: 16pt;
     color: coral;
 }
-li{
+
+.Publications li {
     padding: 10px;
 }
 
@@ -20,9 +23,10 @@ li{
     background: bisque;
     margin: 5px;
 } */
-.list:nth-child(odd){
+.list:nth-child(odd) {
     background: #EDF7FA;
 }
-.list:nth-child(even){
-    background: #FFFFFF ;
+
+.list:nth-child(even) {
+    background: #FFFFFF;
 }
