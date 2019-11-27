@@ -31,7 +31,45 @@ class Home extends Component {
             </p>
           </div>
           <div id="contact">
-            <div id="map"></div>
+            <h1>| CONTECT |</h1>
+            <div id="contact-container">
+              <div id="map-container">
+                <h2>Where I am ?</h2>
+                <div id="map">지도 들어갈 자리</div>
+              </div>
+              <div id="info-container">
+                <h2>Information</h2>
+                <div id="info">
+                  <ul>
+                    <hr />
+                    <li>
+                      <h3>Name</h3>
+                      <p>Scott Uk-Jin Lee</p>
+                    </li>
+                    <hr />
+                    <li>
+                      <h3>Telephone</h3>
+                      <p>031-400-5238</p>
+                    </li>
+                    <hr />
+                    <li>
+                      <h3>E-mail</h3>
+                      <p>scottlee@hanyang.ac.kr</p>
+                    </li>
+                    <hr />
+                    <li>
+                      <h3>Location</h3>
+                      <p>
+                        Room #620 of the Academic Cluster Support Center
+                        <br />
+                        at Hanyang Univ. ERICA
+                      </p>
+                    </li>
+                    <hr />
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </PageTemplate>

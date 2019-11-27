@@ -8,7 +8,6 @@ import {
   Publications,
   Courses,
   Gallery,
-  Contact,
   Login,
   Test
 } from "pages";
@@ -24,7 +23,6 @@ class App extends Component {
         <Route path="/publications" component={Publications} />
         <Route exact path="/courses" component={Courses} />
         <Route path="/gallery" component={Gallery} />
-        <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
         <Route path="/test" component={Test} />
       </BrowserRouter>

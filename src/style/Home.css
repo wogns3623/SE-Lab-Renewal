@@ -1,0 +1,36 @@
+.body .container {
+  background-color: #ECF0F1;
+  height: 520px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  border-radius: 10px;
+}
+
+.body .container h1 {
+  color: #2c3e50;
+  font-size: 90pt;
+}
+
+.body .container h1 img {
+  margin-right: 10px;
+}
+
+.body .container p {
+  color: #2C3E50;
+  line-height: 1.4;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+
+.body .container p span {
+  font-weight: bolder;
+}
+
+.body #contact #map {
+  width: 500px;
+  height: 400px;
+}
+/*# sourceMappingURL=Home.css.map */

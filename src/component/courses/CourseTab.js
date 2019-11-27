@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-import TabMenu from "component/common/tab/TabMenu.js";
-import Table from "component/publications/table.js";
+import TabMenu from "component/tab/TabMenu.js";
+import CourseTable from "component/courses/CourseTable.js";
 import "style/Tab.css";
-import "style/Publications.css";
 
-class ModifiedTap extends Component {
+class CourseTab extends Component {
   state = {
     currentTab: 0
   };
@@ -18,27 +17,16 @@ class ModifiedTap extends Component {
 
   disable = (item, index) => {
     index = index + 1;
-    console.log(this.state.currentTab, index);
+    const cT = this.state.currentTab;
+    const tL = this.props.tabList;
     let isActive = " deactive";
-    let title = " deactive";
-    if (this.state.currentTab === index || this.state.currentTab === 0) {
+
+    if (cT === 0 || tL[cT].name === item.id) {
       isActive = "";
-    }
-    if (this.state.currentTab === 0) {
-      title = "";
     }
 
     return (
-      <div className={item.name + isActive} key={index}>
-        <div className={"title" + title}>{item.name}</div>
-        <ul>
-          {[
-            item.list.map((ICinfo, index) => (
-              <Table {...ICinfo} key={index}></Table>
-            ))
-          ]}
-        </ul>
-      </div>
+      <CourseTable className={isActive} {...item} key={index}></CourseTable>
     );
   };
 
@@ -64,4 +52,4 @@ class ModifiedTap extends Component {
   }
 }
 
-export default ModifiedTap;
+export default CourseTab;

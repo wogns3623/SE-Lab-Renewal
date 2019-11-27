@@ -1,28 +1,28 @@
-li, ul{
-    list-style-type: none;
-    padding-inline-start: 0px;
-    margin: 0px;
+.Publications li,
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+  margin: 0px;
 }
-.title{
-    background-color: #d3edf5;
-    margin: 0px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 16pt;
-    color: coral;
+.title {
+  background-color: #d3edf5;
+  margin: 0px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16pt;
+  color: coral;
 }
-li{
-    padding: 10px;
+.Publications li {
+  padding: 10px;
 }
-
 
 /* .list{
     background: bisque;
     margin: 5px;
 } */
-.list:nth-child(odd){
-    background: #EDF7FA;
+.list:nth-child(odd) {
+  background: #edf7fa;
 }
-.list:nth-child(even){
-    background: #FFFFFF ;
+.list:nth-child(even) {
+  background: #ffffff;
 }
