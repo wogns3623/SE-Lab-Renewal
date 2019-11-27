@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import PageTemplate from "component/template/PageTemplate.js";
+import PageTemplate from "component/common/template/PageTemplate.js";
 import CourseBox from "component/courses/CourseBox.js";
 
 import "style/cse326.css";
