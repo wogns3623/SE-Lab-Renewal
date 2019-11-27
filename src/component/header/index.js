@@ -1,50 +1,45 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Menu from 'component/header/NavMenu.js';
-import Logo from 'component/header/Logo.js'
-import 'style/Header.css';
+import Menu from "component/header/NavMenu.js";
+import Logo from "component/header/Logo.js";
+import "style/Header.css";
 
 class Header extends Component {
   state = {
     menu: [
       {
-        name: 'notice'
+        name: "notice"
       },
       {
-        name: 'members'
+        name: "members"
       },
       {
-        name: 'research'
+        name: "research"
       },
       {
-        name: 'publications'
+        name: "publications"
       },
       {
-        name: 'courses'
+        name: "courses"
       },
       {
-        name: 'gallery'
+        name: "gallery"
       },
       {
-        name: 'contact'
-      },
-      {
-        name: 'login'
-      },
+        name: "login"
+      }
     ]
-  }
+  };
   render() {
     return (
-      <header role='banner'>
-        <nav role='navigation'>
+      <header role="banner">
+        <nav role="navigation">
           <Logo></Logo>
           <Menu
-            className='pull-left'
-            items={this.state.menu.slice(0, 6)}></Menu>
-          <Menu
-            className='pull-right'
-              items={this.state.menu.slice(6)}></Menu>
-
+            className="pull-left"
+            items={this.state.menu.slice(0, 6)}
+          ></Menu>
+          <Menu className="pull-right" items={this.state.menu.slice(6)}></Menu>
         </nav>
       </header>
     );
