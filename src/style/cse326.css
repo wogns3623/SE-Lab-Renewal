@@ -123,3 +123,7 @@ hl {
 .nothing {
     list-style-type: none;
 }
+
+li {
+    padding: 0px;
+}
