@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import PageTemplate from "component/template/PageTemplate.js";
 import courseInfo from "component/courses/courseInfo.json";
-import CourseTable from "../component/courses/CouseTable";
+import CourseTable from "../component/courses/CourseTable";
 
 class Courses extends Component {
   render() {
