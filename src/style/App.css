@@ -28,7 +28,18 @@ a {
   text-decoration: none;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -36,7 +47,7 @@ a {
 
 h1 {
   font-size: 60px;
-  color: #00abd9;
+  color: #2c3e50;
   margin: 20px 0 5px 0;
 }
 
