@@ -1,11 +1,9 @@
 {
   "startYear": 2011,
   "startSemester": 2,
-  "data": [
-    {
+  "data": [{
       "level": "Undergraduate Courses",
-      "courses": [
-        {
+      "courses": [{
           "id": "CSE107",
           "name": "Logical Fundamentals of Programming",
           "activated": [{
@@ -20,80 +18,74 @@
           }, {
             "year": 2012,
             "semester": 1
-          }
-        ]
-      },
-      {
-        "id": "CSE117",
-        "name": "Programming Fundamentals",
-        "activated": [
-          {
+          }]
+        },
+        {
+          "id": "CSE117",
+          "name": "Programming Fundamentals",
+          "activated": [{
             "year": 2011,
             "semester": 2
-          }
-        ]
-      },
-      {
-        "id": "CSE322",
-        "name": "Web Programming",
-        "activated": [
-          {
+          }]
+        },
+        {
+          "id": "CSE322",
+          "name": "Web Programming",
+          "activated": [{
             "year": 2012,
             "semester": 2
-          }
-        ]
-      },
-      {
-        "id": "CSE326",
-        "name": "Web Application Development",
-        "activated": [
+          }]
+        },
+        {
+          "id": "CSE326",
+          "name": "Web Application Development",
+          "activated": [{
+              "year": 2019,
+              "semester": 2
+            },
             {
-            "year": 2019,
-            "semester": 2
-          },
-          {
+              "year": 2017,
+              "semester": 2
+            },
+            {
+              "year": 2016,
+              "semester": 2
+            },
+            {
+              "year": 2015,
+              "semester": 2
+            },
+            {
+              "year": 2014,
+              "semester": 2
+            },
+            {
+              "year": 2013,
+              "semester": 2
+            }
+          ]
+        }, {
+          "id": "CSE406",
+          "name": "Software Engineering",
+          "activated": [{
+            "year": 2018,
+            "semester": 1
+          }, {
             "year": 2017,
-            "semester": 2
-          },
-          {
+            "semester": 1
+          }, {
             "year": 2016,
-            "semester": 2
-          },
-          {
+            "semester": 1
+          }, {
             "year": 2015,
-            "semester": 2
-          },
-          {
-            "year": 2014,
-            "semester": 2
-          },
-          {
-            "year": 2013,
-            "semester": 2
-          }
-        ]
-      }, {
-        "id": "CSE406",
-        "name": "Software Engineering",
-        "activated": [{
-          "year": 2018,
-          "semester": 1
-        }, {
-          "year": 2017,
-          "semester": 1
-        }, {
-          "year": 2016,
-          "semester": 1
-        }, {
-          "year": 2015,
-          "semester": 1
-        }]
-      }]
+            "semester": 1
+          }]
+        }
+      ]
     },
     {
       "level": "Postgraduate Courses",
-      "courses": [
-        {
+      "courses": [{
         "id": "CIN870",
         "name": "Formal Methods",
         "activated": [{
