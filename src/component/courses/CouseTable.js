@@ -32,10 +32,12 @@ class CourseTable extends Component {
       if (JSON.stringify(c) === JSON.stringify(item.activated[0])) {
         infoBody.push(
           <tr key={index} className="active">
-            <Link to={"/coruses" + c.year + "/" + item.id}>
-              <td className="id">{item.id}</td>
-              <td className="name">{item.name}</td>
-            </Link>
+            <td colSpan="2">
+              <Link to={"/coruses/" + item.id + "/" + c.year}>
+                <td className="id">{item.id}</td>
+                <td className="name">{item.name}</td>
+              </Link>
+            </td>
           </tr>
         );
       } else {
