@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Route } from 'react-dom';
 
 import PageTemplate from "component/template/PageTemplate.js";
 import courseInfo from "component/courses/courseInfo.json";
@@ -7,15 +8,12 @@ import CourseTable from "../component/courses/CourseTable";
 class Courses extends Component {
   render() {
     return (
-      <PageTemplate className="Courses">
+      // <Route  />>
+      <PageTemplate className='Courses'>
+        {/* <Route to={this.props.match}></Route> */}
         <h1>COURSES</h1>
         {courseInfo.data.map((item, index) => (
-          <CourseTable
-            startYear={courseInfo.startYear}
-            startSemester={courseInfo.startSemester}
-            data={item}
-            key={index}
-          ></CourseTable>
+        <CourseTable {...{...courseInfo, data:item}} key={index}></CourseTable>
         ))}
       </PageTemplate>
     );
