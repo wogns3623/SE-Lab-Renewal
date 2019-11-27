@@ -26,9 +26,6 @@ class Header extends Component {
         name: "gallery"
       },
       {
-        name: "contact"
-      },
-      {
         name: "login"
       }
     ]
@@ -42,7 +39,10 @@ class Header extends Component {
             className="pull-left"
             items={this.state.menu.slice(0, 6)}
           ></Menu>
-          <Menu className="pull-right" items={this.state.menu.slice(6)}></Menu>
+          <Menu
+            className="pull-right"
+            items={this.state.menu.slice(6, 7)}
+          ></Menu>
         </nav>
       </header>
     );
