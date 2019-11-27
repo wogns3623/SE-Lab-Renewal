@@ -4,7 +4,7 @@ class CourseContents4 extends Component {
   render() {
     return (
       <Fragment>
-        <p> {this.props.name} </p>
+        <p class="nothing"> {this.props.name} </p>
         <ul>
           {this.props.item.map(item => {
             return (

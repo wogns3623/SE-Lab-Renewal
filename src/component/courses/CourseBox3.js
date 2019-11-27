@@ -5,7 +5,7 @@ import CourseContents3 from "component/courses/CourseContents3.js";
 class CourseBox3 extends Component {
   render() {
     return (
-      <div class="wrap-subcontent">
+      <div class="wrap-subcontent_3">
         <h3>{this.props.title}</h3>
 
         {this.props.courseHome.map(course => {

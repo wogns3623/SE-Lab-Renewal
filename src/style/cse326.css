@@ -7,64 +7,70 @@
 } */
 
 
-.Courses .wrap-subcontent{
+.Courses .wrap-subcontent {
     background-color: white;
 
     overflow: hidden;
     margin-bottom: 30px;
 }
 
-h1{
+h1 {
     margin-bottom: 15px !important;
 }
 
-.Courses h2, .Courses h3, .Courses h4, .Courses p, .Courses li{
+.Courses h2,
+.Courses h3,
+.Courses h4,
+.Courses p,
+.Courses li {
     margin-bottom: 12px;
     font-size: 15px;
     font-family: Tahoma, Arial, sans-serif;
 
 }
 
-.Courses p{
+.Courses p {
     padding-left: 15px;
 }
 
 .Courses h2 {
-color: rgb(156, 156, 156);
-margin: 10px 0;
-font-weight: bold;
-font-size: 30px;
+    color: rgb(156, 156, 156);
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 30px;
 }
 
-.Courses h3, .Courses h4 {
+.Courses h3,
+.Courses h4 {
     font-size: 20px;
     font-weight: 100;
     width: 100%;
     padding-left: 10px;
 
-    background-color:rgb(211, 237, 245);
+    background-color: rgb(211, 237, 245);
     color: black;
     line-height: 52px;
     height: 52px;
 }
 
-.Courses li{
+.Courses li {
     margin: 13px 0;
     margin-left: 30px;
 
 }
 
-.Courses ol, .Courses ul{
+.Courses ol,
+.Courses ul {
     margin-left: 30px;
     margin-bottom: 20px;
 
 }
 
-.Courses .last{
+.Courses .last {
     margin-bottom: 100px;
 }
 
-.Courses ul{
+.Courses ul {
     list-style-image: url("../assets/images/list-img.png");
 }
 
@@ -98,11 +104,11 @@ font-size: 30px;
   color: white;
 } */
 
-.display_none{
-  display: none;
+.display_none {
+    display: none;
 }
 
-hl{
+hl {
     height: 5px;
     padding: 0px;
     background-color: #70c8e9;
@@ -110,6 +116,10 @@ hl{
 }
 
 .emphasize {
-	color : red;
-	font-weight : bold;
+    color: red;
+    font-weight: bold;
+}
+
+.nothing {
+    list-style-type: none;
 }
