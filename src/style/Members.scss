@@ -1,0 +1,92 @@
+.Members {
+    margin-top: 40px;
+
+    .position {
+        overflow: hidden;
+        margin-bottom: 30px;
+        border-radius: 3px;
+
+        #title_wrapper {
+            // width: 100%;
+            border-bottom: 1px solid gray;
+            height: 63px;
+        }
+
+        h2 {
+            font-size: 36pt;
+            font-weight: bold;
+            color: #008896;
+            display: inline;
+            padding: 0 20px 5px 20px;
+            border-bottom: 5px solid #008896;
+        }
+    }
+
+
+    .human {
+        margin: 10px;
+        overflow: hidden;
+
+        img {
+            float: left;
+        }
+    }
+
+    .info {
+        float: left;
+        width: 435px;
+        height: 175px;
+
+        li {
+            word-break: break-all;
+            line-height: 1;
+        }
+    }
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style-image: url("../assets/images/list-img.png");
+        float: left;
+        line-height: 1;
+        font-size: 15px;
+    }
+
+    li {
+        margin: 13px 0;
+        margin-left: 30px;
+        line-height: 1;
+    }
+
+    .photo {
+        width: 140px;
+        height: 175px;
+    }
+
+    .name {
+        margin-top: 5px !important;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .edit {
+        float: right;
+        margin-top: 159px;
+    }
+
+    .interest {
+        float: right;
+        width: 550px;
+        height: 175px;
+
+        li {
+            line-height: 25px;
+            margin-top: 5px;
+        }
+
+        li:nth-of-type(1) {
+            list-style: none;
+            margin: 0px 0px 0px 12px;
+        }
+    }
+}
