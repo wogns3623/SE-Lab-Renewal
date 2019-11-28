@@ -12,7 +12,7 @@ class Courses extends Component {
     // console.log(this.props)
     return (
       <PageTemplate className="Courses">
-        <Route exact path={this.props.match.path} component={CourseHome} />>
+        <Route exact path={this.props.match.path} component={CourseHome} />
         <Route path={this.props.match.path + "/CSE326/2019"}></Route>
       </PageTemplate>
     );
