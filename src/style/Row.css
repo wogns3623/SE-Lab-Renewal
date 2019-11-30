@@ -1,72 +1,43 @@
-/* Component관련 css 같음 */
-.Row #information {
-	position: relative;
-	overflow: hidden;
+.Row ul{
+	margin: 0;
+	display:flex;
+	/*flex했지뭐야~*/
 }
 
-.Row ul {
-	clear: both;
-	overflow: hidden;
-}
-
-.Row li {
-	list-style: none;
-}
 
 .Row li.title{
-	width: 800px;
-	border-right: 1px solid #dfdfdf;
-	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: left;
+	border-right: 2px solid #dfdfdf;
+	flex-basis: 800px;
+	background-color: #ECF0F1;
+	padding-left:30px;
 }
 
 .Row li.name{
-	width: 160px;
-	border-right: 1px solid #dfdfdf;
-	text-align: center;
-}
-
-.Row li.time{
-	width: 160px;
-	text-align: center;
-}
-
-.Row .header li {
-	background-color: #8bcbe3;
 	height: 40px;
+	line-height: 40px;
 	font-size: 20px;
-	line-height: 40px;
-	color: white;
-	border-bottom: 3px solid #dfdfdf;
-}
-
-.Row  li {
-	background-color: white;
-}
-
-.Row :nth-child(odd) li {
-	background-color: #edf7fa;
-}
-
-.Row  li.title {
-	width: 800px;
-	padding-left: 35px;
+	text-align: center;
+	flex-basis: 160px;
 	text-align: left;
+	background-color: #ECF0F1;
+    border-right: 2px solid #dfdfdf;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-.Row  .information {
+.Row li.date{
 	height: 40px;
 	line-height: 40px;
-	cursor: pointer;
+	font-size: 20px;
+	text-align: center;
+	flex-basis: 160px;
+	background-color: #ECF0F1;
+	padding-left: 20px;
+	padding-right: 20px;
+    
 }
 
-.Row {
-	background-color: #dfdfdf;
-	width: 100%;
-	line-height: 40px;
-	padding-left: 6%;
-}
-
-.Row p {
-	word-break: break-all;
-	width: 90%;
-}

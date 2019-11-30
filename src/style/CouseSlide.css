@@ -1,0 +1,13 @@
+.box {
+  display: flex;
+}
+.box table {
+  flex-basis: 650px;
+}
+
+.box thead {
+  align-content: center;
+  background-color: #8bcbe3;
+  font-size: 25px;
+  color: white;
+}
