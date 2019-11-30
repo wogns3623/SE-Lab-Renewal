@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-
-import SimpleMap from "pages/Map.js";
+import Slide from "component/slide";
 
 class Test extends Component {
   render() {
-    return (
-      <div>
-        <SimpleMap></SimpleMap>
-      </div>
-    );
+    return <Slide></Slide>;
   }
 }
 

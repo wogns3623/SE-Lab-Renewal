@@ -1,10 +1,24 @@
-tr:nth-child(2n + 1) {
+.SlideSelect {
+  display: flex;
+}
+.SlideSelect table {
+  flex-basis: 650px;
+}
+
+.SlideSelect thead {
+  align-content: center;
+  background-color: #8bcbe3;
+  font-size: 25px;
+  color: white;
+}
+
+.SlideSelect tr:nth-child(2n + 1) {
   height: 55px;
   font-size: 20px;
   background-color: white;
   margin-top: 1px;
 }
-tr:nth-child(2n) {
+.SlideSelect tr:nth-child(2n) {
   height: 55px;
   font-size: 20px;
   background-color: #8bcbe3;

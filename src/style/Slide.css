@@ -1,0 +1,28 @@
+.sider_bar {
+  position: fixed;
+  top: 65px;
+  left: 0px;
+
+  width: 300px;
+  height: calc(100% - 65px);
+
+  border: 1px solid black;
+  overflow-y: auto;
+
+  transition-duration: 200ms;
+}
+
+.sider_bar.deactive {
+  width: 0px;
+}
+
+button {
+  position: fixed;
+  top: 50%;
+  left: 277px;
+
+  transition-duration: 200ms;
+}
+button.deactive {
+  left: 0px;
+}

@@ -7,11 +7,6 @@ import Row from "component/notice/Row.js";
 class Notice extends Component {
   state = {
     contents: [
-      // {
-      //   title: 'Title',
-      //   name: 'Name',
-      //   date: 'Date'
-      // },
       {
         title: "연구원 모집",
         name: "Scott-Uk-Jin Lee",
@@ -29,14 +24,7 @@ class Notice extends Component {
       }
     ]
   };
-  render() {
-    return (
-      <PageTemplate className="Notice">
-        <h1>NOTICE</h1>
-        {[this.state.contents.map((x, y) => <Row {...x} key={y}></Row>)]}
-      </PageTemplate>
-    );
-  }
+
   render() {
     return (
       <PageTemplate className="Notice">
