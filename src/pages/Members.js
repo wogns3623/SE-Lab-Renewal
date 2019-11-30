@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import PageTemplate from "component/common/template/PageTemplate.js";
 import ProfileBox from "component/members/ProfileBox.js";
 
-import "style/Members.css";
+import "style/Members.scss";
 
 class Members extends Component {
   state = {
