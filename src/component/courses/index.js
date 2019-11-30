@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 
 import courseInfo from "./courseInfo.json";
-import CourseTable from "./CouseTable";
+import CourseTable from "./CourseTable";
 
 class CourseHome extends Component {
   render() {
@@ -18,5 +18,4 @@ class CourseHome extends Component {
     );
   }
 }
-
 export default CourseHome;

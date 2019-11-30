@@ -6,4 +6,5 @@ export { default as Publications } from "./Publications";
 export { default as Courses } from "./Courses";
 export { default as Gallery } from "./Gallery";
 export { default as Login } from "./Login";
+export { default as NoMatch } from "./NoMatch";
 export { default as Test } from "./Test";
