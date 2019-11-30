@@ -1,99 +1,101 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import PageTemplate from 'component/template/PageTemplate.js';
-import TabTemplate from 'component/template/TabTemplate.js';
-import Subject from 'component/research/Subject.js';
-import 'style/Research.css';
+import PageTemplate from "component/common/template/PageTemplate";
+import TabTemplate from "component/common/tab/Tab";
+import Subject from "component/research/Subject";
+import "style/Research.scss";
 
 class Research extends Component {
   tabList = [
     {
-      name: 'Introduction'
+      name: "Introduction"
     },
     {
-      name: 'Project'
+      name: "Project"
     }
-  ]
+  ];
   research = [
     {
-      title: 'Web & Web security',
+      title: "Web & Web security",
       image: {
-        src: 'assets/images/research/web_securitymodified.png',
-        alt: 'Internet_Security',
-        width: '150px'
+        src: "assets/images/research/web_securitymodified.png",
+        alt: "Internet_Security",
+        width: "150px"
       },
       info: [
-        'Semantic web',
-        'Effective Access Control for Web Data',
-        'Vulnerability Analysis and Detection for HTML5',
-        'JavaScript and Hybrid Application'
+        "Semantic web",
+        "Effective Access Control for Web Data",
+        "Vulnerability Analysis and Detection for HTML5",
+        "JavaScript and Hybrid Application"
       ]
     },
     {
-      title: 'Formal Engineering Methods',
+      title: "Formal Engineering Methods",
       image: {
-        src: 'assets/images/research/formalmethod.png',
-        alt: 'Abstract_interpretation',
-        width: '200px'
+        src: "assets/images/research/formalmethod.png",
+        alt: "Abstract_interpretation",
+        width: "200px"
       },
       info: [
-        'Formal Specification, Validation, and Verification',
-        'Model checking, Theorem Proving',
-        'Ontology Reasoning, Constraint Solving'
+        "Formal Specification, Validation, and Verification",
+        "Model checking, Theorem Proving",
+        "Ontology Reasoning, Constraint Solving"
       ]
     },
     {
-      title: 'Requirement Engineering',
+      title: "Requirement Engineering",
       image: {
-        src: 'assets/images/research/RE.png',
-        alt: 'GeneralRElogo',
-        width: '120px'
+        src: "assets/images/research/RE.png",
+        alt: "GeneralRElogo",
+        width: "120px"
       },
       info: [
-        'Requirement Analysis, Validation and Conflict Detection',
-        'Non-Functional Requirements Analysis and Prediction',
-        'Product Line and Software Product Line',
-        'Requirement Modeling with Extended Mind Map'
+        "Requirement Analysis, Validation and Conflict Detection",
+        "Non-Functional Requirements Analysis and Prediction",
+        "Product Line and Software Product Line",
+        "Requirement Modeling with Extended Mind Map"
       ]
     },
     {
-      title: 'Real-Time Software Engineering',
+      title: "Real-Time Software Engineering",
       image: {
-        src: 'assets/images/research/Realtime.png',
-        alt: 'realtime_construction_software',
-        width: '200px'
+        src: "assets/images/research/Realtime.png",
+        alt: "realtime_construction_software",
+        width: "200px"
       },
       info: [
-        'Real-Time Software and Process Modeling',
-        'Real-Time Software Specification and Verification',
-        'Real-Time Software Integration and Migration Control'
+        "Real-Time Software and Process Modeling",
+        "Real-Time Software Specification and Verification",
+        "Real-Time Software Integration and Migration Control"
       ]
     },
     {
-      title: 'Semi-structured Data',
+      title: "Semi-structured Data",
       image: {
-        src: 'assets/images/research/XML.png',
-        alt: 'xml_icom',
-        width: '150px'
+        src: "assets/images/research/XML.png",
+        alt: "xml_icom",
+        width: "150px"
       },
       info: [
-        'XML and XML DB, Visualization of XML-Schema',
-        'Ontology and RDF Store',
-        'Semistructured Data Integration and Migration',
-        'Optimization of X-Query',
-        'Consistency Verification for Semistructured Data Manipulation',
-        'Domain Specific Extension to XML & Data Translation from RDBMS to XML DBMS'
+        "XML and XML DB, Visualization of XML-Schema",
+        "Ontology and RDF Store",
+        "Semistructured Data Integration and Migration",
+        "Optimization of X-Query",
+        "Consistency Verification for Semistructured Data Manipulation",
+        "Domain Specific Extension to XML & Data Translation from RDBMS to XML DBMS"
       ]
     }
-  ]
+  ];
   render() {
     return (
-      <PageTemplate className='Research'>
+      <PageTemplate className="Research">
         <h1>RESEARCH</h1>
         <TabTemplate tabList={this.tabList}>
           {[
-            this.research.map((researchInfo, index) => <Subject {...researchInfo} key={index}></Subject>),
-            (<h2 key='0'>공사중</h2>)
+            this.research.map((researchInfo, index) => (
+              <Subject {...researchInfo} key={index}></Subject>
+            )),
+            <h2 key="0">공사중</h2>
           ]}
         </TabTemplate>
       </PageTemplate>

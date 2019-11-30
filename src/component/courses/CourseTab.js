@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-import TabMenu from "component/common/tab/TabMenu.js";
+import TabMenu from "component/tab/TabMenu.js";
+import CourseTable from "component/courses/CourseTable.js";
 import "style/Tab.css";
-import "style/Gallery.css";
-import GalleryTable from "component/gallery/GalleryTable.js";
 
-class GalleryTab extends Component {
+class CourseTab extends Component {
   state = {
     currentTab: 0
   };
@@ -27,7 +26,7 @@ class GalleryTab extends Component {
     }
 
     return (
-      <GalleryTable className={isActive} {...item} key={index}></GalleryTable>
+      <CourseTable className={isActive} {...item} key={index}></CourseTable>
     );
   };
 
@@ -53,4 +52,4 @@ class GalleryTab extends Component {
   }
 }
 
-export default GalleryTab;
+export default CourseTab;

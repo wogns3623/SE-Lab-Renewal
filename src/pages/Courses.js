@@ -1,24 +1,19 @@
 import React, { Component } from "react";
+import { Route } from "react-dom";
 
-import PageTemplate from "component/template/PageTemplate.js";
-import courseInfo from "component/courses/courseInfo.json";
-import CourseTable from "../component/courses/CourseTable";
+import PageTemplate from "component/common/template/PageTemplate.js";
+import CourseHome from "component/courses";
+import { CSE326 } from "component/courses/pages";
 
 import "style/cse326.css";
 
 class Courses extends Component {
   render() {
+    // console.log(this.props)
     return (
       <PageTemplate className="Courses">
-        <h1>COURSES</h1>
-        {courseInfo.data.map((item, index) => (
-          <CourseTable
-            startYear={courseInfo.startYear}
-            startSemester={courseInfo.startSemester}
-            data={item}
-            key={index}
-          ></CourseTable>
-        ))}
+        <Route exact path={this.props.match.path} component={CourseHome} />
+        <Route path={this.props.match.path + "/CSE326/2019"}></Route>
       </PageTemplate>
     );
   }

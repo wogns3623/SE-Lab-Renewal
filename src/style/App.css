@@ -1,16 +1,17 @@
 @charset "utf-8";
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900italic);
-@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(https://fonts.googleapis.com/css?family=Abel);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,900italic");
+@import url("https://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+@import url("https://fonts.googleapis.com/css?family=Abel");
 
 html {
   overflow-y: scroll;
 }
 
 body {
-  background-color: #fFFFFF;
-  font-family: "Roboto", "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background-color: #ffffff;
+  font-family: "Roboto", "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic",
+    sans-serif;
   margin: 0px;
 }
 
@@ -28,15 +29,26 @@ a {
   text-decoration: none;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.1;
 }
 
 h1 {
   font-size: 60px;
-  color: #00abd9;
+  color: #2c3e50;
   margin: 20px 0 5px 0;
 }
 
@@ -55,9 +67,8 @@ h2 {
 
 .contents {
   font-size: 15px;
-  width: 1145px;
   margin: 0 auto;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 }
 
 .pull-left {
