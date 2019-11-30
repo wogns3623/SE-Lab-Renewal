@@ -29,14 +29,7 @@ class Notice extends Component {
       }
     ]
   };
-  render() {
-    return (
-      <PageTemplate className="Notice">
-        <h1>NOTICE</h1>
-        {[this.state.contents.map((x, y) => <Row {...x} key={y}></Row>)]}
-      </PageTemplate>
-    );
-  }
+
   render() {
     return (
       <PageTemplate className="Notice">
