@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import ProfileContents from 'component/members/ProfileContents.js';
+import ProfileContents from "component/members/ProfileContents.js";
 
 class ProfileBox extends Component {
-    render() {
-        return(
-            <div class="position">
-                <h2>{this.props.title}</h2>
-                
-                {this.props.profiles.map((profile) => {
-                    return(<ProfileContents {...profile}></ProfileContents>);
-                })}
-            </div> 
-        );
-    }
+  render() {
+    return (
+      <div className="position">
+        <div id="title_wrapper">
+          <h2>{this.props.title}</h2>
+        </div>
+
+        {this.props.profiles.map((profile, index) => {
+          return <ProfileContents {...profile} key={index}></ProfileContents>;
+        })}
+      </div>
+    );
+  }
 }
 
 export default ProfileBox;
