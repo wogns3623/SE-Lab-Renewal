@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../style/Home.scss";
-
+import { Map, GoogleApiWrapper } from "google-maps-react";
+import SimpleMap from "pages/Map.js";
 import PageTemplate from "component/template/PageTemplate.js";
 
 class Home extends Component {
@@ -35,7 +36,9 @@ class Home extends Component {
             <div id="contact-container">
               <div id="map-container">
                 <h2>Where I am ?</h2>
-                <div id="map">지도 들어갈 자리</div>
+                <div id="map">
+                  <SimpleMap></SimpleMap>
+                </div>
               </div>
               <div id="info-container">
                 <h2>Information</h2>

@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import SimpleMap from "pages/Map.js";
 
-class Test extends Component{
+class Test extends Component {
   render() {
-    return(
-      <div>여기에 내용물을 채워주세요</div>
+    return (
+      <div>
+        <SimpleMap></SimpleMap>
+      </div>
     );
   }
 }
