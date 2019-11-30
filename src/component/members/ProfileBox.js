@@ -6,7 +6,9 @@ class ProfileBox extends Component {
   render() {
     return (
       <div className="position">
-        <h2>{this.props.title}</h2>
+        <div id="title_wrapper">
+          <h2>{this.props.title}</h2>
+        </div>
 
         {this.props.profiles.map((profile, index) => {
           return <ProfileContents {...profile} key={index}></ProfileContents>;

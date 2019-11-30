@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-import PageTemplate from "component/common/template/PageTemplate.js";
-import CourseBox from "component/courses/CourseBox.js";
-
-import "style/cse326.css";
+import SimpleMap from "pages/Map.js";
 
 class Test extends Component {
   render() {
-    return <PageTemplate className="Courses"></PageTemplate>;
+    return (
+      <div>
+        <SimpleMap></SimpleMap>
+      </div>
+    );
   }
 }
 
