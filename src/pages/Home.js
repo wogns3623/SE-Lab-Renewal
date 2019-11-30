@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../style/Home.scss";
-import { Map, GoogleApiWrapper } from "google-maps-react";
 import SimpleMap from "pages/Map.js";
 import PageTemplate from "component/template/PageTemplate.js";
 
