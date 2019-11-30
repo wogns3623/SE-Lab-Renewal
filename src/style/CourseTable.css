@@ -1,30 +1,31 @@
-.CourseTable{
-  margin-bottom: 20px;
-  display: flex;
+.CourseTable {
+	margin-bottom: 20px;
+	display: flex;
 }
-.CourseTable .over{
-  overflow: auto;
+
+.CourseTable .over {
+	overflow: auto;
 	border-radius: 0px 3px 0px 0px;
 }
 
-.CourseTable .info{
-  flex: 0 0 370px;
+.CourseTable .info {
+	flex: 0 0 370px;
 	float: left;
 	border-right: 1px solid #dfdfdf;
 }
 
-.CourseTable .data{
-  overflow: auto;
-  flex: 0 0 auto;
-	table-layout:fixed;
+.CourseTable .data {
+	overflow: auto;
+	flex: 0 0 auto;
+	table-layout: fixed;
 }
 
-.CourseTable table{
-  border-collapse: collapse;
-  border-spacing: 0px;
+.CourseTable table {
+	border-collapse: collapse;
+	border-spacing: 0px;
 }
 
-.CourseTable table th{
+.CourseTable table th {
 	height: 45px;
 	vertical-align: middle;
 	background-color: #8bcbe3;
@@ -32,45 +33,50 @@
 	border-bottom: 3px solid #dfdfdf;
 	text-align: center;
 }
-.CourseTable table tr{
+
+.CourseTable table tr {
 	background-color: #edf7fa;
 }
-.CourseTable tr:nth-child(odd){
+
+.CourseTable tr:nth-child(odd) {
 	background-color: white;
 }
 
-.CourseTable table td{
+.CourseTable table td {
 	height: 40px;
 	vertical-align: middle;
-  padding: 0px;
+	padding: 0px;
 	text-align: center;
 }
-.CourseTable .data th{
+
+.CourseTable .data th {
 	min-width: 70px;
 }
 
-.CourseTable .name{
+.CourseTable .name {
 	width: 300px;
 	border-right: 2px solid #dfdfdf;
 }
-.CourseTable .id{
+
+.CourseTable .id {
 	width: 70px;
 }
 
-.CourseTable table tr td{
+.CourseTable table tr td {
 	border-bottom: 1px solid #dfdfdf;
 	border-right: 1px solid #dfdfdf;
 }
 
-.CourseTable td:last-child{
+.CourseTable td:last-child {
 	border-right: none;
 }
 
-.CourseTable .active td{
+.CourseTable .active td {
 	background-color: #63D5F7;
 	cursor: pointer;
 }
-.CourseTable .active:hover td{
+
+.CourseTable .active:hover td {
 	background-color: #83D9FF;
 }
 
@@ -84,6 +90,6 @@
 	display: inline-block;
 }
 
-.CourseTable .info th:first-of-type{
+.CourseTable .info th:first-of-type {
 	border-radius: 3px 0px 0px 0px;
 }

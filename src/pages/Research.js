@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import PageTemplate from "component/template/PageTemplate.js";
-import TabTemplate from "component/template/TabTemplate.js";
-import Subject from "component/research/Subject.js";
+import PageTemplate from "component/common/template/PageTemplate";
+import TabTemplate from "component/common/tab/Tab";
+import Subject from "component/research/Subject";
 import "style/Research.css";
 
 class Research extends Component {

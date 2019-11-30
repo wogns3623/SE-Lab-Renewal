@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "../style/Login.scss";
-import PageTemplate from "component/template/PageTemplate.js";
+import PageTemplate from "component/common/template/PageTemplate.js";
 
 class Login extends Component {
   render() {
