@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 class ProfileContents extends Component {
   render() {
@@ -23,12 +23,12 @@ class ProfileContents extends Component {
               </a>
             </li>
             <li>
-              {this.props.career.map(career => {
+              {this.props.career.map((career, index) => {
                 return (
-                  <Fragment>
+                  <div key={index}>
                     {career}
                     <br />
-                  </Fragment>
+                  </div>
                 );
               })}
             </li>
@@ -39,12 +39,12 @@ class ProfileContents extends Component {
           <ul>
             <li>{this.props.interestTitle}</li>
             <li>
-              {this.props.interest.map(interest => {
+              {this.props.interest.map((interest, index) => {
                 return (
-                  <Fragment>
+                  <div key={index}>
                     {interest}
                     <br />
-                  </Fragment>
+                  </div>
                 );
               })}
             </li>

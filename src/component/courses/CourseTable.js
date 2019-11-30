@@ -33,7 +33,7 @@ class CourseTable extends Component {
         infoBody.push(
           <tr key={index} className="active">
             <td colSpan="2" style={{ borderBottom: "none" }}>
-              <Link to={"/coruses/" + item.id + "/" + c.year}>
+              <Link to={`${this.props.match.path}/${item.id}`}>
                 <td className="id">{item.id}</td>
                 <td className="name">{item.name}</td>
               </Link>
@@ -72,6 +72,7 @@ class CourseTable extends Component {
   };
 
   render() {
+    console.log(this.props);
     let jsx = this.createTable();
     return (
       <div className="CourseTable">
