@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import TabMenu from "component/tab/TabMenu.js";
+import TabMenu from "component/common/tab/TabMenu.js";
 import Table from "component/publications/table.js";
 import "style/Tab.css";
 import "style/Publications.css";

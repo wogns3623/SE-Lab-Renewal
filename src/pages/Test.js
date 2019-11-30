@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import SimpleMap from "pages/Map.js";
 
 class Test extends Component {

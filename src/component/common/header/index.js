@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import Menu from "component/header/NavMenu.js";
-import Logo from "component/header/Logo.js";
+import Menu from "./NavMenu.js";
+import Logo from "./Logo.js";
 import "style/Header.css";
 
 class Header extends Component {
@@ -39,7 +39,10 @@ class Header extends Component {
             className="pull-left"
             items={this.state.menu.slice(0, 6)}
           ></Menu>
-          <Menu className="pull-right" items={this.state.menu.slice(6)}></Menu>
+          <Menu
+            className="pull-right"
+            items={this.state.menu.slice(6, 7)}
+          ></Menu>
         </nav>
       </header>
     );

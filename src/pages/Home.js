@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import "../style/Home.scss";
+<<<<<<< HEAD
+=======
+
+import { Map, GoogleApiWrapper } from "google-maps-react";
+>>>>>>> 209c8951065fe5ac6b39db18d2e62b6d486a1a40
 import SimpleMap from "pages/Map.js";
-import PageTemplate from "component/template/PageTemplate.js";
+import PageTemplate from "component/common/template/PageTemplate.js";
 
 class Home extends Component {
   render() {

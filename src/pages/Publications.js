@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import PageTamplate from "component/template/PageTemplate.js";
+import PageTamplate from "component/common/template/PageTemplate.js";
 import ModifiedTap from "component/publications/ModifiedTap.js";
 
 import "style/Publications.css";
