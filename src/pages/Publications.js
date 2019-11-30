@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTamplate from "component/common/template/PageTemplate.js";
 import ModifiedTap from "component/publications/ModifiedTap.js";
