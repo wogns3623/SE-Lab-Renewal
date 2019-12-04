@@ -6,40 +6,40 @@
     color: rgb(255, 103, 103);
 } */
 
-.Courses .home .wrap-subcontent {
+.Courses .Home .wrap-subcontent {
   background-color: white;
 
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-.Courses .home h1 {
+.Courses .Home h1 {
   margin-bottom: 15px;
 }
 
-.Courses .home h2,
-.Courses .home h3,
-.Courses .home h4,
-.Courses .home p,
-.Courses .home li {
+.Courses .Home h2,
+.Courses .Home h3,
+.Courses .Home h4,
+.Courses .Home p,
+.Courses .Home li {
   margin-bottom: 12px;
   font-size: 15px;
   font-family: Tahoma, Arial, sans-serif;
 }
 
-.Courses .home p {
+.Courses .Home p {
   padding-left: 15px;
 }
 
-.Courses .home h2 {
+.Courses .Home h2 {
   color: rgb(156, 156, 156);
   margin: 10px 0;
   font-weight: bold;
   font-size: 30px;
 }
 
-.Courses .home h3,
-.Courses .home h4 {
+.Courses .Home h3,
+.Courses .Home h4 {
   font-size: 20px;
   font-weight: 100;
   width: 100%;
@@ -52,45 +52,45 @@
   height: 52px;
 }
 
-.Courses .home li {
+.Courses .Home li {
   margin: 13px 0;
   margin-left: 30px;
 }
 
-.Courses .home ol,
-.Courses .home ul {
+.Courses .Home ol,
+.Courses .Home ul {
   margin-left: 30px;
   margin-bottom: 20px;
 }
 
-.Courses .home .last {
+.Courses .Home .last {
   margin-bottom: 100px;
 }
 
-.Courses .home ul {
+.Courses .Home ul {
   list-style-image: url("../assets/images/list-img.png");
 }
 
-.Courses .home .display_none {
+.Courses .Home .display_none {
   display: none;
 }
 
-.Courses .home #hl {
+.Courses .Home #hl {
   height: 5px;
   padding: 0px;
   background-color: #70c8e9;
   clear: both;
 }
 
-.Courses .home .emphasize {
+.Courses .Home .emphasize {
   color: red;
   font-weight: bold;
 }
 
-.Courses .home .nothing {
+.Courses .Home .nothing {
   list-style-type: none;
 }
 
-.Courses .home li {
+.Courses .Home li {
   padding: 0px;
 }

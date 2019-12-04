@@ -1,43 +1,43 @@
-.Row ul{
-	margin: 0;
-	display:flex;
-	/*flex했지뭐야~*/
+.Row ul {
+  margin: 0;
+  display: flex;
+  /*flex했지뭐야~*/
 }
 
-
-.Row li.title{
-	height: 40px;
-	line-height: 40px;
-	font-size: 20px;
-	text-align: left;
-	border-right: 2px solid #dfdfdf;
-	flex-basis: 800px;
-	background-color: #ECF0F1;
-	padding-left:30px;
+.Row li.title {
+  line-height: 300%;
+  font-size: 20px;
+  text-align: center;
+  flex-basis: 800px;
+  text-align: left;
+  background-color: #ecf0f1;
+  border-right: 1px solid slategray;
+  border-bottom: 1px solid slategray;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.Row li.name{
-	height: 40px;
-	line-height: 40px;
-	font-size: 20px;
-	text-align: center;
-	flex-basis: 160px;
-	text-align: left;
-	background-color: #ECF0F1;
-    border-right: 2px solid #dfdfdf;
-	padding-left: 20px;
-	padding-right: 20px;
+.Row li.name {
+  line-height: 300%;
+  font-size: 20px;
+  text-align: center;
+  flex-basis: 200px;
+  text-align: left;
+  background-color: #ecf0f1;
+  border-right: 1px solid slategray;
+  border-bottom: 1px solid slategray;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.Row li.date{
-	height: 40px;
-	line-height: 40px;
-	font-size: 20px;
-	text-align: center;
-	flex-basis: 160px;
-	background-color: #ECF0F1;
-	padding-left: 20px;
-	padding-right: 20px;
-    
+.Row li.date {
+  line-height: 300%;
+  font-size: 20px;
+  text-align: center;
+  flex-basis: 200px;
+  background-color: #ecf0f1;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px solid slategray;
+  border-bottom: 1px solid slategray;
 }
-

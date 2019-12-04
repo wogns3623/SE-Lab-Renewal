@@ -5,7 +5,7 @@ import CourseBox from "component/courses/CourseBox";
 class Home extends Component {
   render() {
     return (
-      <div className="home">
+      <div className="Home">
         <CourseBox title="Course Objectives">
           <p>
             In this course, the followings will be covered to adequately enable

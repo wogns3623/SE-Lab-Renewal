@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+
 import Home from "./Home";
-import Slide from "./Slide";
+import SlideTable from "./SlideTable";
+import "style/cse326.css";
 
 class cse326 extends Component {
   render() {
@@ -22,7 +24,7 @@ class cse326 extends Component {
           </TabPanel>
 
           <TabPanel>
-            <Slide></Slide>
+            <SlideTable></SlideTable>
           </TabPanel>
         </Tabs>
       </>

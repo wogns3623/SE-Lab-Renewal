@@ -1,13 +1,45 @@
-.box {
+.SlideSelect {
   display: flex;
 }
-.box table {
+.SlideSelect table {
   flex-basis: 650px;
 }
 
-.box thead {
+.SlideSelect thead {
   align-content: center;
   background-color: #8bcbe3;
   font-size: 25px;
   color: white;
 }
+
+.SlideSelect tr:nth-child(2n + 1) {
+  height: 55px;
+  font-size: 20px;
+  background-color: white;
+  margin-top: 1px;
+}
+.SlideSelect tr:nth-child(2n) {
+  height: 55px;
+  font-size: 20px;
+  background-color: #8bcbe3;
+}
+/* 
+.number th:nth-child(2n + 1) {
+  margin-top: 1px;
+  background-color: white;
+}
+
+.cont td:nth-child(2n + 1) {
+  margin-right: 1px;
+  background-color: white;
+}
+
+.number th:nth-child(2n) {
+  margin-top: 1px;
+  background-color: #8bcbe3;
+}
+
+.cont td:nth-child(2n) {
+  margin-right: 1px;
+  background-color: #8bcbe3;
+} */
