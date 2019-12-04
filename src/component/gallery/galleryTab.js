@@ -6,23 +6,61 @@ import GalleryTable from "component/gallery/GalleryTable.js";
 
 class GalleryTab extends Component {
   state = {
-    currentTab: 0
+    currentTab: 0,
+    RisActive: false,
+    readmore: "yes",
+    count: 12
   };
+
+  readmoreCount = [0, 0, 0, 0];
 
   selectTab = index => {
     this.setState({
       currentTab: index
     });
+    this.readmore(false);
+    if (this.readmoreCount[index] <= this.state.count) {
+      this.setState({
+        readmore: "no"
+      });
+    }
+    this.readmoreCount[index] = 0;
+  };
+
+  readmore = value => {
+    if (!value) {
+      this.setState({
+        RisActive: false
+      });
+      this.setState({
+        readmore: "yes"
+      });
+    } else {
+      this.setState({
+        RisActive: true
+      });
+      this.setState({
+        readmore: "no"
+      });
+    }
   };
 
   disable = (item, index) => {
-    index = index + 1;
     const cT = this.state.currentTab;
     const tL = this.props.tabList;
     let isActive = " deactive";
-
     if (cT === 0 || tL[cT].name === item.id) {
       isActive = "";
+      console.log(this.readmoreCount[cT]);
+      this.readmoreCount[cT] += 1;
+      if (
+        this.readmoreCount[cT] > this.state.count &&
+        this.state.RisActive === false
+      ) {
+        isActive = " deactive";
+      } else if (this.state.RisActive === true) {
+        isActive = "";
+      }
     }
 
     return (
@@ -41,10 +79,17 @@ class GalleryTab extends Component {
           })}
           onClickFunc={this.selectTab}
         ></TabMenu>
-
         <div id="hl"></div>
+        <div className="Contents">
+          {this.props.contents.map(this.disable)}
 
-        <div className="Contents">{this.props.contents.map(this.disable)}</div>
+          <button
+            className={this.state.readmore}
+            onClick={() => this.readmore(true)}
+          >
+            Readmore
+          </button>
+        </div>
       </div>
     );
   }

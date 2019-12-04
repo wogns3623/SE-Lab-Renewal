@@ -1,14 +1,18 @@
 .Gallery .Tab .Contents {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .Gallery .Tab .Contents .Item {
-    margin-right: 5px;
-    margin-top: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
-.Gallery img{
-    width: 155pt;
-    height: auto;
+.Gallery img {
+  width: 155pt;
+  height: auto;
+}
+
+.no {
+  display: none;
 }
