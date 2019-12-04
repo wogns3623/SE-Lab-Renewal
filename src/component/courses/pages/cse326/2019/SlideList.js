@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "style/CourseSlide.css";
 
-class SlideItem extends Component {
+class Item extends Component {
   render() {
     return (
       <tr>
@@ -14,7 +14,7 @@ class SlideItem extends Component {
   }
 }
 
-class SlideTable extends Component {
+class SlideList extends Component {
   lcontent = [
     {
       Lec: "Introduction"
@@ -56,9 +56,7 @@ class SlideTable extends Component {
           <tbody>
             {[
               this.lcontent.map((item, index) => {
-                return (
-                  <SlideItem {...item} index={index} key={index}></SlideItem>
-                );
+                return <Item {...item} index={index} key={index}></Item>;
               })
             ]}
           </tbody>
@@ -71,9 +69,7 @@ class SlideTable extends Component {
           <tbody>
             {[
               this.rcontent.map((item, index) => {
-                return (
-                  <SlideItem {...item} index={index} key={index}></SlideItem>
-                );
+                return <Item {...item} index={index} key={index}></Item>;
               })
             ]}
           </tbody>
@@ -82,4 +78,4 @@ class SlideTable extends Component {
     );
   }
 }
-export default SlideTable;
+export default SlideList;
