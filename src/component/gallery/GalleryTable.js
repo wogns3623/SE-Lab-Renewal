@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "style/Gallery.css";
 
+let num = 0;
+
 class GalleryTable extends Component {
   render() {
     return (
