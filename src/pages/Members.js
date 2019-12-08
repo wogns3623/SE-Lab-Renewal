@@ -9,34 +9,44 @@ class Members extends Component {
   state = {
     profiles: [
       {
+        name: "Scott Uk-Jin Lee",
         image: {
           src: "assets/images/members/scott.png",
           alt: "Scott Uk-Jin Lee"
         },
-        name: "Scott Uk-Jin Lee",
+        position: "Associate Professor",
+        division: "Division of Computer Science",
+        divisionURL: "https://sw.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
         email: "scottlee@hanyang.ac.kr",
-        website: "TBA",
+        website: "https://selab.hanyang.ac.kr",
+        location: "Cluster. Rm#620",
         career: [
           "an asst. prof. in the CSE Dept. @ HYU (ERICA)",
           "leading this Laboratory!"
         ],
         interestTitle: "Career",
         interest: [
-          "11 -      : Assistant Professor in CSE Dept. @ Hanyang University, Korea",
-          "09 - 11 : Postdoc @ CEA LIST, France",
-          "05 - 06 : SE Programmer in SE Dept. @ University of Auckland, NZ",
-          "04 - 04 : Visiting Researcher @ National University of Singapore",
-          "04 - 08 : Ph.D in Computer Science @ University of Auckland, NZ",
-          "00 - 03 : BE in Software Engineering @ University of Auckland, NZ"
+          "2011 ~      : Assistant Professor in CSE Dept. @ Hanyang University, Korea",
+          "2009 ~ 2011 : Postdoc @ CEA LIST, France",
+          "2005 ~ 2006 : SE Programmer in SE Dept. @ University of Auckland, NZ",
+          "2004 ~ 2004 : Visiting Researcher @ National University of Singapore",
+          "2004 ~ 2008 : Ph.D in Computer Science @ University of Auckland, NZ",
+          "2000 ~ 2003 : BE in Software Engineering @ University of Auckland, NZ"
         ]
       },
       {
+        name: "Isma Farah",
         image: {
           src: "assets/images/members/Isma.png",
           alt: "Isma"
         },
-        name: "Isma Farah",
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
         email: "isma2012@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
         website: "http://www.linkedin.com/in/ismafarah",
         career: ["PhD scholar From Pakistan on HEC Scholarship"],
         interestTitle: "Research Interests",
@@ -49,19 +59,24 @@ class Members extends Component {
         ]
       },
       {
+        name: "Abdul Rahim",
         image: {
           src: "assets/images/members/Abdul.png",
           alt: "Untitled"
         },
-        name: "Abdul Rahim",
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
         email: "rahim750413@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
         website: "https://www.facebook.com/abdul.ariffin",
         career: ["Master's leading to Phd scholar from Kuala Lumpur,Malaysia"],
         interestTitle: "Research Interests",
         interest: [
-          " Software Engineering",
-          " -Hadoop(MapReduce)",
-          " - Multithreading"
+          "Software Engineering",
+          "Hadoop(MapReduce)",
+          "Multithreading"
         ]
       }
     ]
@@ -70,8 +85,6 @@ class Members extends Component {
   render() {
     return (
       <PageTemplate className="Members">
-        <h1>MEMBERS</h1>
-
         <ProfileBox
           title="Professor"
           profiles={this.state.profiles.slice(0, 1)}
