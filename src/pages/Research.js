@@ -3,15 +3,13 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTemplate from "component/common/template/PageTemplate";
 import Subject from "component/research/Subject";
-import research from "component/research/research";
-import "style/Research.css";
+import "style/Research.scss";
+import research from "component/research/research.json";
 
 class Research extends Component {
   render() {
     return (
       <PageTemplate className="Research">
-        <h1>RESEARCH</h1>
-
         <Tabs selectedTabClassName="active">
           <TabList className="TabMenu">
             <Tab className="Item">Introduction</Tab>

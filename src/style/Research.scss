@@ -1,11 +1,17 @@
 .Research {
 
     h3 {
-        background-color: #8bcbe3;
+        background-color: #242424;
         color: white;
         font-size: 20px;
         padding: 10px;
-        margin-bottom: 10px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+        width: 300px;
+        height: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #register {
@@ -35,7 +41,7 @@
     p {
         margin: 0;
         padding: 0;
-        float: left
+        float: left;
     }
 
     input[type="text"] {
