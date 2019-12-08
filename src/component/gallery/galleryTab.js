@@ -9,7 +9,7 @@ class GalleryTab extends Component {
     currentTab: 0,
     RisActive: false,
     readmore: "yes",
-    count: 12
+    count: 10
   };
 
   readmoreCount = [0, 0, 0, 0];
@@ -82,13 +82,14 @@ class GalleryTab extends Component {
         <div id="hl"></div>
         <div className="Contents">
           {this.props.contents.map(this.disable)}
-
-          <button
-            className={this.state.readmore}
-            onClick={() => this.readmore(true)}
-          >
-            Readmore
-          </button>
+          <div className="Rbtn">
+            <button
+              className={this.state.readmore}
+              onClick={() => this.readmore(true)}
+            >
+              readmore
+            </button>
+          </div>
         </div>
       </div>
     );
