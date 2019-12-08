@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import "style/CourseTable.css";
+import "style/CourseTable.scss";
 
 class CourseTable extends Component {
   currentSemester = {
@@ -75,22 +75,26 @@ class CourseTable extends Component {
     console.log(this.props);
     let jsx = this.createTable();
     return (
-      <div className="CourseTable">
-        <table className="info">
-          <thead>
-            <tr>
-              <th colSpan="2">{this.props.data.level}</th>
-            </tr>
-          </thead>
-          <tbody>{jsx[0]}</tbody>
-        </table>
-        <div className="over">
-          <table className="data">
+      <div className="Course">
+        <h1>{this.props.data.level}</h1>
+        <div className="CourseTable">
+          <table className="info">
             <thead>
-              <tr>{jsx[1]}</tr>
+              <tr>
+                <th>No.</th>
+                <th>Course Name</th>
+              </tr>
             </thead>
-            <tbody>{jsx[2]}</tbody>
+            <tbody>{jsx[0]}</tbody>
           </table>
+          <div className="over">
+            <table className="data">
+              <thead>
+                <tr>{jsx[1]}</tr>
+              </thead>
+              <tbody>{jsx[2]}</tbody>
+            </table>
+          </div>
         </div>
       </div>
     );
