@@ -32,8 +32,8 @@ class CourseTable extends Component {
       if (JSON.stringify(c) === JSON.stringify(item.activated[0])) {
         infoBody.push(
           <tr key={index} className="active">
-            <td colSpan="2">
-              <Link to={"/coruses/" + item.id + "/" + c.year}>
+            <td colSpan="2" style={{ borderBottom: "none" }}>
+              <Link to={`${this.props.match.path}/${item.id}`}>
                 <td className="id">{item.id}</td>
                 <td className="name">{item.name}</td>
               </Link>
@@ -72,6 +72,7 @@ class CourseTable extends Component {
   };
 
   render() {
+    console.log(this.props);
     let jsx = this.createTable();
     return (
       <div className="CourseTable">

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../style/Home.scss";
-
-import SimpleMap from "pages/Map.js";
+import SimpleMap from "component/common/Map.js";
 import PageTemplate from "component/common/template/PageTemplate.js";
 
 class Home extends Component {

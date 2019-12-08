@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
-import "style/Tab.css";
 import "style/Gallery.css";
 import GalleryTable from "component/gallery/GalleryTable.js";
 
@@ -37,9 +36,7 @@ class GalleryTab extends Component {
         <TabMenu
           items={this.props.tabList.map((tab, index) => {
             tab.className =
-              this.state.currentTab !== index
-                ? tab.name + " deactive"
-                : tab.name;
+              this.state.currentTab === index ? tab.name + " active" : tab.name;
             return tab;
           })}
           onClickFunc={this.selectTab}

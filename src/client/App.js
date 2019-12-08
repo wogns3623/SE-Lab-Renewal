@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import {
   Home,
   Notice,
@@ -9,22 +9,26 @@ import {
   Courses,
   Gallery,
   Login,
-  Test
+  Test,
+  NoMatch
 } from "pages";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route path="/notice" component={Notice} />
-        <Route path="/members" component={Members} />
-        <Route path="/research" component={Research} />
-        <Route path="/publications" component={Publications} />
-        <Route exact path="/courses" component={Courses} />
-        <Route path="/gallery" component={Gallery} />
-        <Route path="/login" component={Login} />
-        <Route path="/test" component={Test} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/notice" component={Notice} />
+          <Route path="/members" component={Members} />
+          <Route path="/research" component={Research} />
+          <Route path="/publications" component={Publications} />
+          <Route path="/courses" component={Courses} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/login" component={Login} />
+          <Route path="/test" component={Test} />
+          <Route component={NoMatch} />
+        </Switch>
       </BrowserRouter>
     );
   }

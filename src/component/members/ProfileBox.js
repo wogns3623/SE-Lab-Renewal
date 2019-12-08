@@ -5,7 +5,7 @@ import ProfileContents from "component/members/ProfileContents.js";
 class ProfileBox extends Component {
   render() {
     return (
-      <div className="position">
+      <div className={"position " + this.props.title}>
         <div id="title_wrapper">
           <h2>{this.props.title}</h2>
         </div>

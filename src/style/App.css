@@ -5,7 +5,6 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
 
 html {
-  overflow-y: scroll;
 }
 
 body {
@@ -79,7 +78,7 @@ h2 {
   float: right;
 }
 
-.inline-list>li {
+.inline-list > li {
   display: inline-block;
 }
 
@@ -92,4 +91,39 @@ h2 {
 .assistive-text {
   text-indent: -9999px;
   font-size: 0;
+}
+
+/* Tab */
+#hl {
+  height: 5px;
+  padding: 0px;
+  background-color: #70c8e9;
+  clear: both;
+}
+
+.TabMenu .Item {
+  height: 41px;
+  line-height: 48px; /* height(#class a) */ /* for vertical align */
+  text-align: center;
+  background-color: #afafaf;
+  font-size: 20px;
+  font-weight: 300;
+  color: #d6d6d6;
+  display: inline-block;
+  padding: 0px 10px;
+  margin: 7px 4px 0px 0px;
+  float: left;
+  cursor: pointer;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.TabMenu .Item.active {
+  height: 48px;
+  margin-top: 0px;
+  background-color: #70c8e9;
+  color: white;
+}
+
+.Contents div.deactive {
+  display: none;
 }

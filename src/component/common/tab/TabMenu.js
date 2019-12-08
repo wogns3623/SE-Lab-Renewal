@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import MenuTemplate from "component/common/template/MenuTemplate";
-import "style/TabMenu.css";
 
 class TabBtn extends Component {
   render() {

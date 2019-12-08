@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
 import Table from "component/publications/table.js";
-import "style/Tab.css";
 import "style/Publications.css";
 
 class ModifiedTap extends Component {
@@ -18,7 +17,6 @@ class ModifiedTap extends Component {
 
   disable = (item, index) => {
     index = index + 1;
-    console.log(this.state.currentTab, index);
     let isActive = " deactive";
     let title = " deactive";
     if (this.state.currentTab === index || this.state.currentTab === 0) {
@@ -48,9 +46,7 @@ class ModifiedTap extends Component {
         <TabMenu
           items={this.props.tabList.map((tab, index) => {
             tab.className =
-              this.state.currentTab !== index
-                ? tab.name + " deactive"
-                : tab.name;
+              this.state.currentTab === index ? tab.name + " active" : tab.name;
             return tab;
           })}
           onClickFunc={this.selectTab}
