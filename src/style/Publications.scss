@@ -11,26 +11,20 @@
         padding: 10px;
     }
 
-}
+    .title {
+        background-color: #d3edf5;
+        margin: 0px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16pt;
+        color: coral;
+    }
 
-.title {
-    background-color: #d3edf5;
-    margin: 0px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 16pt;
-    color: coral;
-}
+    .list:nth-child(odd) {
+        background: #edf7fa;
+    }
 
-.list {
-    background: bisque;
-    /* margin: 5px; */
-}
-
-.list:nth-child(odd) {
-    background: #edf7fa;
-}
-
-.list:nth-child(even) {
-    background: #ffffff;
+    .list:nth-child(even) {
+        background: #ffffff;
+    }
 }
