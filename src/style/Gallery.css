@@ -1,14 +1,46 @@
-.Gallery .Tab .Contents {
-    display: flex;
-    flex-wrap: wrap;
+.Gallery .Contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
 }
 
 .Gallery .Tab .Contents .Item {
-    margin-right: 5px;
-    margin-top: 5px;
+  margin-top: 5px;
+  margin: 6px;
+  width: 19%;
 }
 
-.Gallery img{
-    width: 155pt;
-    height: auto;
+.Gallery .Tab .Contents .Item img {
+  width: 100%;
+}
+
+.no {
+  display: none;
+}
+
+.Rbtn button {
+  border: 1px solid skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: -4px;
+  cursor: pointer;
+  width: 255px;
+  height: 50px;
+  font-size: 20pt;
+}
+
+.Rbtn {
+  display: block;
+  max-width: 300px;
+  padding-top: 10px;
+  margin: auto;
+}
+
+button:hover {
+  color: white;
+  background-color: skyblue;
 }

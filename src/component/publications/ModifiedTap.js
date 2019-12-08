@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
 import Table from "component/publications/table.js";
-import "style/Publications.css";
+import "style/Publications.scss";
 
 class ModifiedTap extends Component {
   state = {

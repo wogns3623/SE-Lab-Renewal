@@ -1,0 +1,30 @@
+.Publications {
+
+    li,
+    ul {
+        list-style-type: none;
+        padding-inline-start: 0px;
+        margin: 0px;
+    }
+
+    li {
+        padding: 10px;
+    }
+
+    .title {
+        background-color: #d3edf5;
+        margin: 0px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16pt;
+        color: coral;
+    }
+
+    .list:nth-child(odd) {
+        background: #edf7fa;
+    }
+
+    .list:nth-child(even) {
+        background: #ffffff;
+    }
+}

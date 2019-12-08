@@ -1,92 +1,113 @@
 .Members {
-    margin-top: 40px;
+  margin-top: 40px;
 
-    .position {
-        overflow: hidden;
-        margin-bottom: 30px;
-        border-radius: 3px;
+  .position {
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 3px;
 
-        #title_wrapper {
-            // width: 100%;
-            border-bottom: 1px solid gray;
-            height: 63px;
-        }
-
-        h2 {
-            font-size: 36pt;
-            font-weight: bold;
-            color: #008896;
-            display: inline;
-            padding: 0 20px 5px 20px;
-            border-bottom: 5px solid #008896;
-        }
+    #title_wrapper {
+      // width: 100%;
+      border-bottom: 1px solid gray;
+      height: 63px;
     }
 
-
-    .human {
-        margin: 10px;
-        overflow: hidden;
-
-        img {
-            float: left;
-        }
+    h2 {
+      font-size: 36pt;
+      font-weight: bold;
+      color: #008896;
+      display: inline;
+      padding: 0 20px 5px 20px;
+      border-bottom: 5px solid #008896;
     }
 
-    .info {
+    .profile-container {
+      margin: 10px;
+      margin-top: 30px;
+      overflow: hidden;
+
+      img {
         float: left;
-        width: 435px;
-        height: 175px;
+      }
+
+      ul {
+        float: left;
 
         li {
-            word-break: break-all;
-            line-height: 1;
+          margin: 13px 0;
         }
-    }
+      }
 
-    ul {
-        margin: 0px;
-        padding: 0px;
-        list-style-image: url("../assets/images/list-img.png");
-        float: left;
-        line-height: 1;
-        font-size: 15px;
-    }
+      .photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 5px;
+      }
 
-    li {
-        margin: 13px 0;
-        margin-left: 30px;
-        line-height: 1;
-    }
+      .info {
+        ul {
+          list-style: none;
+          margin-left: 0;
 
-    .photo {
-        width: 140px;
-        height: 175px;
-    }
+          a {
+            color: #008896;
+          }
 
-    .name {
-        margin-top: 5px !important;
-        font-weight: bold;
-        font-size: 20px;
-    }
+          img {
+            width: 16px;
+            height: auto;
+            margin-right: 3px;
+          }
 
-    .edit {
-        float: right;
-        margin-top: 159px;
-    }
+          .name {
+            font-size: 26pt;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #2c3e50;
+          }
 
-    .interest {
+          .info-position::first-letter {
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      div.career {
         float: right;
         width: 550px;
-        height: 175px;
 
-        li {
+        ul {
+          list-style: disc;
+
+          li {
             line-height: 25px;
-            margin-top: 5px;
-        }
+            margin-top: 10px;
+          }
 
-        li:nth-of-type(1) {
+          li.career-title {
+            font-size: 18pt;
             list-style: none;
-            margin: 0px 0px 0px 12px;
+            color: #2c3e50;
+          }
         }
+      }
     }
+  }
+
+  .Professor {
+    .profile-container {
+      .photo {
+        width: 300px;
+        height: 300px;
+      }
+
+      .info {
+        ul {
+          .name {
+            font-size: 30pt;
+          }
+        }
+      }
+    }
+  }
 }
