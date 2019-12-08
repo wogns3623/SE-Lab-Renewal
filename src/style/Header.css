@@ -1,18 +1,15 @@
 header {
-	width: 100%;
-	/*min-width: 1280px;  width(.container) */
-	line-height: 65px;
-	background-color: #2c3e50;
-	position: sticky;
-	top: 0;
-	margin-bottom: 10px;
-	z-index: 1;
+  width: 100%;
+  min-width: 1300px;
+  line-height: 65px;
+  height: 65px;
+  background-color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-header nav{
-	width: 1300px;
-	margin-left: auto;
-	margin-right: auto;
-	min-height: 65px;
-	background-color: #2c3e50;
+header nav {
+  width: 1300px;
+  margin: 0 auto;
 }

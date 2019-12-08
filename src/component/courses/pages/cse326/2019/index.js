@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import Home from "./Home";
-import SlideTable from "./SlideTable";
+import SlideList from "./SlideList";
 import "style/cse326.css";
 
 class cse326 extends Component {
@@ -24,7 +24,7 @@ class cse326 extends Component {
           </TabPanel>
 
           <TabPanel>
-            <SlideTable></SlideTable>
+            <SlideList></SlideList>
           </TabPanel>
         </Tabs>
       </>
