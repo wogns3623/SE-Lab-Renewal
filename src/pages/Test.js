@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Slide, {
-  SlidePage,
   SlideTitle,
+  SlidePage,
+  SlideSection,
   PageTitle,
   PageContent
 } from "component/courses/slide";
@@ -9,8 +10,13 @@ import Slide, {
 class Test extends Component {
   render() {
     return (
-      <Slide>
-        <SlideTitle>08.JavaScript</SlideTitle>
+      <Slide
+        lectureID="CSE326"
+        lectureName="Web Application Development"
+        no="8"
+      >
+        <SlideTitle>JavaScript</SlideTitle>
+        {/* auto input in slide */}
         {/* <SlidePage>
           <PageTitle>
             CSE3026: Web Application Development 08.JavaScript
@@ -18,14 +24,14 @@ class Test extends Component {
           <PageContent>
             <h2>Scott Uk-Jin Lee</h2>
 
-            <p class="license">
+            <p className="license">
               Reproduced with permission of the authors. Copyright 2012 Marty
               Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
               Further reproduction or distribution is prohibited without written
               permission.
             </p>
 
-            <div class="w3c">
+            <div className="w3c">
               <a href="https://validator.w3.org/check/referer">
                 <img
                   src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
@@ -42,26 +48,13 @@ class Test extends Component {
           </PageContent>
         </SlidePage> */}
 
-        <SlidePage>
-          <PageTitle>8.1: Key JavaScript Concepts</PageTitle>
-
-          <PageContent>
-            <ul>
-              <li>
-                <strong>8.1: Key JavaScript Concepts</strong>
-              </li>
-              <li>8.2: JavaScript Syntax</li>
-              <li>8.3: Program Logic</li>
-              <li>8.4: Advanced JavaScript Syntax</li>
-            </ul>
-          </PageContent>
-        </SlidePage>
+        <SlideSection>Key JavaScript Concepts</SlideSection>
 
         <SlidePage>
           <PageTitle>Client-side scripting</PageTitle>
 
           <PageContent>
-            <div class="centerfigure">
+            <div className="centerfigure">
               <img
                 src="./CSE3026 - 08. JavaScript_files/figure_2_client_side_scripting.png"
                 alt="client-side scripting"
@@ -70,7 +63,7 @@ class Test extends Component {
 
             <ul>
               <li>
-                <span class="term">client-side script</span>: code runs in
+                <span className="term">client-side script</span>: code runs in
                 browser <em>after</em> page is sent back from server
                 <ul>
                   <li>
@@ -96,16 +89,16 @@ class Test extends Component {
                 client-side scripting (JavaScript) benefits:
                 <ul>
                   <li>
-                    <span class="term">usability</span>: can modify a page
+                    <span className="term">usability</span>: can modify a page
                     without having to post back to the server (faster UI)
                   </li>
                   <li>
-                    <span class="term">efficiency</span>: can make small, quick
-                    changes to page without waiting for server
+                    <span className="term">efficiency</span>: can make small,
+                    quick changes to page without waiting for server
                   </li>
                   <li>
-                    <span class="term">event-driven</span>: can respond to user
-                    actions like clicks and key presses
+                    <span className="term">event-driven</span>: can respond to
+                    user actions like clicks and key presses
                   </li>
                 </ul>
               </li>
@@ -129,6 +122,23 @@ class Test extends Component {
               </li>
             </ul>
           </PageContent>
+        </SlidePage>
+
+        <SlideSection>Key JavaScript Concepts</SlideSection>
+
+        <SlidePage>
+          <PageTitle>
+            <a href="http://www.w3schools.com/js/js_variables.asp">Variables</a>{" "}
+            and types
+          </PageTitle>
+          <PageContent></PageContent>
+        </SlidePage>
+
+        <SlidePage>
+          <PageTitle>
+            <code>Number</code> type
+          </PageTitle>
+          <PageContent></PageContent>
         </SlidePage>
       </Slide>
     );
