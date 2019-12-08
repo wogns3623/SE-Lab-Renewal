@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import PageTemplate from "component/common/template/PageTemplate.js";
 import Row from "component/notice/Row.js";
-import "style/Notice.css";
+import "style/Notice.scss";
 
 class Notice extends Component {
   state = {
