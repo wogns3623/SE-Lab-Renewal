@@ -1,6 +1,7 @@
 .Row ul {
   margin: 0;
   display: flex;
+  padding: 0;
   /*flex했지뭐야~*/
 }
 
@@ -15,6 +16,7 @@
   border-bottom: 1px solid slategray;
   padding-left: 20px;
   padding-right: 20px;
+  list-style: none;
 }
 
 .Row li.name {
@@ -28,6 +30,7 @@
   border-bottom: 1px solid slategray;
   padding-left: 20px;
   padding-right: 20px;
+  list-style: none;
 }
 
 .Row li.date {
@@ -40,4 +43,5 @@
   padding-right: 20px;
   border-right: 1px solid slategray;
   border-bottom: 1px solid slategray;
+  list-style: none;
 }
