@@ -2,20 +2,29 @@ import React, { Component } from "react";
 
 import "./style/dropdownMenu.css";
 import Menu from "./Menu";
+import { Link } from "react-router-dom";
 
 class DropdownMenu extends Component {
   render() {
-    console.log(this.props.children);
     return (
       <div
         className={
-          "Dropdown" +
+          "react-Dropdown" +
           (this.props.className !== undefined ? " " + this.props.className : "")
         }
       >
-        <div className="btn">
-          <span>{this.props.title}</span>
-        </div>
+        <Link
+          to={{
+            pathname:
+              this.props.pathname === undefined
+                ? "/" + this.props.title.toLowerCase()
+                : this.props.pathname
+          }}
+        >
+          <span className="btn">
+            <span>{this.props.title}</span>
+          </span>
+        </Link>
         <Menu className="content">{this.props.children}</Menu>
       </div>
     );

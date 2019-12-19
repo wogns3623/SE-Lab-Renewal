@@ -39,26 +39,161 @@ class Header extends Component {
     return (
       <header role="banner">
         <nav role="navigation">
+          <Logo></Logo>
           <Menu className="pull-left">
-            <MenuItem>Notice</MenuItem>
-            <MenuItem>Members</MenuItem>
-            <MenuItem>Research</MenuItem>
-            <DropdownMenu title="Publication">
-              <MenuItem>All</MenuItem>
-              <MenuItem>International Conference</MenuItem>
-              <MenuItem>International Journal</MenuItem>
-              <MenuItem>Domestic Conference</MenuItem>
-              <MenuItem>Domestic Journal</MenuItem>
+            <Link
+              to={{
+                pathname: `notice`
+              }}
+            >
+              <MenuItem>Notice</MenuItem>
+            </Link>
+            <Link
+              to={{
+                pathname: "members"
+              }}
+            >
+              <MenuItem>Members</MenuItem>
+            </Link>
+            <DropdownMenu title="RESEARCH">
+              <Link
+                to={{
+                  pathname: `research`,
+                  state: {
+                    tabIndex: 0
+                  }
+                }}
+              >
+                <MenuItem>Introduction</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `research`,
+                  state: {
+                    tabIndex: 1
+                  }
+                }}
+              >
+                <MenuItem>Project</MenuItem>
+              </Link>
             </DropdownMenu>
-            <DropdownMenu title="Course">
-              <DropdownMenu title="Web App">
-                <MenuItem>Home</MenuItem>
-                <MenuItem>Slides</MenuItem>
+            <DropdownMenu title="Publications">
+              <Link
+                to={{
+                  pathname: `publications`,
+                  state: {
+                    tabIndex: 0
+                  }
+                }}
+              >
+                <MenuItem>All</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `publications`,
+                  state: {
+                    tabIndex: 1
+                  }
+                }}
+              >
+                <MenuItem>I C</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `publications`,
+                  state: {
+                    tabIndex: 2
+                  }
+                }}
+              >
+                <MenuItem>I J</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `publications`,
+                  state: {
+                    tabIndex: 3
+                  }
+                }}
+              >
+                <MenuItem>D C</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `publications`,
+                  state: {
+                    tabIndex: 4
+                  }
+                }}
+              >
+                <MenuItem>D J</MenuItem>
+              </Link>
+            </DropdownMenu>
+            <DropdownMenu title="COURSES">
+              <DropdownMenu className="leftdrop" title="Web App">
+                <Link
+                  to={{
+                    pathname: `courses/cse326`,
+                    state: {
+                      tabIndex: 0
+                    }
+                  }}
+                >
+                  <MenuItem>Home</MenuItem>
+                </Link>
+                <Link
+                  to={{
+                    pathname: `courses/cse326`,
+                    state: {
+                      tabIndex: 1
+                    }
+                  }}
+                >
+                  <MenuItem>Slides</MenuItem>
+                </Link>
               </DropdownMenu>
-              <DropdownMenu title="asd">
-                <MenuItem>ss</MenuItem>
-                <MenuItem>dd</MenuItem>
-              </DropdownMenu>
+            </DropdownMenu>
+            <DropdownMenu title="GALLERY">
+              <Link
+                to={{
+                  pathname: `gallery`,
+                  state: {
+                    tabIndex: 0
+                  }
+                }}
+              >
+                <MenuItem>All</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `gallery`,
+                  state: {
+                    tabIndex: 1
+                  }
+                }}
+              >
+                <MenuItem>Social</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `gallery`,
+                  state: {
+                    tabIndex: 2
+                  }
+                }}
+              >
+                <MenuItem>Conference</MenuItem>
+              </Link>
+              <Link
+                to={{
+                  pathname: `gallery`,
+                  state: {
+                    tabIndex: 3
+                  }
+                }}
+              >
+                <MenuItem>ETC.</MenuItem>
+              </Link>
             </DropdownMenu>
           </Menu>
         </nav>

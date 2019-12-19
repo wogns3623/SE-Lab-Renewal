@@ -10,7 +10,15 @@ class Research extends Component {
   render() {
     return (
       <PageTemplate className="Research">
-        <Tabs selectedTabClassName="active">
+        <Tabs
+          selectedTabClassName="active"
+          defaultIndex={
+            this.props.location.state === null ||
+            this.props.location.state === undefined
+              ? 0
+              : this.props.location.state.tabIndex
+          }
+        >
           <TabList className="TabMenu">
             <Tab className="Item">Introduction</Tab>
             <Tab className="Item">Project</Tab>

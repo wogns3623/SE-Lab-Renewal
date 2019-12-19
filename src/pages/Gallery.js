@@ -117,6 +117,12 @@ class Gallery extends Component {
         <div className="table">
           <h1 id="headname">Gallery</h1>
           <GalleryTab
+            initialTabIndex={
+              this.props.location.state === null ||
+              this.props.location.state === undefined
+                ? 0
+                : this.props.location.state.tabIndex
+            }
             tabList={this.state.tabList}
             contents={this.state.ALL}
           ></GalleryTab>
