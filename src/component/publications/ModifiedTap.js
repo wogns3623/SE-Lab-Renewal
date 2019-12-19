@@ -9,6 +9,10 @@ class ModifiedTap extends Component {
     currentTab: 0
   };
 
+  componentDidMount() {
+    this.selectTab(this.props.initialTabIndex);
+  }
+
   selectTab = index => {
     this.setState({
       currentTab: index

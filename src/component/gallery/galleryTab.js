@@ -14,6 +14,10 @@ class GalleryTab extends Component {
 
   readmoreCount = [0, 0, 0, 0];
 
+  componentDidMount() {
+    this.selectTab(this.props.initialTabIndex);
+  }
+
   selectTab = index => {
     this.setState({
       currentTab: index

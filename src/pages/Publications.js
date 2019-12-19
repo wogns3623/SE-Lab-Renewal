@@ -16,12 +16,19 @@ class Publications extends Component {
     ]
   };
   render() {
+    console.log(this.props);
     return (
       <PageTamplate className="Publications">
         <div>
           <h1>PUBLICATIONS</h1>
 
           <ModifiedTap
+            initialTabIndex={
+              this.props.location.state === null ||
+              this.props.location.state === undefined
+                ? 0
+                : this.props.location.state.tabIndex
+            }
             tabList={this.state.tabList}
             contents={ALL}
           ></ModifiedTap>
