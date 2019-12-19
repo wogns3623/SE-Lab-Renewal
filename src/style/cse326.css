@@ -46,7 +46,7 @@
   padding-left: 10px;
   margin-top: 0px;
 
-  background-color: rgb(211, 237, 245);
+  background-color: #d3d9de;
   color: black;
   line-height: 52px;
   height: 52px;
@@ -68,7 +68,7 @@
 }
 
 .Courses .Home ul {
-  list-style-image: url("../assets/images/list-img.png");
+  list-style-type: disc;
 }
 
 .Courses .Home .display_none {

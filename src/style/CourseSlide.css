@@ -7,7 +7,7 @@
 
 .SlideSelect thead {
   align-content: center;
-  background-color: #0099a4;
+  background-color: #1a334c;
   font-size: 25px;
   color: white;
 }
@@ -21,7 +21,7 @@
 .SlideSelect tr:nth-child(2n) {
   height: 55px;
   font-size: 20px;
-  background-color: #0099a4;
+  background-color: #d3d9de;
 }
 /* 
 .number th:nth-child(2n + 1) {

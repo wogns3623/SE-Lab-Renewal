@@ -21,13 +21,13 @@ class Home extends Component {
               <span>Lab</span>oratory !
             </p>
             <p>
-              I LOVE <span>Scott Uk-Jin Lee</span> professor.
+              WE LOVE <span>The Greatest professor </span>
             </p>
             <p>
-              We Service <span>Notice, Members, Courses, Login</span>, etc.
+              We service <span>Notice, Members, Courses</span>, etc.
             </p>
             <p>
-              Please give me a <span>A+</span>!
+              This site was made by <span>Kim's Family</span>!
             </p>
           </div>
           <div id="contact">
