@@ -1,205 +1,149 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+// import React, { Component } from "react";
+// import Slide, {
+//   SlideTitle,
+//   SlidePage,
+//   SlideSection,
+//   PageTitle,
+//   PageContent
+// } from "component/courses/slide";
 
-import DropdownMenu from "component/common/menu/DropdownMemu";
-import Menu, { MenuItem } from "component/common/menu/Menu";
+// class Test extends Component {
+//   render() {
+//     return (
+//       <Slide
+//         lectureID="CSE326"
+//         lectureName="Web Application Development"
+//         no="8"
+//       >
+//         <SlideTitle>JavaScript</SlideTitle>
+//         {/* auto input in slide */}
+//         {/* <SlidePage>
+//           <PageTitle>
+//             CSE3026: Web Application Development 08.JavaScript
+//           </PageTitle>
+//           <PageContent>
+//             <h2>Scott Uk-Jin Lee</h2>
 
-import NavMenu from "component/common/header/NavMenu.js";
-import Logo from "component/common/header/Logo.js";
-import "style/Header.css";
+//             <p className="license">
+//               Reproduced with permission of the authors. Copyright 2012 Marty
+//               Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
+//               Further reproduction or distribution is prohibited without written
+//               permission.
+//             </p>
 
-class Header extends Component {
-  state = {
-    menu: [
-      {
-        name: "notice"
-      },
-      {
-        name: "members"
-      },
-      {
-        name: "research"
-      },
-      {
-        name: "publications"
-      },
-      {
-        name: "courses"
-      },
-      {
-        name: "gallery"
-      },
-      {
-        name: "login"
-      }
-    ]
-  };
-  render() {
-    return (
-      <header role="banner">
-        <nav role="navigation">
-          <Logo></Logo>
-          <Menu className="pull-left">
-            <Link
-              to={{
-                pathname: `notice`
-              }}
-            >
-              <MenuItem>Notice</MenuItem>
-            </Link>
-            <Link
-              to={{
-                pathname: "members"
-              }}
-            >
-              <MenuItem>Members</MenuItem>
-            </Link>
-            <DropdownMenu title="RESEARCH">
-              <Link
-                to={{
-                  pathname: `research`,
-                  state: {
-                    tabIndex: 0
-                  }
-                }}
-              >
-                <MenuItem>Introduction</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `research`,
-                  state: {
-                    tabIndex: 1
-                  }
-                }}
-              >
-                <MenuItem>Project</MenuItem>
-              </Link>
-            </DropdownMenu>
-            <DropdownMenu title="Publications">
-              <Link
-                to={{
-                  pathname: `publications`,
-                  state: {
-                    tabIndex: 0
-                  }
-                }}
-              >
-                <MenuItem>All</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `publications`,
-                  state: {
-                    tabIndex: 1
-                  }
-                }}
-              >
-                <MenuItem>I C</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `publications`,
-                  state: {
-                    tabIndex: 2
-                  }
-                }}
-              >
-                <MenuItem>I J</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `publications`,
-                  state: {
-                    tabIndex: 3
-                  }
-                }}
-              >
-                <MenuItem>D C</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `publications`,
-                  state: {
-                    tabIndex: 4
-                  }
-                }}
-              >
-                <MenuItem>D J</MenuItem>
-              </Link>
-            </DropdownMenu>
-            <DropdownMenu title="COURSES">
-              <DropdownMenu className="leftdrop" title="Web App">
-                <Link
-                  to={{
-                    pathname: `courses/cse326`,
-                    state: {
-                      tabIndex: 0
-                    }
-                  }}
-                >
-                  <MenuItem>Home</MenuItem>
-                </Link>
-                <Link
-                  to={{
-                    pathname: `courses/cse326`,
-                    state: {
-                      tabIndex: 1
-                    }
-                  }}
-                >
-                  <MenuItem>Slides</MenuItem>
-                </Link>
-              </DropdownMenu>
-            </DropdownMenu>
-            <DropdownMenu title="GALLERY">
-              <Link
-                to={{
-                  pathname: `gallery`,
-                  state: {
-                    tabIndex: 0
-                  }
-                }}
-              >
-                <MenuItem>All</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `gallery`,
-                  state: {
-                    tabIndex: 1
-                  }
-                }}
-              >
-                <MenuItem>Social</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `gallery`,
-                  state: {
-                    tabIndex: 2
-                  }
-                }}
-              >
-                <MenuItem>Conference</MenuItem>
-              </Link>
-              <Link
-                to={{
-                  pathname: `gallery`,
-                  state: {
-                    tabIndex: 3
-                  }
-                }}
-              >
-                <MenuItem>ETC.</MenuItem>
-              </Link>
-            </DropdownMenu>
-          </Menu>
-        </nav>
-      </header>
-    );
-  }
-}
+//             <div className="w3c">
+//               <a href="https://validator.w3.org/check/referer">
+//                 <img
+//                   src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
+//                   alt="Valid HTML 5"
+//                 />
+//               </a>
+//               <a href="https://jigsaw.w3.org/css-validator/check/referer">
+//                 <img
+//                   src="./CSE3026 - 08. JavaScript_files/w3c-css.png"
+//                   alt="Valid CSS!"
+//                 />
+//               </a>
+//             </div>
+//           </PageContent>
+//         </SlidePage> */}
 
-export default Header;
+//         <SlideSection title="Key JavaScript Concepts">
+//           <SlidePage>
+//             <PageTitle>Client-side scripting</PageTitle>
+
+//             <PageContent>
+//               <div className="centerfigure">
+//                 <img
+//                   src="./CSE3026 - 08. JavaScript_files/figure_2_client_side_scripting.png"
+//                   alt="client-side scripting"
+//                 />
+//               </div>
+
+//               <ul>
+//                 <li>
+//                   <span className="term">client-side script</span>: code runs in
+//                   browser <em>after</em> page is sent back from server
+//                   <ul>
+//                     <li>
+//                       often this code manipulates the page or responds to user
+//                       actions
+//                     </li>
+//                   </ul>
+//                 </li>
+//               </ul>
+//             </PageContent>
+//           </SlidePage>
+
+//           <SlidePage>
+//             <PageTitle>Why use client-side programming?</PageTitle>
+//             <PageContent>
+//               <p>
+//                 PHP already allows us to create dynamic web pages. Why also use
+//                 client-side scripting?
+//               </p>
+
+//               <ul>
+//                 <li>
+//                   client-side scripting (JavaScript) benefits:
+//                   <ul>
+//                     <li>
+//                       <span className="term">usability</span>: can modify a page
+//                       without having to post back to the server (faster UI)
+//                     </li>
+//                     <li>
+//                       <span className="term">efficiency</span>: can make small,
+//                       quick changes to page without waiting for server
+//                     </li>
+//                     <li>
+//                       <span className="term">event-driven</span>: can respond to
+//                       user actions like clicks and key presses
+//                     </li>
+//                   </ul>
+//                 </li>
+
+//                 <li>
+//                   server-side programming (PHP) benefits:
+//                   <ul>
+//                     <li>
+//                       <strong>security</strong>: has access to server's private
+//                       data; client can't see source code
+//                     </li>
+//                     <li>
+//                       <strong>compatibility</strong>: not subject to browser
+//                       compatibility issues
+//                     </li>
+//                     <li>
+//                       <strong>power</strong>: can write files, open connections
+//                       to servers, connect to databases, ...
+//                     </li>
+//                   </ul>
+//                 </li>
+//               </ul>
+//             </PageContent>
+//           </SlidePage>
+//         </SlideSection>
+
+//         <SlideSection title="Key JavaScript Concepts">
+//           <SlidePage>
+//             <PageTitle>
+//               <a href="http://www.w3schools.com/js/js_variables.asp">
+//                 Variables
+//               </a>{" "}
+//               and types
+//             </PageTitle>
+//             <PageContent></PageContent>
+//           </SlidePage>
+//           <SlidePage>
+//             <PageTitle>
+//               <code>Number</code> type
+//             </PageTitle>
+//             <PageContent></PageContent>
+//           </SlidePage>
+//         </SlideSection>
+//       </Slide>
+//     );
+//   }
+// }
+
+// export default Test;

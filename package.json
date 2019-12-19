@@ -2,6 +2,7 @@
   "name": "renewal",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@react-google-maps/api": "^1.7.12",
     "axios": "^0.19.0",
@@ -24,7 +25,7 @@
   "scripts": {
     "start": "npm-run-all --parallel start:**",
     "start:client": "cross-env NODE_PATH=src react-scripts start",
-    "start:server": "nodemon ./server/index.js",
+    "start:server": "node ./server/index.js",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

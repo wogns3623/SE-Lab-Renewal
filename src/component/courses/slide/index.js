@@ -10,6 +10,93 @@ import PageContent from "./PageContent";
 
 import "style/Slide.css";
 
+const getText = item => {
+  if (typeof item === "string") {
+    return item;
+  } else {
+    let text = "";
+    for (const child of item) {
+      if (typeof child === "string") {
+        text += child;
+      } else {
+        text += getText(child.props.children);
+      }
+    }
+    return text;
+  }
+};
+
+const extractPage = props => {
+  slideTitle = props.children[0];
+
+  let firstPageTitle = `${props.lectureID}: ${props.lectureName} ${(
+    "00" + props.no
+  ).slice(-2)}.${slideTitle.props.children}`;
+
+  let slideData = {
+    cover: {
+      sTitle: firstPageTitle,
+      title: <PageTitle>{firstPageTitle}</PageTitle>,
+      content: (
+        <PageContent>
+          <h2>Scott Uk-Jin Lee</h2>
+
+          <p className="license">
+            Reproduced with permission of the authors. Copyright 2012 Marty
+            Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
+            Further reproduction or distribution is prohibited without written
+            permission.
+          </p>
+
+          <div className="w3c">
+            <a href="https://validator.w3.org/check/referer">
+              <img
+                src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
+                alt="Valid HTML 5"
+              />
+            </a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img
+                src="./CSE3026 - 08. JavaScript_files/w3c-css.png"
+                alt="Valid CSS!"
+              />
+            </a>
+          </div>
+        </PageContent>
+      )
+    },
+    section: []
+  };
+
+  props.children.map(slideItem => {
+    if (slideItem.type === SlideSection) {
+      slideData.content.push({
+        title: slideItem.children,
+        page: []
+      });
+    } else if (slideItem.type === SlidePage) {
+      let pageData = {
+        sTitle: null,
+        title: null,
+        content: null
+      };
+      slideItem.props.children.map(pageItem => {
+        if (pageItem.type === PageTitle) {
+          pageData.title = pageItem;
+
+          pageData.sTitle = getText(pageItem.props.children);
+        } else if (pageItem.type === PageContent) {
+          pageContents.push(pageItem);
+        }
+      });
+
+      slideData.section[slideData.content.length - 1].page.push(pageData);
+    }
+  });
+
+  return slideData;
+};
+
 class Slide extends Component {
   // todo: 1. 화살표 버튼 or space bar로 페이지 이동기능
   // 2.
@@ -19,29 +106,17 @@ class Slide extends Component {
     this.state = {
       siderBarActive: true,
       currentIndex: 0,
-      slideTitle: null,
-      pageTitles: [],
-      pageContents: [],
-      slideIndex: []
+      slideData: null
     };
 
     window.addEventListener("keyup", this.handleKeyEvent);
   }
 
   componentDidMount() {
-    console.log(this.extractPage());
-    let {
-      slideTitle,
-      pageTitles,
-      pageContents,
-      slideIndex
-    } = this.extractPage();
+    let slideData = extractPage(this.props);
 
     this.setState({
-      slideTitle: slideTitle,
-      pageTitles: pageTitles,
-      pageContents: pageContents,
-      slideIndex: slideIndex
+      slideData: slideData
     });
   }
 
@@ -69,89 +144,8 @@ class Slide extends Component {
     }
   };
 
-  extractPage = () => {
-    let slideTitle = null;
-    let pageContents = [];
-    let pageTitles = [];
-    let slideIndex = [];
-    this.props.children.map(slideItem => {
-      if (slideItem.type === SlideTitle) {
-        slideTitle = slideItem;
-
-        let firstPageTitle = (
-          <PageTitle>
-            {`${this.props.lectureID}: ${this.props.lectureName} ${(
-              "00" + this.props.no
-            ).slice(-2)}.${slideTitle.props.children}`}
-          </PageTitle>
-        );
-
-        let firstPageComponent = (
-          <PageContent>
-            <h2>Scott Uk-Jin Lee</h2>
-
-            <p className="license">
-              Reproduced with permission of the authors. Copyright 2012 Marty
-              Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
-              Further reproduction or distribution is prohibited without written
-              permission.
-            </p>
-
-            <div className="w3c">
-              <a href="https://validator.w3.org/check/referer">
-                <img
-                  src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
-                  alt="Valid HTML 5"
-                />
-              </a>
-              <a href="https://jigsaw.w3.org/css-validator/check/referer">
-                <img
-                  src="./CSE3026 - 08. JavaScript_files/w3c-css.png"
-                  alt="Valid CSS!"
-                />
-              </a>
-            </div>
-          </PageContent>
-        );
-        slideIndex.push(firstPageTitle.props.children);
-        pageTitles.push(firstPageTitle);
-        pageContents.push(firstPageComponent);
-      } else if (slideItem.type === SlideSection) {
-      } else if (slideItem.type === SlidePage) {
-        slideItem.props.children.map(pageItem => {
-          if (pageItem.type === PageTitle) {
-            pageTitles.push(pageItem);
-
-            let getText = item => {
-              if (typeof item === "string") {
-                return item;
-              } else {
-                let text = "";
-                for (const child of item) {
-                  if (typeof child === "string") {
-                    text += child;
-                  } else {
-                    text += getText(child.props.children);
-                  }
-                }
-                return text;
-              }
-            };
-
-            slideIndex.push(getText(pageItem.props.children));
-          } else if (pageItem.type === PageContent) {
-            pageContents.push(pageItem);
-          }
-        });
-      }
-    });
-
-    return {
-      slideTitle: slideTitle,
-      pageTitles: pageTitles,
-      pageContents: pageContents,
-      slideIndex: slideIndex
-    };
+  constructOverview = () => {
+    let slideIndex = this.state.slideIndex;
   };
 
   render() {
