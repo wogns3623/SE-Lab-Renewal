@@ -2,7 +2,7 @@
   {
     "title": "Web & Web security",
     "image": {
-      "src": "assets/images/research/web_securitymodified.png",
+      "src": "assets/images/research/web_security.png",
       "alt": "Internet_Security",
       "width": "150px"
     },
@@ -29,9 +29,9 @@
   {
     "title": "Requirement Engineering",
     "image": {
-      "src": "assets/images/research/RE.png",
+      "src": "assets/images/research/requirement_engineering.jpeg",
       "alt": "GeneralRElogo",
-      "width": "120px"
+      "width": "250px"
     },
     "info": [
       "Requirement Analysis, Validation and Conflict Detection",
