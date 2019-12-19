@@ -1,136 +1,136 @@
 .Research {
+  h3 {
+    background-color: #242424;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 350px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    h3 {
-        background-color: #242424;
+  #register {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 690px;
+    margin-left: -345px;
+    color: #4796bd;
+    border-radius: 5px;
+    border: 2px solid #4796bd;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: #f4f4f4;
+    box-shadow: 0 3px 10px black;
+    z-index: 1;
+
+    .subwrap {
+      width: 660px;
+      margin: 15px;
+      margin-top: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+
+      p {
+        margin: 0;
+        padding: 0;
+        float: left;
+      }
+    }
+
+    input[type="text"] {
+      padding: 0;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      border: none;
+      height: 30px;
+      font-size: 15px;
+      font-weight: 100;
+      padding-left: 10px;
+    }
+
+    #Project_name {
+      width: 648px;
+    }
+
+    #start_date,
+    #end_date {
+      font-size: 18px;
+      margin-right: 30px;
+      width: 100px;
+    }
+
+    #related {
+      width: 250px;
+    }
+
+    .subname {
+      margin: 0;
+      padding: 0;
+      display: inline;
+      float: left;
+      padding-top: 11px;
+      margin-right: 10px;
+    }
+
+    #title-name {
+      margin: 15px;
+      font-size: 30px;
+      padding-top: 3px;
+    }
+
+    #buttons {
+      margin-bottom: 15px;
+      float: right;
+
+      button {
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        background-color: #4796bd;
+        width: 110px;
         color: white;
-        font-size: 20px;
-        padding: 10px;
-        padding-bottom: 20px;
-        margin-bottom: 30px;
-        text-align: center;
-        width: 300px;
-        height: 10px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #register {
-        position: absolute;
-        top: 150px;
-        left: 50%;
-        width: 690px;
-        margin-left: -345px;
-        color: #4796bd;
-        border-radius: 5px;
-        border: 2px solid #4796bd;
         font-size: 15px;
-        font-weight: normal;
-        background-color: #f4f4f4;
-        box-shadow: 0 3px 10px black;
-        z-index: 1;
+        height: 40px;
+        margin-left: 10px;
+      }
 
-        .subwrap {
-            width: 660px;
-            margin: 15px;
-            margin-top: 0;
-            margin-bottom: 0;
-            overflow: hidden;
+      button:hover {
+        background-color: rgb(41, 112, 148);
+      }
 
-            p {
-                margin: 0;
-                padding: 0;
-                float: left;
-            }
-        }
+      input[type="radio"] {
+        display: none;
+      }
 
-        input[type="text"] {
-            padding: 0;
-            margin-top: 7px;
-            margin-bottom: 7px;
-            border: none;
-            height: 30px;
-            font-size: 15px;
-            font-weight: 100;
-            padding-left: 10px;
-        }
+      #first ~ #researches {
+        display: none;
+      }
 
-        #Project_name {
-            width: 648px;
-        }
+      #first:checked ~ #researches {
+        display: block;
+      }
 
-        #start_date,
-        #end_date {
-            font-size: 18px;
-            margin-right: 30px;
-            width: 100px;
-        }
+      #second ~ #project {
+        display: none;
+      }
 
-        #related {
-            width: 250px;
-        }
-
-        .subname {
-            margin: 0;
-            padding: 0;
-            display: inline;
-            float: left;
-            padding-top: 11px;
-            margin-right: 10px;
-        }
-
-        #title-name {
-            margin: 15px;
-            font-size: 30px;
-            padding-top: 3px;
-        }
-
-        #buttons {
-            margin-bottom: 15px;
-            float: right;
-
-            button {
-                outline: none;
-                border: none;
-                border-radius: 3px;
-                background-color: #4796bd;
-                width: 110px;
-                color: white;
-                font-size: 15px;
-                height: 40px;
-                margin-left: 10px;
-            }
-
-            button:hover {
-                background-color: rgb(41, 112, 148);
-            }
-
-            input[type=radio] {
-                display: none;
-            }
-
-            #first~#researches {
-                display: none;
-            }
-
-            #first:checked~#researches {
-                display: block;
-            }
-
-            #second~#project {
-                display: none;
-            }
-
-            #second:checked~#project {
-                display: block;
-            }
-        }
+      #second:checked ~ #project {
+        display: block;
+      }
     }
+  }
 }
 
 /*-----------register end-----------------*/
 .add_btn {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    text-align: right;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  text-align: right;
 }
