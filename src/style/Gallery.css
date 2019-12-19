@@ -7,8 +7,8 @@
 
 .Gallery .Tab .Contents .Item {
   margin-top: 5px;
-
   width: 19%;
+  margin: 6px;
 }
 
 .Gallery .Tab .Contents .Item img {
@@ -24,13 +24,16 @@
   background-color: rgba(0, 0, 0, 0);
   color: skyblue;
   padding: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   margin-right: -4px;
   cursor: pointer;
   width: 255px;
   height: 50px;
   font-size: 20pt;
+  font-style: bold;
 }
 
 .Rbtn {
