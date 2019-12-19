@@ -7,6 +7,10 @@
 
 .Gallery .Tab .Contents .Item {
   margin-top: 5px;
+<<<<<<< HEAD
+=======
+  margin: 6px;
+>>>>>>> e2852247a7b753b7ad9007eff81e2c3e05b0a99a
   width: 19%;
   margin: 6px;
 }

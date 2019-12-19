@@ -6,7 +6,6 @@ import CourseTable from "./CourseTable";
 function CourseHome({ match }) {
   return (
     <>
-      <h1>COURSES</h1>
       {courseInfo.data.map((item, index) => (
         <CourseTable
           {...{ ...courseInfo, data: item }}
