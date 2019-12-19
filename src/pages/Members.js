@@ -78,6 +78,276 @@ class Members extends Component {
           "Hadoop(MapReduce)",
           "Multithreading"
         ]
+      },
+      {
+        name: "Asad Abbas",
+        image: {
+          src: "assets/images/members/Untitled.jpg",
+          alt: "Untitled"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "asadabbas@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: ["Software Engineering", "Product Line Software Engineering"]
+      },
+      {
+        name: "Gichan Lee",
+        image: {
+          src: "assets/images/members/gichan.jpg",
+          alt: "gichan"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "fantasyopy@gmail.com",
+        location: "Cluster. Rm#621",
+        website: "https://www.linkedin.com/in/GCSELAB",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering in practice",
+          "Access Control in IoT environment(project)"
+        ]
+      },
+      {
+        name: "Mohsin Javaid",
+        image: {
+          src: "assets/images/members/mohsin.jpg",
+          alt: "mohsin"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "mohsinjavaid@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: "https://goo.gl/3QXH6k",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering",
+          "Model Driven Architecture",
+          "Internet of Things",
+          "Android Application",
+          "Requirement Engineering"
+        ]
+      },
+      {
+        name: "Muhammad Umair Khan",
+        image: {
+          src: "assets/images/members/khan.jpg",
+          alt: "muhammad umair khan"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "mumairkhan@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: "https://goo.gl/GdYteF",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering",
+          "Concurrent Programming",
+          "Internet of Thing"
+        ]
+      },
+      {
+        name: "Gayeon Kim",
+        image: {
+          src: "assets/images/members/11.jpg",
+          alt: "gayeon Kim"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "gayeonkim91@gmail.com",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering",
+          "Web Application",
+          "Bigdata analysis"
+        ]
+      },
+      {
+        name: "Wu Zhiqiang",
+        image: {
+          src: "assets/images/members/325115318014822206.jpg",
+          alt: "wu zhiqiang"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "hhhwwwuuu@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software engineering",
+          "Concurrency Detection",
+          "Malware Detection"
+        ]
+      },
+      {
+        name: "Gwanggyu Choi",
+        image: {
+          src: "assets/images/members/gif.gif",
+          alt: "gwanggyu choi"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "gcahmoei@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: ["Software engineering", "requirement engineering"]
+      },
+      {
+        name: "Hyunglak Kim",
+        image: {
+          src: "assets/images/members/140x175.jpg",
+          alt: "hyunglak kim"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "jikuaij@gmail.com",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering",
+          "Crowdsourcing Software Develop",
+          "Android Application",
+          "Model Checking"
+        ]
+      },
+      {
+        name: "Dahae Sung",
+        image: {
+          src: "assets/images/members/CAM00259.jpg",
+          alt: "dahae sung"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "sdh4513136@hanmail.net",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: []
+      },
+      {
+        name: "Yongtaek Oh",
+        image: {
+          src: "http://placehold.it/140x175",
+          alt: "yongtaek oh"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "ka123ak1@gmail.com",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: ["Iot"]
+      },
+      {
+        name: "Namju Park",
+        image: {
+          src: "http://placehold.it/140x175",
+          alt: "namju park"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "qkrska66@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: []
+      },
+      {
+        name: "Jiang Hua",
+        image: {
+          src: "assets/images/members/1.jpg",
+          alt: "jiang hua"
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "jh19880208@163.com",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: ["Requirement Engineering"]
+      },
+      {
+        name: "Jaeho Choi",
+        image: {
+          src: "assets/images/members/IMG_2242.JPG",
+          alt: ""
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "jaeho34@hanyang.ac.kr",
+        location: "Cluster. Rm#621",
+        website: "http://www.facebook.com/rogue9071",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: [
+          "Software Engineering",
+          "A field of Access Control(XACML tools)",
+          "Web Application & Security",
+          "Cloud Computing Evironment",
+          "Social Network Service"
+        ]
+      },
+      {
+        name: "Geunhwan Park",
+        image: {
+          src: "assets/images/members/IMG_0889.jpg",
+          alt: ""
+        },
+        position: "Doctor of Philosophy",
+        division: "SELab",
+        divisionURL: "http://selab.hanyang.ac.kr",
+        work: "Hanyang University, ERICA",
+        email: "0101d8cf@gmail.com",
+        location: "Cluster. Rm#621",
+        website: " ",
+        career: [" "],
+        interestTitle: "Research Interests",
+        interest: []
       }
     ]
   };
@@ -91,7 +361,19 @@ class Members extends Component {
         ></ProfileBox>
         <ProfileBox
           title="Ph.D."
-          profiles={this.state.profiles.slice(1)}
+          profiles={this.state.profiles.slice(1, 7)}
+        ></ProfileBox>
+        <ProfileBox
+          title="M.E."
+          profiles={this.state.profiles.slice(7, 11)}
+        ></ProfileBox>
+        <ProfileBox
+          title="Interen"
+          profiles={this.state.profiles.slice(11, 14)}
+        ></ProfileBox>
+        <ProfileBox
+          title="Alumni"
+          profiles={this.state.profiles.slice(14, 17)}
         ></ProfileBox>
       </PageTemplate>
     );
