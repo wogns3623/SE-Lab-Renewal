@@ -45,10 +45,12 @@
 }
 .Slide .lecture_note_wrap {
   flex: 1 1 auto;
-  padding: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .Slide .lecture_note_item {
+  padding: 20px 30px;
 }
 
 .Slide .lecture_note_item.deactive {
