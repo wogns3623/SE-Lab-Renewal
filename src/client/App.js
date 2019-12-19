@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { fire } from "./Firebase";
 import {
   Home,
   Notice,
@@ -14,6 +15,10 @@ import {
 } from "pages";
 
 class App extends Component {
+  constructor() {
+    super();
+    fire();
+  }
   render() {
     return (
       <BrowserRouter>
