@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
-import "style/Gallery.css";
+import "style/Gallery.scss";
 import GalleryTable from "component/gallery/GalleryTable.js";
 
 class GalleryTab extends Component {

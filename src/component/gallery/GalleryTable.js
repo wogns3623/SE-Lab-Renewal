@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import "style/Gallery.css";
-
-let num = 0;
+import "style/Gallery.scss";
 
 class GalleryTable extends Component {
   render() {

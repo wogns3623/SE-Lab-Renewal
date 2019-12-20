@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import NavBtn from "./NavBtn.js";
-import "style/Logo.css";
+import "style/Logo.scss";
 import logoImg from "assets/images/selab_logo_S.png";
 
 class Header extends Component {

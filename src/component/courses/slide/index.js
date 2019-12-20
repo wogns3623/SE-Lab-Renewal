@@ -9,7 +9,7 @@ import SlideSection from "./SlideSection";
 import PageTitle from "./PageTitle";
 import PageContent from "./PageContent";
 
-import "style/Slide.css";
+import "style/Slide.scss";
 
 class Slide extends Component {
   constructor(props) {

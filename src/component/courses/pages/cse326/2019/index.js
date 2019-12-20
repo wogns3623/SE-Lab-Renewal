@@ -3,7 +3,7 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import Home from "./Home";
 import SlideList from "./SlideList";
-import "style/cse326.css";
+import "style/cse326.scss";
 
 class cse326 extends Component {
   render() {

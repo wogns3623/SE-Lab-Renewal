@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./style/dropdownMenu.css";
+import "./style/dropdownMenu.scss";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 

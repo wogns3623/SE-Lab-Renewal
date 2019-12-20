@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "style/Row.css";
+import "style/Row.scss";
 
 class Row extends Component {
   static defaultProps = {
