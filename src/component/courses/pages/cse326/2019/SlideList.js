@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "style/CourseSlide.css";
+import { Link } from "react-router-dom";
 
 class Item extends Component {
   render() {
@@ -8,7 +9,9 @@ class Item extends Component {
       <tr>
         {/* todo: slide 페이지로 이동되는 링크 추가 */}
         <th className="number">{this.props.index}</th>
-        <td className="cont">{this.props.Lec}</td>
+        <td className="cont">
+          <Link to="/slide">{this.props.Lec}</Link>
+        </td>
       </tr>
     );
   }

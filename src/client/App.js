@@ -9,7 +9,7 @@ import {
   Publications,
   Courses,
   Gallery,
-  Login,
+  Slide,
   Test,
   NoMatch
 } from "pages";
@@ -26,7 +26,7 @@ class App extends Component {
           <Route path="/publications" component={Publications} />
           <Route path="/courses" component={Courses} />
           <Route path="/gallery" component={Gallery} />
-          <Route path="/login" component={Login} />
+          <Route path="/slide" component={Slide} />
           <Route path="/test" component={Test} />
           <Route component={NoMatch} />
         </Switch>
