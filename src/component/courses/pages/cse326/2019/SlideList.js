@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "style/CourseSlide.css";
+import "style/CourseSlide.scss";
 import { Link } from "react-router-dom";
 
 class Item extends Component {
