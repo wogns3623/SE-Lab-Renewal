@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./style/menu.css";
+import "./style/menu.scss";
 class MenuItem extends Component {
   render() {
     return <div className="item">{this.props.children}</div>;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "style/CourseSlide.css";
+import "style/CourseSlide.scss";
 
 class Item extends Component {
   render() {

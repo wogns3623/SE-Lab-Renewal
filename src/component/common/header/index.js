@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import DropdownMenu from "component/common/menu/DropdownMemu";
+import DropdownMenu from "component/common/menu/DropdownMenu";
 import Menu, { MenuItem } from "component/common/menu/Menu";
 import { Link } from "react-router-dom";
 
 import NavMenu from "./NavMenu.js";
 import Logo from "./Logo.js";
-import "style/Header.css";
+import "style/Header.scss";
 
 class Header extends Component {
   state = {

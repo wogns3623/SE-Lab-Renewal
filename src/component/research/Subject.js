@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import 'style/Subject.css';
+import 'style/Subject.scss';
 
 class Subject extends Component {
   render() {

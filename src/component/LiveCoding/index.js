@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import Output from "./Output";
 
-import "./style/LiveCoding.css";
+import "./style/LiveCoding.scss";
 
 class LiveCoding extends Component {
   static defaultProps = {
