@@ -1,6 +1,7 @@
 .Row ul {
   margin: 0;
   display: flex;
+  list-style: none;
   padding: 0;
   /*flex했지뭐야~*/
 }
