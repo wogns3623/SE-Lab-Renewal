@@ -21,7 +21,16 @@
 
 .Slide .sider_bar {
   width: 300px;
-  height: 1300px; /* for test */
+}
+
+.Slide .sider_bar ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.Slide .sider_bar h2,
+.Slide .sider_bar h3 {
+  margin: 8px 0;
 }
 
 .Slide .slide_index_item {
@@ -43,16 +52,23 @@
   padding: 0px;
   transition-duration: 200ms;
 }
+
+/* lectureNote */
 .Slide .lecture_note_wrap {
   flex: 1 1 auto;
   display: flex;
-  justify-content: center;
+  font-size: 25px;
 }
 
-.Slide .lecture_note_item {
-  padding: 20px 30px;
+.Slide .lecture_note_wrap .lecture_note_item {
+  margin: 0 auto;
+  width: 1300px;
 }
 
-.Slide .lecture_note_item.deactive {
+.Slide .lecture_note_wrap .lecture_note_item.deactive {
   display: none;
+}
+
+.Slide .lecture_note_wrap .lecture_note_item > hr {
+  margin: 15px 0 30px 0;
 }

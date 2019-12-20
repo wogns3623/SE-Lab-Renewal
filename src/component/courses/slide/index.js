@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import Header from "component/common/header";
-
+import compile from "lib/compile.js";
+import LiveCoding from "component/LiveCoding";
 import SlideTitle from "./SlideTitle";
 import SlidePage from "./SlidePage";
 import SlideSection from "./SlideSection";
@@ -10,115 +11,161 @@ import PageContent from "./PageContent";
 
 import "style/Slide.css";
 
-const getText = item => {
-  if (typeof item === "string") {
-    return item;
-  } else {
-    let text = "";
-    for (const child of item) {
-      if (typeof child === "string") {
-        text += child;
-      } else {
-        text += getText(child.props.children);
-      }
-    }
-    return text;
-  }
-};
-
-const extractPage = props => {
-  slideTitle = props.children[0];
-
-  let firstPageTitle = `${props.lectureID}: ${props.lectureName} ${(
-    "00" + props.no
-  ).slice(-2)}.${slideTitle.props.children}`;
-
-  let slideData = {
-    cover: {
-      sTitle: firstPageTitle,
-      title: <PageTitle>{firstPageTitle}</PageTitle>,
-      content: (
-        <PageContent>
-          <h2>Scott Uk-Jin Lee</h2>
-
-          <p className="license">
-            Reproduced with permission of the authors. Copyright 2012 Marty
-            Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
-            Further reproduction or distribution is prohibited without written
-            permission.
-          </p>
-
-          <div className="w3c">
-            <a href="https://validator.w3.org/check/referer">
-              <img
-                src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
-                alt="Valid HTML 5"
-              />
-            </a>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer">
-              <img
-                src="./CSE3026 - 08. JavaScript_files/w3c-css.png"
-                alt="Valid CSS!"
-              />
-            </a>
-          </div>
-        </PageContent>
-      )
-    },
-    section: []
-  };
-
-  props.children.map(slideItem => {
-    if (slideItem.type === SlideSection) {
-      slideData.content.push({
-        title: slideItem.children,
-        page: []
-      });
-    } else if (slideItem.type === SlidePage) {
-      let pageData = {
-        sTitle: null,
-        title: null,
-        content: null
-      };
-      slideItem.props.children.map(pageItem => {
-        if (pageItem.type === PageTitle) {
-          pageData.title = pageItem;
-
-          pageData.sTitle = getText(pageItem.props.children);
-        } else if (pageItem.type === PageContent) {
-          pageContents.push(pageItem);
-        }
-      });
-
-      slideData.section[slideData.content.length - 1].page.push(pageData);
-    }
-  });
-
-  return slideData;
-};
-
 class Slide extends Component {
-  // todo: 1. 화살표 버튼 or space bar로 페이지 이동기능
-  // 2.
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    console.log(props);
+
+    let slideData = this.extractPage(this.props);
+
+    let overviewJsx = this.constructOverview(slideData);
 
     this.state = {
       siderBarActive: true,
+      KeyEventActive: true,
       currentIndex: 0,
-      slideData: null
+      slideData: slideData,
+      overviewJsx: overviewJsx
     };
 
     window.addEventListener("keyup", this.handleKeyEvent);
+
+    window.onload = () => {
+      let LiveCodingList = document.querySelectorAll(".LiveCoding .Input");
+      for (const inputComp of LiveCodingList) {
+        compile(inputComp.parentElement);
+        for (const query of [".html", ".css", ".js"]) {
+          inputComp.querySelector(query).onfocus = () => {
+            this.KeyEventActivate(false);
+          };
+          inputComp.querySelector(query).onblur = e => {
+            e.preventDefault();
+            this.KeyEventActivate(true);
+            compile(
+              e.target.parentElement.parentElement.parentElement.parentElement
+            );
+          };
+        }
+      }
+    };
   }
 
-  componentDidMount() {
-    let slideData = extractPage(this.props);
+  getText = item => {
+    if (typeof item === "string") {
+      return item;
+    } else {
+      let text = "";
+      for (const child of item) {
+        if (typeof child === "string") {
+          text += child;
+        } else {
+          text += this.getText(child.props.children);
+        }
+      }
+      return text;
+    }
+  };
 
-    this.setState({
-      slideData: slideData
+  hookLiveCoding = content => {
+    console.log("content is ", content);
+    if (content === undefined) {
+      return undefined;
+    } else if (typeof content === "string") {
+      return content;
+    } else if (content.type === LiveCoding) {
+      return (
+        <LiveCoding
+          {...content.props}
+          KeyEventActivate={this.KeyEventActivate}
+        ></LiveCoding>
+      );
+    } else {
+      let tmp = [];
+      if (content.length === undefined) content = [content];
+      for (const child of content) {
+        console.log("child is ", child);
+        if (typeof child === "string") {
+          tmp.push(child);
+        } else {
+          let children = this.hookLiveCoding(child.props.children);
+          let jsx;
+          if (children === undefined) {
+            jsx = <child.type {...child.props} />;
+          } else {
+            jsx = <child.type {...child.props}>{children}</child.type>;
+          }
+          tmp.push(jsx);
+        }
+      }
+      return tmp;
+    }
+  };
+
+  extractPage = props => {
+    let length = 1;
+    let tmp = props.children.map(section => {
+      let pages = section.props.children;
+      if (pages.length === undefined) pages = [pages];
+
+      return {
+        sTitle: section.props.title,
+        pages: pages.map(page => {
+          length++;
+          return {
+            sTitle: this.getText(page.props.children[0].props.children),
+            title: page.props.children[0],
+            // content: (
+            //   <PageContent>
+            //     {this.hookLiveCoding(page.props.children[1].props.children)}
+            //   </PageContent>
+            // )
+            content: page.props.children[1]
+          };
+        })
+      };
     });
-  }
+
+    return {
+      length: length,
+      cover: {
+        sTitle: `${("00" + props.no).slice(-2)}.${props.title}`,
+        title: (
+          <PageTitle>{`${props.lectureID}: ${props.lectureName} ${(
+            "00" + props.no
+          ).slice(-2)}.${props.title}`}</PageTitle>
+        ),
+        content: (
+          <PageContent>
+            <h2>Scott Uk-Jin Lee</h2>
+
+            <p className="license">
+              Reproduced with permission of the authors. Copyright 2012 Marty
+              Stepp, Jessica Miller, and Victoria Kirst. All rights reserved.
+              Further reproduction or distribution is prohibited without written
+              permission.
+            </p>
+
+            <div className="w3c">
+              <a href="https://validator.w3.org/check/referer">
+                <img
+                  src="./CSE3026 - 08. JavaScript_files/w3c-html.png"
+                  alt="Valid HTML 5"
+                />
+              </a>
+              <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img
+                  src="./CSE3026 - 08. JavaScript_files/w3c-css.png"
+                  alt="Valid CSS!"
+                />
+              </a>
+            </div>
+          </PageContent>
+        )
+      },
+      sections: tmp
+    };
+  };
 
   handleActive = value => {
     this.setState({
@@ -127,7 +174,8 @@ class Slide extends Component {
   };
 
   handleIndex = index => {
-    if (index >= 0 && index < this.state.pageContents.length) {
+    console.log(index);
+    if (index >= 0 && index < this.state.slideData.length) {
       this.setState({
         currentIndex: index
       });
@@ -135,21 +183,88 @@ class Slide extends Component {
   };
 
   handleKeyEvent = event => {
-    if (event.code === "ArrowRight") {
-      this.handleIndex(this.state.currentIndex + 1);
-    } else if (event.code === "ArrowLeft") {
-      this.handleIndex(this.state.currentIndex - 1);
-    } else if (event.code === "Space") {
-      this.handleIndex(this.state.currentIndex + 1);
+    if (this.state.KeyEventActive) {
+      if (event.code === "ArrowRight") {
+        this.handleIndex(this.state.currentIndex + 1);
+      } else if (event.code === "ArrowLeft") {
+        this.handleIndex(this.state.currentIndex - 1);
+      } else if (event.code === "Space") {
+        this.handleIndex(this.state.currentIndex + 1);
+      }
     }
   };
 
-  constructOverview = () => {
-    let slideIndex = this.state.slideIndex;
+  KeyEventActivate = value => {
+    this.setState({ KeyEventActive: value });
+  };
+
+  constructOverview = slideData => {
+    let index = 0;
+    return [
+      <li onClick={() => this.handleIndex(0)} key="cover">
+        <h2>{slideData.cover.sTitle}</h2>
+      </li>
+    ].concat(
+      slideData.sections.map((section, sIndex) => {
+        let tmp = 0;
+        let jsx = section.pages.map((page, pIndex) => {
+          tmp++;
+          let rIndex = pIndex + index + 1;
+          return (
+            <li
+              onClick={() => this.handleIndex(rIndex)}
+              key={sIndex + "_" + pIndex}
+            >
+              {page.sTitle}
+            </li>
+          );
+        });
+        index = tmp;
+        return (
+          <li key={sIndex}>
+            <h3>{section.sTitle}</h3>
+            <ul>{jsx}</ul>
+          </li>
+        );
+      })
+    );
+  };
+
+  constructPages = slideData => {
+    let index = 1;
+    let jsx = [
+      <div
+        className={`lecture_note_item${
+          0 === this.state.currentIndex ? "" : " deactive"
+        }`}
+        key="cover"
+      >
+        {slideData.cover.title}
+        <hr />
+        {slideData.cover.content}
+      </div>
+    ];
+    for (const section of slideData.sections) {
+      for (const page of section.pages) {
+        let i = index++;
+        jsx.push(
+          <div
+            className={`lecture_note_item${
+              i === this.state.currentIndex ? "" : " deactive"
+            }`}
+            key={index}
+          >
+            {page.title}
+            <hr />
+            {page.content}
+          </div>
+        );
+      }
+    }
+    return jsx;
   };
 
   render() {
-    console.log(this.state);
     return (
       <>
         <Header></Header>
@@ -160,17 +275,7 @@ class Slide extends Component {
             }`}
           >
             <nav className="sider_bar">
-              {this.state.slideIndex.map((item, index) => {
-                return (
-                  <div
-                    className="slide_index_item"
-                    onClick={() => this.handleIndex(index)}
-                    key={index}
-                  >
-                    {item}
-                  </div>
-                );
-              })}
+              <ul>{this.state.overviewJsx}</ul>
             </nav>
           </div>
           <div className="sider_bar_button_wrap">
@@ -184,20 +289,12 @@ class Slide extends Component {
             </button>
           </div>
 
-          <div className="lecture_note_wrap">
-            {this.state.pageContents.map((item, index) => {
-              return (
-                <div
-                  className={`lecture_note_item${
-                    index === this.state.currentIndex ? "" : " deactive"
-                  }`}
-                  key={index}
-                >
-                  {this.state.pageTitles[index]}
-                  {item}
-                </div>
-              );
-            })}
+          <div
+            className={`lecture_note_wrap${
+              this.state.siderBarActive ? "" : " sider_deactive"
+            }`}
+          >
+            {this.constructPages(this.state.slideData)}
           </div>
         </main>
       </>
