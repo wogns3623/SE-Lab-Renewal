@@ -30,25 +30,25 @@ class Slide extends Component {
     };
 
     window.addEventListener("keyup", this.handleKeyEvent);
+  }
 
-    window.onload = () => {
-      let LiveCodingList = document.querySelectorAll(".LiveCoding .Input");
-      for (const inputComp of LiveCodingList) {
-        compile(inputComp.parentElement);
-        for (const query of [".html", ".css", ".js"]) {
-          inputComp.querySelector(query).onfocus = () => {
-            this.KeyEventActivate(false);
-          };
-          inputComp.querySelector(query).onblur = e => {
-            e.preventDefault();
-            this.KeyEventActivate(true);
-            compile(
-              e.target.parentElement.parentElement.parentElement.parentElement
-            );
-          };
-        }
+  componentDidUpdate() {
+    let LiveCodingList = document.querySelectorAll(".LiveCoding .Input");
+    for (const inputComp of LiveCodingList) {
+      compile(inputComp.parentElement);
+      for (const query of [".html", ".css", ".js"]) {
+        inputComp.querySelector(query).onfocus = () => {
+          this.KeyEventActivate(false);
+        };
+        inputComp.querySelector(query).onblur = e => {
+          e.preventDefault();
+          this.KeyEventActivate(true);
+          compile(
+            e.target.parentElement.parentElement.parentElement.parentElement
+          );
+        };
       }
-    };
+    }
   }
 
   getText = item => {
