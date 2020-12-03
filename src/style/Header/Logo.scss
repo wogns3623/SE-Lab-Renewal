@@ -1,0 +1,16 @@
+@import "headerStyle";
+
+.Logo {
+  height: 100%;
+
+  a {
+    margin: $headerMargin;
+    display: block;
+
+    img {
+      height: $headerLogoHeight;
+      margin: $headerMargin;
+      vertical-align: middle;
+    }
+  }
+}
