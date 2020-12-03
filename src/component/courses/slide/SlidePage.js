@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class SlidePage extends Component {
   static defaultProps = {
-    className: ""
+    className: "",
   };
 
   render() {

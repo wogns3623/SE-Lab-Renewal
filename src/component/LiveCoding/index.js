@@ -9,18 +9,19 @@ class LiveCoding extends Component {
     defaultValue: {
       html: "",
       css: "",
-      js: ""
-    }
+      js: "",
+      title: "untitled",
+    },
   };
   state = {
-    result: ""
+    result: "",
   };
 
   render() {
     return (
       <div className="LiveCoding">
         <Input compile={this.compile} defaultValue={this.props.defaultValue} />
-        <Output result={this.state.result} />
+        <Output result={this.state.result} title={this.props.title} />
       </div>
     );
   }

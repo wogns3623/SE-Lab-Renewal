@@ -7,4 +7,3 @@ export { default as Courses } from "./Courses";
 export { default as Gallery } from "./Gallery";
 export { default as Slide } from "./Slide";
 export { default as NoMatch } from "./NoMatch";
-export { default as Test } from "./Test";

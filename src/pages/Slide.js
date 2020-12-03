@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Slide, {
-  SlideTitle,
   SlidePage,
   SlideSection,
   PageTitle,
-  PageContent
+  PageContent,
 } from "component/courses/slide";
 import LiveCoding from "component/LiveCoding";
 
@@ -158,7 +157,8 @@ class Slider extends Component {
                   js: `
 document.getElementById("a").onclick = () => {
   document.getElementById("field").innerHTML += "<div>a clicked</div>"
-}`
+}`,
+                  title: "Number type",
                 }}
               />
             </PageContent>
