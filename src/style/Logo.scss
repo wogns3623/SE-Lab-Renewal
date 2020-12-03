@@ -1,13 +1,15 @@
-.Logo a {
-  height: 52px;
-  padding: 0 8px;
-  font-size: 18px;
-  font-weight: 400;
-  color: white;
-  display: block;
-}
+.Logo {
+  a {
+    height: 52px;
+    padding: 0 8px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    display: block;
 
-.Logo a img {
-  width: 100px;
-  vertical-align: middle;
+    img {
+      width: 100px;
+      vertical-align: middle;
+    }
+  }
 }
