@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./style/dropdownMenu.scss";
 import Menu from "./Menu";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class DropdownMenu extends Component {
   render() {
@@ -13,9 +13,14 @@ class DropdownMenu extends Component {
           (this.props.className !== undefined ? " " + this.props.className : "")
         }
       >
-        <Link to={this.props.to}>
+        <NavLink
+          to={this.props.to}
+          activeStyle={{
+            backgroundColor: "#212f3d",
+          }}
+        >
           <div className="btn">{this.props.title}</div>
-        </Link>
+        </NavLink>
         <Menu className="content">{this.props.children}</Menu>
       </div>
     );
