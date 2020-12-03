@@ -13,17 +13,8 @@ class DropdownMenu extends Component {
           (this.props.className !== undefined ? " " + this.props.className : "")
         }
       >
-        <Link
-          to={{
-            pathname:
-              this.props.pathname === undefined
-                ? "/" + this.props.title.toLowerCase()
-                : this.props.pathname
-          }}
-        >
-          <span className="btn">
-            <span>{this.props.title}</span>
-          </span>
+        <Link to={this.props.to}>
+          <div className="btn">{this.props.title}</div>
         </Link>
         <Menu className="content">{this.props.children}</Menu>
       </div>

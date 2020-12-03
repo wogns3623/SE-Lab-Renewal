@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "./style/menu.scss";
 class MenuItem extends Component {
   render() {
-    return <div className="item">{this.props.children}</div>;
+    return (
+      <div className="react-MenuItem">
+        <Link to={this.props.to}>
+          <div className="item">{this.props.children}</div>
+        </Link>
+      </div>
+    );
   }
 }
 
@@ -20,11 +27,7 @@ class Menu extends Component {
           (this.props.className !== undefined ? " " + this.props.className : "")
         }
       >
-        {children.map((item, index) => (
-          <div className="react-MenuItem" key={index}>
-            {item}
-          </div>
-        ))}
+        {children.map((item, index) => item)}
       </div>
     );
   }

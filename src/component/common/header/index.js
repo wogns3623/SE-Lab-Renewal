@@ -11,27 +11,27 @@ class Header extends Component {
   state = {
     menu: [
       {
-        name: "notice"
+        name: "notice",
       },
       {
-        name: "members"
+        name: "members",
       },
       {
-        name: "research"
+        name: "research",
       },
       {
-        name: "publications"
+        name: "publications",
       },
       {
-        name: "courses"
+        name: "courses",
       },
       {
-        name: "gallery"
+        name: "gallery",
       },
       {
-        name: "login"
-      }
-    ]
+        name: "login",
+      },
+    ],
   };
   render() {
     return (
@@ -39,162 +39,155 @@ class Header extends Component {
         <nav role="navigation">
           <Logo></Logo>
           <Menu className="pull-left">
-            <Link
-              to={{
-                pathname: `/notice`
-              }}
-            >
-              <MenuItem>NOTICE</MenuItem>
-            </Link>
-            <Link
-              to={{
-                pathname: "/members"
-              }}
-            >
-              <MenuItem>MEMBERS</MenuItem>
-            </Link>
-            <DropdownMenu title="RESEARCH">
-              <Link
+            <MenuItem to="/notice">NOTICE</MenuItem>
+
+            <MenuItem to="/members">MEMBERS</MenuItem>
+
+            <DropdownMenu title="RESEARCH" to="/research">
+              <MenuItem
                 to={{
-                  pathname: `/research`,
+                  pathname: "/research",
                   state: {
-                    tabIndex: 0
-                  }
+                    tabIndex: 0,
+                  },
                 }}
               >
-                <MenuItem>Introduction</MenuItem>
-              </Link>
-              <Link
+                Introduction
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/research`,
+                  pathname: "/research",
                   state: {
-                    tabIndex: 1
-                  }
+                    tabIndex: 1,
+                  },
                 }}
               >
-                <MenuItem>Project</MenuItem>
-              </Link>
+                Project
+              </MenuItem>
             </DropdownMenu>
-            <DropdownMenu title="PUBLICATIONS">
-              <Link
+
+            <DropdownMenu title="PUBLICATIONS" to="/publications">
+              <MenuItem
                 to={{
-                  pathname: `/publications`,
+                  pathname: "/publications",
                   state: {
-                    tabIndex: 0
-                  }
+                    tabIndex: 0,
+                  },
                 }}
               >
-                <MenuItem>All</MenuItem>
-              </Link>
-              <Link
+                All
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/publications`,
+                  pathname: "/publications",
                   state: {
-                    tabIndex: 1
-                  }
+                    tabIndex: 1,
+                  },
                 }}
               >
-                <MenuItem>International Conference</MenuItem>
-              </Link>
-              <Link
+                International Conference
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/publications`,
+                  pathname: "/publications",
                   state: {
-                    tabIndex: 2
-                  }
+                    tabIndex: 2,
+                  },
                 }}
               >
-                <MenuItem>International Journal</MenuItem>
-              </Link>
-              <Link
+                International Journal
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/publications`,
+                  pathname: "/publications",
                   state: {
-                    tabIndex: 3
-                  }
+                    tabIndex: 3,
+                  },
                 }}
               >
-                <MenuItem>Domestic Conference</MenuItem>
-              </Link>
-              <Link
+                Domestic Conference
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/publications`,
+                  pathname: "/publications",
                   state: {
-                    tabIndex: 4
-                  }
+                    tabIndex: 4,
+                  },
                 }}
               >
-                <MenuItem>Domestic Journal</MenuItem>
-              </Link>
+                Domestic Journal
+              </MenuItem>
             </DropdownMenu>
-            <DropdownMenu title="GALLERY">
-              <Link
+
+            <DropdownMenu title="GALLERY" to="/gallery">
+              <MenuItem
                 to={{
-                  pathname: `/gallery`,
+                  pathname: "/gallery",
                   state: {
-                    tabIndex: 0
-                  }
+                    tabIndex: 0,
+                  },
                 }}
               >
-                <MenuItem>All</MenuItem>
-              </Link>
-              <Link
+                All
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/gallery`,
+                  pathname: "/gallery",
                   state: {
-                    tabIndex: 1
-                  }
+                    tabIndex: 1,
+                  },
                 }}
               >
-                <MenuItem>Social</MenuItem>
-              </Link>
-              <Link
+                Social
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/gallery`,
+                  pathname: "/gallery",
                   state: {
-                    tabIndex: 2
-                  }
+                    tabIndex: 2,
+                  },
                 }}
               >
-                <MenuItem>Conference</MenuItem>
-              </Link>
-              <Link
+                Conference
+              </MenuItem>
+              <MenuItem
                 to={{
-                  pathname: `/gallery`,
+                  pathname: "/gallery",
                   state: {
-                    tabIndex: 3
-                  }
+                    tabIndex: 3,
+                  },
                 }}
               >
-                <MenuItem>ETC.</MenuItem>
-              </Link>
+                ETC.
+              </MenuItem>
             </DropdownMenu>
-            <DropdownMenu title="COURSES">
+
+            <DropdownMenu title="COURSES" to="/courses">
               <DropdownMenu
                 className="rightdrop"
                 title="Web App"
-                pathname={`/courses/cse326`}
+                to="/courses/cse326"
               >
-                <Link
+                <MenuItem
                   to={{
-                    pathname: `/courses/cse326`,
+                    pathname: "/courses/cse326",
                     state: {
-                      tabIndex: 0
-                    }
+                      tabIndex: 0,
+                    },
                   }}
                 >
-                  <MenuItem>Home</MenuItem>
-                </Link>
-                <Link
+                  Home
+                </MenuItem>
+                <MenuItem
                   to={{
-                    pathname: `/courses/cse326`,
+                    pathname: "/courses/cse326",
                     state: {
-                      tabIndex: 1
-                    }
+                      tabIndex: 1,
+                    },
                   }}
                 >
-                  <MenuItem>Slides</MenuItem>
-                </Link>
+                  Slides
+                </MenuItem>
               </DropdownMenu>
             </DropdownMenu>
           </Menu>
