@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import gmail from "../../assets/images/gmail.png";
+import gmail from "assets/images/gmail.png";
 
 class ProfileContents extends Component {
   render() {
