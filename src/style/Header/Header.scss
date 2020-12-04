@@ -1,0 +1,18 @@
+@import "headerStyle";
+
+header {
+  width: 100%;
+  min-width: $headerNavMinWidth;
+  line-height: $headerHeight;
+  height: $headerHeight;
+  background-color: $headerBGColor;
+  box-shadow: $headerShadow;
+  position: sticky;
+  top: 0;
+  z-index: $headerIndex;
+
+  nav {
+    width: $headerNavMinWidth;
+    margin: 0 auto;
+  }
+}

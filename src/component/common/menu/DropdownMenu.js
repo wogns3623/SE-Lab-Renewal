@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./style/dropdownMenu.scss";
+import "style/Header/dropdownMenu.scss";
 import Menu from "./Menu";
 import { NavLink } from "react-router-dom";
 

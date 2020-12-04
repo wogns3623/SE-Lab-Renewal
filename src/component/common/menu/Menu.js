@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import "./style/menu.scss";
+import "style/Header/menu.scss";
 class MenuItem extends Component {
   render() {
     return (
-      <div className="react-MenuItem">
+      <div className="item">
         <NavLink
           to={this.props.to}
           activeStyle={{

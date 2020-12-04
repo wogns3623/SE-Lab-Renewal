@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DropdownMenu from "component/common/menu/DropdownMenu";
 import Menu, { MenuItem } from "component/common/menu/Menu";
 import Logo from "./Logo.js";
-import "style/Header.scss";
+import "style/Header/Header.scss";
 
 class Header extends Component {
   state = {

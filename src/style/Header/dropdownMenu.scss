@@ -1,0 +1,47 @@
+@import "headerStyle";
+
+.react-Dropdown {
+  width: 100%;
+  height: 100%;
+  background-color: $headerBGColor;
+  font-family: $headerFont;
+  font-weight: normal;
+  position: relative;
+
+  .content {
+    display: none;
+    position: absolute;
+    width: inherit;
+    line-height: $headerDropDownMenuHeight;
+    box-shadow: $headerShadow;
+
+    .item {
+      width: 100%;
+      height: $headerDropDownMenuHeight;
+      line-height: $headerDropDownMenuHeight/3;
+      word-break: break-word;
+      text-align: center;
+    }
+  }
+
+  .btn {
+    margin: $headerMargin;
+    display: flex;
+    justify-content: center;
+    color: $headerColor;
+  }
+
+  &:hover {
+    background-color: $headerMenuHoverColor;
+
+    & > .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &.rightdrop .content {
+    top: 0px;
+    left: 100%;
+  }
+}
