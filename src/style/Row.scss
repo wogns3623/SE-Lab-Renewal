@@ -1,66 +1,60 @@
-.Row ul {
-  margin: 0;
-  display: flex;
-  list-style: none;
-  padding: 0;
-  /*flex했지뭐야~*/
-}
+.Row_container {
+  .Row_summery {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
 
-.Row li.title {
-  line-height: 300%;
-  font-size: 20px;
-  text-align: center;
-  flex-basis: 800px;
-  text-align: left;
-  background-color: #ecf0f1;
-  border-right: 1px solid slategray;
-  border-bottom: 1px solid slategray;
-  padding-left: 20px;
-  padding-right: 20px;
-  list-style: none;
-}
+    & > li {
+      line-height: 300%;
+      font-size: 20px;
+      flex-basis: 800px;
+      background-color: #ecf0f1;
+      border-right: 1px solid slategray;
+      border-bottom: 1px solid slategray;
+      padding-left: 20px;
+      padding-right: 20px;
+      list-style: none;
 
-.Row li.name {
-  line-height: 300%;
-  font-size: 20px;
-  text-align: center;
-  flex-basis: 200px;
-  text-align: left;
-  background-color: #ecf0f1;
-  border-right: 1px solid slategray;
-  border-bottom: 1px solid slategray;
-  padding-left: 20px;
-  padding-right: 20px;
-  list-style: none;
-}
+      &.title {
+        flex-basis: 800px;
+        text-align: left;
+      }
 
-.Row li.date {
-  line-height: 300%;
-  font-size: 20px;
-  text-align: center;
-  flex-basis: 200px;
-  background-color: #ecf0f1;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-right: 1px solid slategray;
-  border-bottom: 1px solid slategray;
-  list-style: none;
-}
+      &.name,
+      &.date {
+        flex-basis: 200px;
+        text-align: center;
+      }
+    }
+  }
 
-.row_content {
-  display: flex;
-  width: 100%;
-  min-height: 0px;
-  font-size: 20px;
-  text-align: center;
-  background-color: slategrey;
-  transition: height 0.5s;
-  overflow-y: hidden;
-}
+  .Row_content {
+    display: flex;
+    width: 100%;
+    min-height: 0px;
+    font-size: 20px;
+    text-align: center;
+    background-color: slategrey;
+    transition: height 0.5s;
+    overflow-y: hidden;
 
-.row_content.appear {
-  height: 230px;
-}
-.row_content.hide {
-  height: 0px;
+    &.appear {
+      height: 230px;
+    }
+
+    &.hide {
+      height: 0px;
+    }
+  }
+
+  &.disabled {
+    .Row_summery > li {
+      background-color: #849ea5;
+
+      &.title {
+        text-align: center;
+      }
+    }
+  }
 }
