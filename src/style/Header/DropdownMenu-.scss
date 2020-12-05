@@ -1,42 +1,34 @@
 @import "headerStyle";
 
 .react-Dropdown {
-  width: 100%;
-  height: 100%;
-  background-color: $headerBGColor;
-  font-family: $headerFont;
-  font-weight: normal;
   position: relative;
 
   .content {
     display: none;
     position: absolute;
-    width: inherit;
-    line-height: $headerDropDownMenuHeight;
     box-shadow: $headerShadow;
+    top: 100%;
+    width: 100%;
 
-    .item {
-      width: 100%;
+    a {
       height: $headerDropDownMenuHeight;
       line-height: $headerDropDownMenuHeight/3;
       word-break: break-word;
       text-align: center;
+      flex: 0 0 auto;
+      justify-content: center;
     }
   }
+  &.mouseOver-true {
+    box-shadow: $headerShadow;
 
-  .btn {
-    margin: $headerMargin;
-    display: flex;
-    justify-content: center;
-    color: $headerColor;
-  }
-
-  &:hover {
-    background-color: $headerMenuHoverColor;
-
-    & > .content {
+    .content {
       display: flex;
       flex-direction: column;
+    }
+
+    > a {
+      background-color: $headerMenuHoverColor;
     }
   }
 

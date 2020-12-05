@@ -1,0 +1,26 @@
+@import "headerStyle";
+.react-Menu {
+  font-family: $headerFont;
+  display: flex;
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    background-color: $headerBGColor;
+
+    &:hover {
+      background-color: $headerMenuHoverColor;
+    }
+  }
+
+  &-item {
+    color: $headerColor;
+    font-size: $headerFontSize;
+    margin: $headerMargin;
+    align-self: center;
+  }
+}
