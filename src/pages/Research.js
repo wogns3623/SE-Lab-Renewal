@@ -7,17 +7,31 @@ import "style/Research.scss";
 import research from "component/research/research.json";
 
 class Research extends Component {
+  state = {
+    selectedIndex: 0,
+  };
+
+  static getDerivedStateFromProps(props) {
+    if (props.location.state == null) {
+      return { selectedIndex: 0 };
+    } else {
+      return { selectedIndex: props.location.state.tabIndex };
+    }
+  }
+
+  onSelect = (index) => {
+    this.props.history.replace("/research", {
+      tabIndex: index,
+    });
+  };
+
   render() {
     return (
       <PageTemplate className="Research">
         <Tabs
+          defaultIndex={this.state.selectedIndex}
+          onSelect={this.onSelect}
           selectedTabClassName="active"
-          defaultIndex={
-            this.props.location.state === null ||
-            this.props.location.state === undefined
-              ? 0
-              : this.props.location.state.tabIndex
-          }
         >
           <TabList className="TabMenu">
             <Tab className="Item">Introduction</Tab>
