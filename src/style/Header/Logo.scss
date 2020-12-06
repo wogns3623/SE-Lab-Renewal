@@ -4,12 +4,12 @@
   height: 100%;
 
   a {
-    margin: $headerMargin;
+    margin: $headerMargin 0 0;
     display: block;
 
     img {
       height: $headerLogoHeight;
-      margin: $headerMargin;
+      margin: $headerMargin 0 0;
       vertical-align: middle;
     }
   }
