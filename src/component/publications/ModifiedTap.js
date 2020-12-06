@@ -2,20 +2,22 @@ import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
 import Table from "component/publications/table.js";
+
 import "style/Publications.scss";
+import "style/Tab.scss";
 
 class ModifiedTap extends Component {
   state = {
-    currentTab: 0
+    currentTab: 0,
   };
 
   componentDidMount() {
     this.selectTab(this.props.initialTabIndex);
   }
 
-  selectTab = index => {
+  selectTab = (index) => {
     this.setState({
-      currentTab: index
+      currentTab: index,
     });
   };
 
@@ -37,7 +39,7 @@ class ModifiedTap extends Component {
           {[
             item.list.map((ICinfo, index) => (
               <Table {...ICinfo} key={index}></Table>
-            ))
+            )),
           ]}
         </ul>
       </div>
@@ -56,7 +58,7 @@ class ModifiedTap extends Component {
           onClickFunc={this.selectTab}
         ></TabMenu>
 
-        <div id="hl"></div>
+        <hr />
 
         <div className="Contents">{this.props.contents.map(this.disable)}</div>
       </div>

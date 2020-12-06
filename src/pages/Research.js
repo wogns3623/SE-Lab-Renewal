@@ -3,7 +3,10 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTemplate from "component/common/template/PageTemplate";
 import Subject from "component/research/Subject";
+
 import "style/Research.scss";
+import "style/Tab.scss";
+
 import research from "component/research/research.json";
 
 class Research extends Component {
@@ -38,7 +41,7 @@ class Research extends Component {
             <Tab className="Item">Project</Tab>
           </TabList>
 
-          <div id="hl"></div>
+          <hr />
 
           <TabPanel>
             {research.map((researchInfo, index) => (

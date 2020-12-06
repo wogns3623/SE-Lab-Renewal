@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 
 import TabMenu from "component/common/tab/TabMenu.js";
-import "style/Gallery.scss";
 import GalleryTable from "component/gallery/GalleryTable.js";
+
+import "style/Gallery.scss";
+import "style/Tab.scss";
 
 class GalleryTab extends Component {
   state = {
     currentTab: 0,
     RisActive: false,
     readmore: "yes",
-    count: 10
+    count: 10,
   };
 
   readmoreCount = [0, 0, 0, 0];
@@ -18,33 +20,33 @@ class GalleryTab extends Component {
     this.selectTab(this.props.initialTabIndex);
   }
 
-  selectTab = index => {
+  selectTab = (index) => {
     this.setState({
-      currentTab: index
+      currentTab: index,
     });
     this.readmore(false);
     if (this.readmoreCount[index] <= this.state.count) {
       this.setState({
-        readmore: "no"
+        readmore: "no",
       });
     }
     this.readmoreCount[index] = 0;
   };
 
-  readmore = value => {
+  readmore = (value) => {
     if (!value) {
       this.setState({
-        RisActive: false
+        RisActive: false,
       });
       this.setState({
-        readmore: "yes"
+        readmore: "yes",
       });
     } else {
       this.setState({
-        RisActive: true
+        RisActive: true,
       });
       this.setState({
-        readmore: "no"
+        readmore: "no",
       });
     }
   };
@@ -83,7 +85,9 @@ class GalleryTab extends Component {
           })}
           onClickFunc={this.selectTab}
         ></TabMenu>
-        <div id="hl"></div>
+
+        <hr />
+
         <div className="Contents">
           {this.props.contents.map(this.disable)}
           <div className="Rbtn">
