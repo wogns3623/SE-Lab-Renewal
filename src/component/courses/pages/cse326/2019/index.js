@@ -26,7 +26,7 @@ class cse326 extends Component {
             <Tab className="Item">Slides</Tab>
           </TabList>
 
-          <div id="hl"></div>
+          <hr />
 
           <TabPanel>
             <Home></Home>
