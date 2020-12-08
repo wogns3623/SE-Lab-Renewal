@@ -3,31 +3,50 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTemplate from "component/common/template/PageTemplate";
 import Subject from "component/research/Subject";
+
+import data from "assets/data/research.json";
+
 import "style/Research.scss";
-import research from "component/research/research.json";
+import "style/Tab.scss";
 
 class Research extends Component {
+  state = {
+    tabIndex: 0,
+  };
+
+  static getDerivedStateFromProps(props) {
+    if (props.location.state == null) {
+      return { tabIndex: 0 };
+    } else {
+      return { tabIndex: props.location.state.tabIndex };
+    }
+  }
+
+  onSelect = (index) => {
+    this.props.history.replace("/research", {
+      tabIndex: index,
+    });
+  };
+
   render() {
     return (
       <PageTemplate className="Research">
+        <h1>RESEARCH</h1>
+
         <Tabs
+          selectedIndex={this.state.tabIndex}
+          onSelect={this.onSelect}
           selectedTabClassName="active"
-          defaultIndex={
-            this.props.location.state === null ||
-            this.props.location.state === undefined
-              ? 0
-              : this.props.location.state.tabIndex
-          }
         >
           <TabList className="TabMenu">
             <Tab className="Item">Introduction</Tab>
             <Tab className="Item">Project</Tab>
           </TabList>
 
-          <div id="hl"></div>
+          <hr />
 
           <TabPanel>
-            {research.map((researchInfo, index) => (
+            {data.map((researchInfo, index) => (
               <Subject {...researchInfo} key={index}></Subject>
             ))}
           </TabPanel>

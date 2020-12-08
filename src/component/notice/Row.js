@@ -35,10 +35,7 @@ class Row extends Component {
     );
 
     let content = (
-      <div
-        className={"Row_content " + (this.state.isOn ? "hide" : "appear")}
-        onClick={this.handleClick}
-      >
+      <div className={"Row_content " + (this.state.isOn ? "hide" : "appear")}>
         {this.props.value}
       </div>
     );

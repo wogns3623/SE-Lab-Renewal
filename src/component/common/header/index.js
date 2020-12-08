@@ -3,6 +3,8 @@ import DropdownMenu from "component/common/menu/DropdownMenu";
 import Menu, { MenuItem } from "component/common/menu/Menu";
 import Logo from "./Logo.js";
 import "style/Header/Header.scss";
+import "style/Header/Menu.scss";
+import "style/Header/DropdownMenu.scss";
 
 class Header extends Component {
   state = {
@@ -31,14 +33,21 @@ class Header extends Component {
     ],
   };
   render() {
+    let activeStyle = {
+      backgroundColor: "#212f3d",
+    };
     return (
       <header role="banner">
         <nav role="navigation">
           <Logo></Logo>
           <Menu className="pull-left">
-            <MenuItem to="/notice">NOTICE</MenuItem>
+            <MenuItem to="/notice" activeStyle={activeStyle}>
+              NOTICE
+            </MenuItem>
 
-            <MenuItem to="/members">MEMBERS</MenuItem>
+            <MenuItem to="/members" activeStyle={activeStyle}>
+              MEMBERS
+            </MenuItem>
 
             <DropdownMenu title="RESEARCH" to="/research">
               <MenuItem
@@ -48,6 +57,7 @@ class Header extends Component {
                     tabIndex: 0,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Introduction
               </MenuItem>
@@ -58,6 +68,7 @@ class Header extends Component {
                     tabIndex: 1,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Project
               </MenuItem>
@@ -71,6 +82,7 @@ class Header extends Component {
                     tabIndex: 0,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 All
               </MenuItem>
@@ -81,6 +93,7 @@ class Header extends Component {
                     tabIndex: 1,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 International Conference
               </MenuItem>
@@ -91,6 +104,7 @@ class Header extends Component {
                     tabIndex: 2,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 International Journal
               </MenuItem>
@@ -101,6 +115,7 @@ class Header extends Component {
                     tabIndex: 3,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Domestic Conference
               </MenuItem>
@@ -111,6 +126,7 @@ class Header extends Component {
                     tabIndex: 4,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Domestic Journal
               </MenuItem>
@@ -124,6 +140,7 @@ class Header extends Component {
                     tabIndex: 0,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 All
               </MenuItem>
@@ -134,6 +151,7 @@ class Header extends Component {
                     tabIndex: 1,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Social
               </MenuItem>
@@ -144,6 +162,7 @@ class Header extends Component {
                     tabIndex: 2,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 Conference
               </MenuItem>
@@ -154,6 +173,7 @@ class Header extends Component {
                     tabIndex: 3,
                   },
                 }}
+                activeStyle={activeStyle}
               >
                 ETC.
               </MenuItem>
@@ -172,6 +192,7 @@ class Header extends Component {
                       tabIndex: 0,
                     },
                   }}
+                  activeStyle={activeStyle}
                 >
                   Home
                 </MenuItem>
@@ -182,6 +203,7 @@ class Header extends Component {
                       tabIndex: 1,
                     },
                   }}
+                  activeStyle={activeStyle}
                 >
                   Slides
                 </MenuItem>

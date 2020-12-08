@@ -1,112 +1,110 @@
 .Course {
-    margin-top: 30px;
+  .CourseTable {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
 
-    .CourseTable {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        display: flex;
-
-        .over {
-            overflow: auto;
-            border-radius: 0px 3px 0px 0px;
-        }
-
-        .over::-webkit-scrollbar {
-            display: none;
-        }
-
-        .info {
-            flex: 0 0 370px;
-            float: left;
-            border-right: 1px solid #dfdfdf;
-        }
-
-        .data {
-            overflow: auto;
-            flex: 0 0 auto;
-            table-layout: fixed;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0px;
-
-            th {
-                height: 45px;
-                vertical-align: middle;
-                background-color: #0099a4;
-                color: white;
-                text-align: center;
-                border-bottom: 3px solid #dfdfdf;
-                border-right: 1px solid #dfdfdf;
-            }
-
-            tr {
-                background-color: #edf7fa;
-
-                td {
-                    border-bottom: 1px solid #dfdfdf;
-                    border-right: 1px solid #dfdfdf;
-                }
-            }
-
-            tr:nth-child(odd) {
-                background-color: white;
-            }
-
-            td {
-                height: 40px;
-                vertical-align: middle;
-                padding: 0px;
-                text-align: center;
-            }
-        }
-
-        .data {
-            th {
-                min-width: 70px;
-            }
-        }
-
-        .name {
-            width: 300px;
-            border-right: 2px solid #dfdfdf;
-        }
-
-        .id {
-            width: 70px;
-        }
-
-        td:last-child {
-            border-right: none;
-        }
-
-        .active {
-            td {
-                background-color: #4ddebc;
-                color: white;
-                cursor: pointer;
-            }
-        }
-
-        .active:hover td {
-            background-color: #ff2c97;
-        }
-
-        .circle {
-            width: 20px;
-            height: 20px;
-            background-color: #18bc9c;
-            -moz-border-radius: 50px;
-            -webkit-border-radius: 50px;
-            border-radius: 50px;
-            display: inline-block;
-        }
-
-        .info {
-            th:first-of-type {
-                border-radius: 3px 0px 0px 0px;
-            }
-        }
+    .over {
+      overflow: auto;
+      border-radius: 0px 3px 0px 0px;
     }
+
+    .over::-webkit-scrollbar {
+      display: none;
+    }
+
+    .info {
+      flex: 0 0 370px;
+      float: left;
+      border-right: 1px solid #dfdfdf;
+    }
+
+    .data {
+      overflow: auto;
+      flex: 0 0 auto;
+      table-layout: fixed;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0px;
+
+      th {
+        height: 45px;
+        vertical-align: middle;
+        background-color: #0099a4;
+        color: white;
+        text-align: center;
+        border-bottom: 3px solid #dfdfdf;
+        border-right: 1px solid #dfdfdf;
+      }
+
+      tr {
+        background-color: #edf7fa;
+
+        td {
+          border-bottom: 1px solid #dfdfdf;
+          border-right: 1px solid #dfdfdf;
+        }
+      }
+
+      tr:nth-child(odd) {
+        background-color: white;
+      }
+
+      td {
+        height: 40px;
+        vertical-align: middle;
+        padding: 0px;
+        text-align: center;
+      }
+    }
+
+    .data {
+      th {
+        min-width: 70px;
+      }
+    }
+
+    .name {
+      width: 300px;
+      border-right: 2px solid #dfdfdf;
+    }
+
+    .id {
+      width: 70px;
+    }
+
+    td:last-child {
+      border-right: none;
+    }
+
+    .active {
+      td {
+        background-color: #4ddebc;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    .active:hover td {
+      background-color: #ff2c97;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: #18bc9c;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .info {
+      th:first-of-type {
+        border-radius: 3px 0px 0px 0px;
+      }
+    }
+  }
 }

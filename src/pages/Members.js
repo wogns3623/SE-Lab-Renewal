@@ -12,7 +12,7 @@ class Members extends Component {
         name: "Scott Uk-Jin Lee",
         image: {
           src: "assets/images/members/scott.png",
-          alt: "Scott Uk-Jin Lee"
+          alt: "Scott Uk-Jin Lee",
         },
         position: "Associate Professor",
         division: "Division of Computer Science",
@@ -23,7 +23,7 @@ class Members extends Component {
         location: "Cluster. Rm#620",
         career: [
           "an asst. prof. in the CSE Dept. @ HYU (ERICA)",
-          "leading this Laboratory!"
+          "leading this Laboratory!",
         ],
         interestTitle: "Career",
         interest: [
@@ -32,14 +32,14 @@ class Members extends Component {
           "2005 ~ 2006 : SE Programmer in SE Dept. @ University of Auckland, NZ",
           "2004 ~ 2004 : Visiting Researcher @ National University of Singapore",
           "2004 ~ 2008 : Ph.D in Computer Science @ University of Auckland, NZ",
-          "2000 ~ 2003 : BE in Software Engineering @ University of Auckland, NZ"
-        ]
+          "2000 ~ 2003 : BE in Software Engineering @ University of Auckland, NZ",
+        ],
       },
       {
         name: "Isma Farah",
         image: {
           src: "assets/images/members/Isma.png",
-          alt: "Isma"
+          alt: "Isma",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -55,14 +55,14 @@ class Members extends Component {
           "Web Applications",
           "Semantic Web",
           "Database Management",
-          "Formal Methods"
-        ]
+          "Formal Methods",
+        ],
       },
       {
         name: "Abdul Rahim",
         image: {
           src: "assets/images/members/Abdul.png",
-          alt: "Untitled"
+          alt: "Untitled",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -76,14 +76,14 @@ class Members extends Component {
         interest: [
           "Software Engineering",
           "Hadoop(MapReduce)",
-          "Multithreading"
-        ]
+          "Multithreading",
+        ],
       },
       {
         name: "Asad Abbas",
         image: {
           src: "assets/images/members/Untitled.jpg",
-          alt: "Untitled"
+          alt: "Untitled",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -94,13 +94,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: ["Software Engineering", "Product Line Software Engineering"]
+        interest: ["Software Engineering", "Product Line Software Engineering"],
       },
       {
         name: "Gichan Lee",
         image: {
           src: "assets/images/members/gichan.jpg",
-          alt: "gichan"
+          alt: "gichan",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -113,14 +113,14 @@ class Members extends Component {
         interestTitle: "Research Interests",
         interest: [
           "Software Engineering in practice",
-          "Access Control in IoT environment(project)"
-        ]
+          "Access Control in IoT environment(project)",
+        ],
       },
       {
         name: "Mohsin Javaid",
         image: {
           src: "assets/images/members/mohsin.jpg",
-          alt: "mohsin"
+          alt: "mohsin",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -136,14 +136,14 @@ class Members extends Component {
           "Model Driven Architecture",
           "Internet of Things",
           "Android Application",
-          "Requirement Engineering"
-        ]
+          "Requirement Engineering",
+        ],
       },
       {
         name: "Muhammad Umair Khan",
         image: {
           src: "assets/images/members/khan.jpg",
-          alt: "muhammad umair khan"
+          alt: "muhammad umair khan",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -157,14 +157,14 @@ class Members extends Component {
         interest: [
           "Software Engineering",
           "Concurrent Programming",
-          "Internet of Thing"
-        ]
+          "Internet of Thing",
+        ],
       },
       {
         name: "Gayeon Kim",
         image: {
           src: "assets/images/members/11.jpg",
-          alt: "gayeon Kim"
+          alt: "gayeon Kim",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -178,14 +178,14 @@ class Members extends Component {
         interest: [
           "Software Engineering",
           "Web Application",
-          "Bigdata analysis"
-        ]
+          "Bigdata analysis",
+        ],
       },
       {
         name: "Wu Zhiqiang",
         image: {
           src: "assets/images/members/325115318014822206.jpg",
-          alt: "wu zhiqiang"
+          alt: "wu zhiqiang",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -199,14 +199,14 @@ class Members extends Component {
         interest: [
           "Software engineering",
           "Concurrency Detection",
-          "Malware Detection"
-        ]
+          "Malware Detection",
+        ],
       },
       {
         name: "Gwanggyu Choi",
         image: {
           src: "assets/images/members/gif.gif",
-          alt: "gwanggyu choi"
+          alt: "gwanggyu choi",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -217,13 +217,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: ["Software engineering", "requirement engineering"]
+        interest: ["Software engineering", "requirement engineering"],
       },
       {
         name: "Hyunglak Kim",
         image: {
           src: "assets/images/members/140x175.jpg",
-          alt: "hyunglak kim"
+          alt: "hyunglak kim",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -238,14 +238,14 @@ class Members extends Component {
           "Software Engineering",
           "Crowdsourcing Software Develop",
           "Android Application",
-          "Model Checking"
-        ]
+          "Model Checking",
+        ],
       },
       {
         name: "Dahae Sung",
         image: {
           src: "assets/images/members/CAM00259.jpg",
-          alt: "dahae sung"
+          alt: "dahae sung",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -256,13 +256,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: []
+        interest: [],
       },
       {
         name: "Yongtaek Oh",
         image: {
           src: "http://placehold.it/140x175",
-          alt: "yongtaek oh"
+          alt: "yongtaek oh",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -273,13 +273,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: ["Iot"]
+        interest: ["Iot"],
       },
       {
         name: "Namju Park",
         image: {
           src: "http://placehold.it/140x175",
-          alt: "namju park"
+          alt: "namju park",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -290,13 +290,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: []
+        interest: [],
       },
       {
         name: "Jiang Hua",
         image: {
           src: "assets/images/members/1.jpg",
-          alt: "jiang hua"
+          alt: "jiang hua",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -307,13 +307,13 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: ["Requirement Engineering"]
+        interest: ["Requirement Engineering"],
       },
       {
         name: "Jaeho Choi",
         image: {
           src: "assets/images/members/IMG_2242.JPG",
-          alt: ""
+          alt: "",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -329,14 +329,14 @@ class Members extends Component {
           "A field of Access Control(XACML tools)",
           "Web Application & Security",
           "Cloud Computing Evironment",
-          "Social Network Service"
-        ]
+          "Social Network Service",
+        ],
       },
       {
         name: "Geunhwan Park",
         image: {
           src: "assets/images/members/IMG_0889.jpg",
-          alt: ""
+          alt: "",
         },
         position: "Doctor of Philosophy",
         division: "SELab",
@@ -347,14 +347,16 @@ class Members extends Component {
         website: " ",
         career: [" "],
         interestTitle: "Research Interests",
-        interest: []
-      }
-    ]
+        interest: [],
+      },
+    ],
   };
 
   render() {
     return (
       <PageTemplate className="Members">
+        <h1>MEMBERS</h1>
+
         <ProfileBox
           title="Professor"
           profiles={this.state.profiles.slice(0, 1)}
