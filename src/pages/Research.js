@@ -7,18 +7,18 @@ import Subject from "component/research/Subject";
 import "style/Research.scss";
 import "style/Tab.scss";
 
-import research from "component/research/research.json";
+import research from "assets/data/research.json";
 
 class Research extends Component {
   state = {
-    selectedIndex: 0,
+    tabIndex: 0,
   };
 
   static getDerivedStateFromProps(props) {
     if (props.location.state == null) {
-      return { selectedIndex: 0 };
+      return { tabIndex: 0 };
     } else {
-      return { selectedIndex: props.location.state.tabIndex };
+      return { tabIndex: props.location.state.tabIndex };
     }
   }
 
@@ -32,7 +32,7 @@ class Research extends Component {
     return (
       <PageTemplate className="Research">
         <Tabs
-          defaultIndex={this.state.selectedIndex}
+          selectedIndex={this.state.tabIndex}
           onSelect={this.onSelect}
           selectedTabClassName="active"
         >
