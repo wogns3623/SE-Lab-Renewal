@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTamplate from "component/common/template/PageTemplate.js";
-import ALL from "assets/data/publications.json";
+
+import data from "assets/data/publications.json";
+
 import "style/Publications.scss";
+import "style/Tab.scss";
 
 class Publications extends Component {
   state = {
@@ -62,21 +65,19 @@ class Publications extends Component {
   render() {
     return (
       <PageTamplate className="Publications">
-        <div>
-          <h1>PUBLICATIONS</h1>
+        <h1>PUBLICATIONS</h1>
 
-          <Tabs
-            selectedIndex={this.state.tabIndex}
-            onSelect={this.onSelect}
-            selectedTabClassName="active"
-          >
-            <TabList className="TabMenu">{this.createTab(ALL)}</TabList>
+        <Tabs
+          selectedIndex={this.state.tabIndex}
+          onSelect={this.onSelect}
+          selectedTabClassName="active"
+        >
+          <TabList className="TabMenu">{this.createTab(data)}</TabList>
 
-            <hr />
+          <hr />
 
-            {this.createTabPanel(ALL)}
-          </Tabs>
-        </div>
+          {this.createTabPanel(data)}
+        </Tabs>
       </PageTamplate>
     );
   }

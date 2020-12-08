@@ -4,10 +4,10 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import PageTemplate from "component/common/template/PageTemplate";
 import Subject from "component/research/Subject";
 
+import data from "assets/data/research.json";
+
 import "style/Research.scss";
 import "style/Tab.scss";
-
-import research from "assets/data/research.json";
 
 class Research extends Component {
   state = {
@@ -31,6 +31,8 @@ class Research extends Component {
   render() {
     return (
       <PageTemplate className="Research">
+        <h1>RESEARCH</h1>
+
         <Tabs
           selectedIndex={this.state.tabIndex}
           onSelect={this.onSelect}
@@ -44,7 +46,7 @@ class Research extends Component {
           <hr />
 
           <TabPanel>
-            {research.map((researchInfo, index) => (
+            {data.map((researchInfo, index) => (
               <Subject {...researchInfo} key={index}></Subject>
             ))}
           </TabPanel>
