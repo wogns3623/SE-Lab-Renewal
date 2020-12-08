@@ -1,49 +1,36 @@
-.Gallery .Contents {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-}
+.Gallery {
+  .Contents {
+    display: flex;
+    flex-wrap: wrap;
 
-.Gallery .Tab .Contents .Item {
-  margin-top: 5px;
-  width: 19%;
-  margin: 6px;
-}
+    .Item {
+      margin: 5px 10px;
+      width: 240px;
 
-.Gallery .Tab .Contents .Item img {
-  width: 100%;
-}
+      img {
+        width: 100%;
+      }
+    }
+  }
 
-.no {
-  display: none;
-}
+  .btn-readmore {
+    border: 1px solid skyblue;
+    background-color: rgba(0, 0, 0, 0);
+    color: skyblue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 255px;
+    height: 50px;
+    font-size: 20pt;
 
-.Rbtn button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  padding: 5px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-right: -4px;
-  cursor: pointer;
-  width: 255px;
-  height: 50px;
-  font-size: 20pt;
-  font-style: bold;
-}
+    &:hover {
+      color: white;
+      background-color: skyblue;
+    }
 
-.Rbtn {
-  display: block;
-  max-width: 300px;
-  padding-top: 10px;
-  margin: auto;
-}
-
-button:hover {
-  color: white;
-  background-color: skyblue;
+    &.active {
+      display: none;
+    }
+  }
 }

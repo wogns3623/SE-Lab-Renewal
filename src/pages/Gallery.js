@@ -1,133 +1,96 @@
 import React, { Component } from "react";
+import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
 import PageTemplate from "component/common/template/PageTemplate.js";
-import GalleryTab from "component/gallery/GalleryTab.js";
+
+import "style/Gallery.scss";
+import "style/Tab.scss";
+
+import data from "assets/data/gallery.json";
 
 class Gallery extends Component {
   state = {
-    tabList: [
-      { name: "All" },
-      { name: "Social Activity" },
-      { name: "Conference" },
-      { name: "Etc" },
-    ],
-    ALL: [
-      {
-        title: "회식1",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식2",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식3",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식4",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식5",
-        id: "Conference",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식6",
-        id: "Conference",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식7",
-        id: "Etc",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식8",
-        id: "Etc",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식9",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식10",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식11",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식12",
-        id: "Social Activity",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식13",
-        id: "Conference",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식14",
-        id: "Conference",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식15",
-        id: "Etc",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-      {
-        title: "회식16",
-        id: "Etc",
-        address:
-          "https://selab.hanyang.ac.kr/gallery/images/2016-07-25%2012.25.28.jpg",
-      },
-    ],
+    tabIndex: 0,
+    readmore: "deactive",
+  };
+
+  static getDerivedStateFromProps(props) {
+    if (props.location.state == null) {
+      return { tabIndex: 0 };
+    } else {
+      return { tabIndex: props.location.state.tabIndex };
+    }
+  }
+
+  onSelect = (index) => {
+    this.setState({ readmore: "deactive" });
+
+    this.props.history.replace("/gallery", {
+      tabIndex: index,
+    });
+  };
+
+  activeReadmore = () => {
+    this.setState({ readmore: "active" });
+  };
+
+  createTab = (data) => {
+    return [
+      <Tab className="Item">All</Tab>,
+      data.map((tabInfo) => {
+        return <Tab className="Item">{tabInfo.name}</Tab>;
+      }),
+    ];
+  };
+
+  createTabPanel = (data) => {
+    let contentAll = [];
+
+    let panels = data.map((tabInfo) => {
+      let panelContent = tabInfo.list.map((listItem) => {
+        return (
+          <div className="Item">
+            <a href={listItem.address}>
+              <img src={listItem.address} alt=""></img>
+              <br></br>
+              {listItem.title}
+            </a>
+          </div>
+        );
+      });
+      contentAll.push(panelContent);
+
+      return <TabPanel className="Contents">{panelContent}</TabPanel>;
+    });
+
+    let all = [<TabPanel className="Contents">{contentAll}</TabPanel>];
+
+    return all.concat(panels);
   };
 
   render() {
     return (
       <PageTemplate className="Gallery">
-        <div className="table">
-          <h1 id="headname">Gallery</h1>
+        <h1>GALLERY</h1>
 
-          <GalleryTab
-            initialTabIndex={
-              this.props.location.state === null ||
-              this.props.location.state === undefined
-                ? 0
-                : this.props.location.state.tabIndex
-            }
-            tabList={this.state.tabList}
-            contents={this.state.ALL}
-          ></GalleryTab>
-        </div>
+        <Tabs
+          selectedIndex={this.state.tabIndex}
+          onSelect={this.onSelect}
+          selectedTabClassName="active"
+        >
+          <TabList className="TabMenu">{this.createTab(data)}</TabList>
+
+          <hr />
+
+          {this.createTabPanel(data)}
+          {/* Todo: readmore 버튼 기능 만들기 */}
+          {/* <button
+            className={`btn-readmore ${this.state.readmore}`}
+            onClick={this.activeReadmore}
+          >
+            readmore
+          </button> */}
+        </Tabs>
       </PageTemplate>
     );
   }
