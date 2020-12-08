@@ -8,36 +8,36 @@
   margin-right: auto;
   margin-top: 50px;
   border: black solid;
-}
 
-.Subject ul {
-  margin: 0px;
-  /* text-align: center; */
-  margin-bottom: 30px;
-  padding-left: 20%;
-}
+  ul {
+    margin: 0px;
+    /* text-align: center; */
+    margin-bottom: 30px;
+    padding-left: 20%;
 
-.Subject li {
-  margin: 5px;
-  font-size: 20px;
-  list-style: disc;
-}
+    li {
+      margin: 5px;
+      font-size: 20px;
+      list-style: disc;
+    }
+  }
 
-.Subject .container {
-  display: flex;
-  width: 300px;
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
+  .container {
+    display: flex;
+    width: 300px;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
 
-.Subject img {
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 200px;
-}
+  img {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 200px;
+  }
 
-.Subject h3 {
-  margin-top: 100px;
+  h3 {
+    margin-top: 100px;
+  }
 }
