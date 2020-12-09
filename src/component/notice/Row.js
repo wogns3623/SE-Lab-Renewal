@@ -25,7 +25,7 @@ class Row extends Component {
   render() {
     let summery = (
       <ul
-        className="Row_summery"
+        className="Row_accordion"
         onClick={this.props.disable ? null : this.handleClick}
       >
         <li className="title">{this.props.title}</li>
