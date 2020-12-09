@@ -9,18 +9,27 @@ import "style/Tab.scss";
 import data from "assets/data/gallery.json";
 
 class Gallery extends Component {
-  state = {
-    tabIndex: 0,
-    readmore: "deactive",
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      tabIndex: 0,
+      readmore: "deactive",
+      category: ["All", "Social Activity", "Conference", "Etc"],
+    };
+  }
 
   static getDerivedStateFromProps(props) {
-    if (props.location.state == null) {
-      return { tabIndex: 0 };
-    } else {
-      return { tabIndex: props.location.state.tabIndex };
+    let tabIndex = 0;
+    if (props.location.state != null) {
+      tabIndex = props.location.state.tabIndex;
     }
+    return { tabIndex: tabIndex };
   }
+
+  activeReadmore = () => {
+    this.setState({ readmore: "active" });
+  };
 
   onSelect = (index) => {
     this.setState({ readmore: "deactive" });
@@ -30,20 +39,13 @@ class Gallery extends Component {
     });
   };
 
-  activeReadmore = () => {
-    this.setState({ readmore: "active" });
+  renderTab = () => {
+    return this.state.category.map((name) => {
+      return <Tab className="Item">{name}</Tab>;
+    });
   };
 
-  createTab = (data) => {
-    return [
-      <Tab className="Item">All</Tab>,
-      data.map((tabInfo) => {
-        return <Tab className="Item">{tabInfo.name}</Tab>;
-      }),
-    ];
-  };
-
-  createTabPanel = (data) => {
+  renderTabPanel = (data) => {
     let contentAll = [];
 
     let panels = data.map((tabInfo) => {
@@ -78,11 +80,11 @@ class Gallery extends Component {
           onSelect={this.onSelect}
           selectedTabClassName="active"
         >
-          <TabList className="TabMenu">{this.createTab(data)}</TabList>
+          <TabList className="TabMenu">{this.renderTab()}</TabList>
 
           <hr />
 
-          {this.createTabPanel(data)}
+          {this.renderTabPanel(data)}
           {/* Todo: readmore 버튼 기능 만들기 */}
           {/* <button
             className={`btn-readmore ${this.state.readmore}`}
