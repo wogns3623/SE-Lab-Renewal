@@ -1,0 +1,13 @@
+SET foreign_key_checks = 0;
+
+DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS `Board`;
+DROP TABLE IF EXISTS `Category`;
+DROP TABLE IF EXISTS `Post`;
+DROP TABLE IF EXISTS `Comment`;
+DROP TABLE IF EXISTS `File`;
+DROP TABLE IF EXISTS `Course_type`;
+DROP TABLE IF EXISTS `Course`;
+DROP TABLE IF EXISTS `Slide`;
+
+SET foreign_key_checks = 1;
