@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import "style/Header/Logo.scss";
-import logoImg from "assets/images/selab_logo_S.png";
 
 class Header extends Component {
   render() {
     return (
       <div className="Logo pull-left">
         <Link exact="true" to="/">
-          <img src={logoImg} alt="SE Lab logo"></img>
+          <img
+            src="assets/images/common/selab_logo_S.png"
+            alt="SE Lab logo"
+          ></img>
         </Link>
       </div>
     );
