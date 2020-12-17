@@ -15,7 +15,7 @@
     "express-session": "^1.17.1",
     "google-maps-react": "^2.0.2",
     "http-proxy-middleware": "^0.20.0",
-    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
     "node-sass": "^4.13.1",
     "package-lock.json": "^1.0.0",
     "passport": "^0.4.1",
