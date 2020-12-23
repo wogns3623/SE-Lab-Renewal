@@ -5,5 +5,6 @@ export { default as Research } from "./Research";
 export { default as Publications } from "./Publications";
 export { default as Courses } from "./Courses";
 export { default as Gallery } from "./Gallery";
+export { default as Login } from "./Login";
 export { default as Slide } from "./Slide";
 export { default as NoMatch } from "./NoMatch";

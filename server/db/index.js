@@ -3,7 +3,7 @@ const config = require("./config.json");
 
 let pool = mysql.createPool(config);
 
-const select = async (sql, values) => {
+exports.select = async (sql, values) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
     try {
@@ -24,7 +24,7 @@ const select = async (sql, values) => {
   }
 };
 
-const change = async (rows) => {
+exports.change = async (rows) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
 
@@ -53,5 +53,3 @@ const change = async (rows) => {
     return false;
   }
 };
-
-export { select, change };

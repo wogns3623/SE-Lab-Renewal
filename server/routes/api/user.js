@@ -1,15 +1,16 @@
 const express = require("express");
 const passport = require("passport");
 
-const router = express.router();
+const userAPIRouter = express.Router();
 
-router.post(
+userAPIRouter.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login",
-    failureFlash: true,
+    // express 3.x에서는 req.flash를 지원하지 않아 사용하려면 connect-flash 모듈이 필요함
+    // failureFlash: true,
   })
 );
 
-export default router;
+module.exports = userAPIRouter;

@@ -1,13 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 // const proxy = require("http-proxy-middleware");
 
 const passportConfig = require("./passport");
-// const api = require('./routes/index');
+const APIRouter = require("./routes/api/index");
 
 const app = express();
 
@@ -30,8 +29,6 @@ app.use(passport.session());
 
 passportConfig();
 
-app.use("/api", (req, res) => {
-  res.send("WIP");
-});
+app.use("/api", APIRouter);
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

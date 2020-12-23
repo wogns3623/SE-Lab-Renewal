@@ -1,4 +1,4 @@
-source delete.sql
+source delete.sql;
 
 CREATE TABLE `User` (
 	`u_no`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
@@ -139,4 +139,4 @@ REFERENCES `Course` (
 	`course_id`
 );
 
-source insert.sql
+source insert.sql;

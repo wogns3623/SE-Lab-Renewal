@@ -8,25 +8,36 @@ class Login extends Component {
     return (
       <PageTemplate className="Login">
         <div id="panel-body">
-          <form>
+          <form action="/api/user/login" method="post">
             <h2>Login</h2>
             This is LOGIN !
             <div className="input-group">
-              <span className="glyphicon">아</span>
-              <label for="email" class="sr-only">
-                Email
+              <label for="id" class="sr-only">
+                ID
               </label>
               <input
                 type="text"
-                id="email"
+                id="id"
+                name="id"
                 className="form-control"
-                placeholder="Email"
+                placeholder="id"
                 autocomplete="off"
               />
             </div>
             <div className="input-group">
-              <span className="glyphicon">아</span>
+              <label for="pw" class="sr-only">
+                PASSWORD
+              </label>
+              <input
+                type="text"
+                id="pw"
+                name="pw"
+                className="form-control"
+                placeholder="password"
+                autocomplete="off"
+              />
             </div>
+            <button type="submit">login</button>
           </form>
         </div>
       </PageTemplate>

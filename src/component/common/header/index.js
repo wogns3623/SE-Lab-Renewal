@@ -7,31 +7,6 @@ import "style/Header/Menu.scss";
 import "style/Header/DropdownMenu.scss";
 
 class Header extends Component {
-  state = {
-    menu: [
-      {
-        name: "notice",
-      },
-      {
-        name: "members",
-      },
-      {
-        name: "research",
-      },
-      {
-        name: "publications",
-      },
-      {
-        name: "courses",
-      },
-      {
-        name: "gallery",
-      },
-      {
-        name: "login",
-      },
-    ],
-  };
   render() {
     let activeStyle = {
       backgroundColor: "#212f3d",
@@ -209,6 +184,11 @@ class Header extends Component {
                 </MenuItem>
               </DropdownMenu>
             </DropdownMenu>
+          </Menu>
+          <Menu className="pull-right">
+            <MenuItem to="/login" activeStyle={activeStyle}>
+              LOGIN
+            </MenuItem>
           </Menu>
         </nav>
       </header>
