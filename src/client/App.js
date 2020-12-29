@@ -16,6 +16,7 @@ class App extends Component {
           <Route path="/courses" component={pages.Courses} />
           <Route path="/gallery" component={pages.Gallery} />
           <Route path="/login" component={pages.Login} />
+          <Route path="/register" component={pages.Register} />
           <Route path="/slide" component={pages.Slide} />
           <Route component={pages.NoMatch} />
         </Switch>

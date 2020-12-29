@@ -189,6 +189,9 @@ class Header extends Component {
             <MenuItem to="/login" activeStyle={activeStyle}>
               LOGIN
             </MenuItem>
+            <MenuItem to="/register" activeStyle={activeStyle}>
+              REGISTER
+            </MenuItem>
           </Menu>
         </nav>
       </header>
