@@ -6,7 +6,7 @@ const passport = require("passport");
 // const proxy = require("http-proxy-middleware");
 
 const passportConfig = require("./passport");
-const APIRouter = require("./routes/api/index");
+const APIRouter = require("routes/api/index");
 
 const app = express();
 
