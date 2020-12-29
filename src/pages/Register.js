@@ -41,14 +41,14 @@ class Login extends Component {
               <label for="name">NAME</label>
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="fname"
+                name="fname"
                 placeholder="first name"
               />
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="lname"
+                name="lname"
                 placeholder="last name"
               />
             </div>

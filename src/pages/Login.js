@@ -10,32 +10,19 @@ class Login extends Component {
         <div id="panel-body">
           <form action="/api/user/login" method="post">
             <h2>Login</h2>
-            This is LOGIN !
-            <div className="input-group">
+
+            <div>
               <label for="id" class="sr-only">
                 ID
               </label>
-              <input
-                type="text"
-                id="id"
-                name="id"
-                className="form-control"
-                placeholder="id"
-                autocomplete="off"
-              />
+              <input type="text" id="id" name="id" placeholder="id" />
             </div>
-            <div className="input-group">
+
+            <div>
               <label for="pw" class="sr-only">
                 PASSWORD
               </label>
-              <input
-                type="text"
-                id="pw"
-                name="pw"
-                className="form-control"
-                placeholder="password"
-                autocomplete="off"
-              />
+              <input type="password" id="pw" name="pw" placeholder="password" />
             </div>
             <button type="submit">login</button>
           </form>

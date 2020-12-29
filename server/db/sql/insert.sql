@@ -1,8 +1,8 @@
-INSERT INTO User(u_id, u_pw, u_name_last, u_name_first, u_perm)
+INSERT INTO User(u_id, u_pw, u_lname, u_fname, u_perm)
 VALUES('ptest', 'ptest', '김', '교수', 2);
-INSERT INTO User(u_id, u_pw, u_name_last, u_name_first, u_perm)
+INSERT INTO User(u_id, u_pw, u_lname, u_fname, u_perm)
 VALUES('dobby', 'dobby', '김', '대학원생', 1);
-INSERT INTO User(u_id, u_pw, u_name_last, u_name_first, u_perm)
+INSERT INTO User(u_id, u_pw, u_lname, u_fname, u_perm)
 VALUES('stest', 'stest', '김', '학생', 0);
 
 INSERT INTO Board(bo_name)
