@@ -1,9 +1,32 @@
 const express = require("express");
 const passport = require("passport");
+const crypto = require("crypto");
 
 const { select, change } = require("db/index");
+const { idRegex, pwRegex, emailRegex } = require("useful/regex.js");
 
 const userAPIRouter = express.Router();
+
+// let generateSalt = async () => {
+//   const salt = await new Promise((resolve, reject) => {
+//     crypto.randomBytes(256, (err, buf) => {
+//       if (err) {
+//         reject("Error on generating salt");
+//       }
+//       resolve(buf);
+//     });
+//   });
+
+//   return salt;
+// };
+
+let pbkdf2Async = (password, salt, iterations, keylen, digest) => {
+  return new Promise((res, rej) => {
+    crypto.pbkdf2(password, salt, iterations, keylen, digest, (err, key) => {
+      err ? rej(err) : res(key);
+    });
+  });
+};
 
 let checkExist = async (dbTag, value) => {
   let user = await select(`SELECT * FROM User WHERE u_${dbTag} = ?`, [value]);
@@ -17,11 +40,16 @@ let checkExist = async (dbTag, value) => {
   }
 };
 
-let checkPWValid = (pw) => {
-  const pwRegex = /^(?=.*?\w)(?=.*?\d)(?=.*?[?!@#$%^&*_=+-]).{8,25}$/;
-  console.log(pwRegex.test(pw), pw);
-  return pwRegex.test(pw);
+let checkValid = (regex, value) => {
+  console.log(value, regex.test(value));
+  return regex.test(value);
 };
+
+userAPIRouter.get("/checkExist", async (req, res) => {
+  return res.json({
+    isExist: await checkExist(req.query.type, req.query.value),
+  });
+});
 
 userAPIRouter.post(
   "/login",
@@ -41,22 +69,30 @@ userAPIRouter.post(
     console.log(info);
 
     try {
-      if (await checkExist("id", info.id)) {
+      if (!checkValid(idRegex, info.id)) {
+        res.send("Id is not valid!");
+      } else if (await checkExist("id", info.id)) {
         res.send("Id already exist!");
-      } else if (!checkPWValid(info.pw)) {
+      } else if (!checkValid(pwRegex, info.pw)) {
         res.send("Password is not valid!");
       } else if (info.pw != info.pw_check) {
         res.send("Password check is incorrect!");
       } else if (await checkExist("nick", info.nick)) {
         res.send("Nickname already exist!");
+      } else if (!checkValid(emailRegex, info.email)) {
+        res.send("Email is not valid!");
       } else {
+        let salt = crypto.randomBytes(256).toString("base64");
+        let pw = await pbkdf2Async(info.pw, salt, 104932, 256, "sha512");
+
         await change([
           {
             sql:
-              "INSERT INTO User(u_id, u_pw, u_lname, u_fname, u_nick, u_email, u_perm) VALUES(?, ?, ?, ?, ?, ?, ?);",
+              "INSERT INTO User(u_id, u_pw, u_pw_salt, u_lname, u_fname, u_nick, u_email, u_perm) VALUES(?, ?, ?, ?, ?, ?, ?);",
             args: [
               info.id,
-              info.pw,
+              pw,
+              salt,
               info.lname,
               info.fname,
               info.nick,

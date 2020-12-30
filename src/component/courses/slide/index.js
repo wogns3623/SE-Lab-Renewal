@@ -26,7 +26,7 @@ class Slide extends Component {
       KeyEventActive: true,
       currentIndex: 0,
       slideData: slideData,
-      overviewJsx: overviewJsx
+      overviewJsx: overviewJsx,
     };
 
     window.addEventListener("keyup", this.handleKeyEvent);
@@ -40,7 +40,7 @@ class Slide extends Component {
         inputComp.querySelector(query).onfocus = () => {
           this.KeyEventActivate(false);
         };
-        inputComp.querySelector(query).onblur = e => {
+        inputComp.querySelector(query).onblur = (e) => {
           e.preventDefault();
           this.KeyEventActivate(true);
           compile(
@@ -51,7 +51,7 @@ class Slide extends Component {
     }
   }
 
-  getText = item => {
+  getText = (item) => {
     if (typeof item === "string") {
       return item;
     } else {
@@ -67,7 +67,7 @@ class Slide extends Component {
     }
   };
 
-  hookLiveCoding = content => {
+  hookLiveCoding = (content) => {
     console.log("content is ", content);
     if (content === undefined) {
       return undefined;
@@ -102,15 +102,15 @@ class Slide extends Component {
     }
   };
 
-  extractPage = props => {
+  extractPage = (props) => {
     let length = 1;
-    let tmp = props.children.map(section => {
+    let tmp = props.children.map((section) => {
       let pages = section.props.children;
       if (pages.length === undefined) pages = [pages];
 
       return {
         sTitle: section.props.title,
-        pages: pages.map(page => {
+        pages: pages.map((page) => {
           length++;
           return {
             sTitle: this.getText(page.props.children[0].props.children),
@@ -120,9 +120,9 @@ class Slide extends Component {
             //     {this.hookLiveCoding(page.props.children[1].props.children)}
             //   </PageContent>
             // )
-            content: page.props.children[1]
+            content: page.props.children[1],
           };
-        })
+        }),
       };
     });
 
@@ -161,28 +161,28 @@ class Slide extends Component {
               </a>
             </div>
           </PageContent>
-        )
+        ),
       },
-      sections: tmp
+      sections: tmp,
     };
   };
 
-  handleActive = value => {
+  handleActive = (value) => {
     this.setState({
-      siderBarActive: value
+      siderBarActive: value,
     });
   };
 
-  handleIndex = index => {
+  handleIndex = (index) => {
     console.log(index);
     if (index >= 0 && index < this.state.slideData.length) {
       this.setState({
-        currentIndex: index
+        currentIndex: index,
       });
     }
   };
 
-  handleKeyEvent = event => {
+  handleKeyEvent = (event) => {
     if (this.state.KeyEventActive) {
       if (event.code === "ArrowRight") {
         this.handleIndex(this.state.currentIndex + 1);
@@ -194,16 +194,16 @@ class Slide extends Component {
     }
   };
 
-  KeyEventActivate = value => {
+  KeyEventActivate = (value) => {
     this.setState({ KeyEventActive: value });
   };
 
-  constructOverview = slideData => {
+  constructOverview = (slideData) => {
     let index = 0;
     return [
       <li onClick={() => this.handleIndex(0)} key="cover">
         <h2>{slideData.cover.sTitle}</h2>
-      </li>
+      </li>,
     ].concat(
       slideData.sections.map((section, sIndex) => {
         let tmp = 0;
@@ -230,7 +230,7 @@ class Slide extends Component {
     );
   };
 
-  constructPages = slideData => {
+  constructPages = (slideData) => {
     let index = 1;
     let jsx = [
       <div
@@ -242,7 +242,7 @@ class Slide extends Component {
         {slideData.cover.title}
         <hr />
         {slideData.cover.content}
-      </div>
+      </div>,
     ];
     for (const section of slideData.sections) {
       for (const page of section.pages) {

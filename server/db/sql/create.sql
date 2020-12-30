@@ -2,12 +2,13 @@ source delete.sql;
 
 CREATE TABLE `User` (
 	`u_no`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`u_id`	          VARCHAR(20)	  NOT NULL  UNIQUE,
-	`u_pw`	          VARCHAR(255)	NOT NULL,
-	`u_lname`	    VARCHAR(50)	  NOT NULL,
-	`u_fname`    VARCHAR(50)	  NOT NULL,
+	`u_id`	          VARCHAR(256)	NOT NULL  UNIQUE,
+	`u_pw_salt`	      VARCHAR(256)	NOT NULL,
+	`u_pw`	          VARCHAR(256)	NOT NULL,
+	`u_lname`	        VARCHAR(50)	  NOT NULL,
+	`u_fname`         VARCHAR(50)	  NOT NULL,
 	`u_nick`	        VARCHAR(50)	  NULL,
-	`u_email`	        VARCHAR(255)	NULL      UNIQUE,
+	`u_email`	        VARCHAR(256)	NULL      UNIQUE,
 	`file_id`	        INT           NULL      COMMENT 'user profile image',
 	`u_perm`	        TINYINT	      NOT NULL	DEFAULT 0	COMMENT '0: 학생, 1: 조교/대학원생, 2: 교수'
 );
@@ -32,7 +33,7 @@ CREATE TABLE `Post` (
 	`cat_id`	        INT	          NOT NULL,
 	`p_date`	        DATETIME	    NOT NULL,
 	`p_date_modi`	    TIMESTAMP	    NOT NULL,
-	`p_title`	        VARCHAR(255)	NOT NULL,
+	`p_title`	        VARCHAR(256)	NOT NULL,
 	`p_content`	      TEXT	        NOT NULL,
 	`p_tags`	        TEXT	        NULL
 );
@@ -50,8 +51,8 @@ CREATE TABLE `File` (
 	`file_id`	        INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	`file_name`	      INT	          NOT NULL,
 	`file_type`	      TINYINT	      NOT NULL  COMMENT 'image, file',
-	`file_src`	      VARCHAR(255)	NOT NULL,
-	`file_desc`	      VARCHAR(255)	NULL
+	`file_src`	      VARCHAR(256)	NOT NULL,
+	`file_desc`	      VARCHAR(256)	NULL
 );
 
 CREATE TABLE `Course_type` (

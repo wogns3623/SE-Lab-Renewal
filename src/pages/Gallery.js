@@ -9,8 +9,8 @@ import "style/Tab.scss";
 import data from "assets/data/gallery.json";
 
 class Gallery extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       tabIndex: 0,

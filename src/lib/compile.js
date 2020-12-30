@@ -1,4 +1,4 @@
-const compile = inputNode => {
+const compile = (inputNode) => {
   console.log(inputNode);
   let html = inputNode.querySelector(".html");
   let css = inputNode.querySelector(".css");
