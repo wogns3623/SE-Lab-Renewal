@@ -3,8 +3,8 @@ source delete.sql;
 CREATE TABLE `User` (
 	`u_no`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	`u_id`	          VARCHAR(256)	NOT NULL  UNIQUE,
-	`u_pw_salt`	      VARCHAR(256)	NOT NULL,
-	`u_pw`	          VARCHAR(256)	NOT NULL,
+	`u_pw_salt`	      VARCHAR(512)	NOT NULL,
+	`u_pw`	          VARCHAR(512)	NOT NULL,
 	`u_lname`	        VARCHAR(50)	  NOT NULL,
 	`u_fname`         VARCHAR(50)	  NOT NULL,
 	`u_nick`	        VARCHAR(50)	  NULL,

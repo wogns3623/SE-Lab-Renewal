@@ -44,11 +44,17 @@ class Register extends Component {
           .then((res) => {
             if (!res.data.isExist) this.setState({ idWarning: "" });
             else this.setState({ idWarning: "이미 존재하는 아이디입니다." });
+          })
+          .catch((err) => {
+            this.setState({
+              idWarning:
+                "알수 없는 오류가 발생했습니다. 이후에 다시 시도해주십시오.",
+            });
           });
       } else {
         this.setState({
           idWarning:
-            "아이디 형식이 틀립니다. 아이디는 6글자 이상의 영문자, 숫자, .등으로 이루어져야 합니다.",
+            "아이디 형식이 틀립니다.\n아이디는 6글자 이상의 영문자, 숫자, .등으로 이루어져야 합니다.",
         });
       }
     }
@@ -61,6 +67,12 @@ class Register extends Component {
         .then((res) => {
           if (!res.data.isExist) this.setState({ nickWarning: "" });
           else this.setState({ nickWarning: "이미 존재하는 닉네임입니다." });
+        })
+        .catch((err) => {
+          this.setState({
+            idWarning:
+              "알수 없는 오류가 발생했습니다. 이후에 다시 시도해주십시오.",
+          });
         });
     }
   };
@@ -72,7 +84,7 @@ class Register extends Component {
       } else {
         this.setState({
           pwWarning:
-            "비밀번호 형식이 틀립니다. 비밀번호는 8글자 이상의 영문자, 숫자, 특수문자(?!@#$%^&*_=+-)등으로 이루어져야 합니다.",
+            "비밀번호 형식이 틀립니다. 비밀번호는 8글자 이상의 영문자, 숫자, 특수문자(?!@#$%^&*_=+-)등을 포함해야 합니다.",
         });
       }
     }
@@ -96,6 +108,12 @@ class Register extends Component {
           .then((res) => {
             if (!res.data.isExist) this.setState({ emailWarning: "" });
             else this.setState({ emailWarning: "이미 존재하는 이메일입니다." });
+          })
+          .catch((err) => {
+            this.setState({
+              idWarning:
+                "알수 없는 오류가 발생했습니다. 이후에 다시 시도해주십시오.",
+            });
           });
       } else {
         this.setState({ emailWarning: "이메일 형식이 틀립니다." });
@@ -114,25 +132,27 @@ class Register extends Component {
               name="id"
               placeholder="id"
               value={this.state.id}
-              warning={this.state.id}
+              warning={this.state.idWarning}
               onChange={this.handleChange}
               onBlur={this.idOnBlur}
             />
 
             <InputField
-              name="password"
+              name="pw"
               placeholder="password"
               type="password"
               value={this.state.pw}
+              warning={this.state.pwWarning}
               onChange={this.handleChange}
               onBlur={this.pwOnBlur}
             />
 
             <InputField
-              name="pw_check"
+              name="pwCheck"
               placeholder="check password"
               type="password"
               value={this.state.pwCheck}
+              warning={this.state.pwCheckWarning}
               onChange={this.handleChange}
               onBlur={this.pwCheckOnBlur}
             />
@@ -155,6 +175,7 @@ class Register extends Component {
               name="nick"
               placeholder="nickname"
               value={this.state.nick}
+              warning={this.state.nickWarning}
               onChange={this.handleChange}
               onBlur={this.nickOnBlur}
             />
@@ -164,6 +185,7 @@ class Register extends Component {
               type="email"
               placeholder="email"
               value={this.state.email}
+              warning={this.state.emailWarning}
               onChange={this.handleChange}
               onBlur={this.emailOnBlur}
             />
@@ -172,9 +194,13 @@ class Register extends Component {
               name="profile"
               type="file"
               placeholder="profile image"
-              value={this.state.email}
               onChange={this.handleChange}
-              onBlur={this.emailOnBlur}
+            />
+
+            <InputField
+              name="perm"
+              placeholder="perm(test)"
+              onChange={this.handleChange}
             />
 
             <button type="submit">register</button>

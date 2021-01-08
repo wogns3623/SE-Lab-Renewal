@@ -2,6 +2,8 @@ const passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
 
 const { select } = require("db/index");
+const { pbkdf2Async } = require("useful/password.js");
+const config = require("config.json").crypto;
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
@@ -52,7 +54,17 @@ module.exports = () => {
             return done(null, false, {
               message: "아이디가 존재하지 않거나 비밀번호가 틀렸습니다.",
             });
-          } else if (pw != user[0].u_pw) {
+          }
+
+          let pwCrypt = await pbkdf2Async(
+            pw,
+            user[0].u_pw_salt,
+            config.iterations,
+            config.keylen,
+            config.digest
+          );
+
+          if (pwCrypt != user[0].u_pw) {
             console.log("Password not match", id);
 
             return done(null, false, {

@@ -12,16 +12,10 @@ class Login extends Component {
             <h2>Login</h2>
 
             <div>
-              <label for="id" class="sr-only">
-                ID
-              </label>
               <input type="text" id="id" name="id" placeholder="id" />
             </div>
 
             <div>
-              <label for="pw" class="sr-only">
-                PASSWORD
-              </label>
               <input type="password" id="pw" name="pw" placeholder="password" />
             </div>
             <button type="submit">login</button>

@@ -3,7 +3,17 @@ const config = require("config.json").db;
 
 let pool = mysql.createPool(config);
 
-exports.select = async (sql, values) => {
+function DBException(type, value) {
+  this.name = "DBException";
+  this.type = type;
+  this.value = value;
+  this.message = `DBException error when ${this.type} in ${this.value} function`;
+}
+DBException.prototype.toString = function () {
+  return this.message;
+};
+
+let select = async (sql, values) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
     try {
@@ -11,45 +21,40 @@ exports.select = async (sql, values) => {
 
       conn.release();
       return rows;
-    } catch (error) {
-      console.error("error on query", error);
-
+    } catch (err) {
       conn.release();
-      return false;
+      throw new DBException("query", "select");
     }
-  } catch (error) {
-    console.error("error on getting connection\n", error);
-
-    return false;
+  } catch (err) {
+    throw new DBException("connection", "select");
   }
 };
 
-exports.change = async (rows) => {
+let change = async (rows) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
 
     try {
       await conn.beginTransaction();
 
-      rows.forEach(async (row) => {
+      for (const row of rows) {
         await conn.query(row.sql, row.args);
-      });
+      }
 
       await conn.commit();
       conn.release();
 
       return true;
-    } catch (error) {
-      console.error(error);
-
+    } catch (err) {
       await conn.rollback();
       conn.release();
-
-      return false;
+      console.error(err);
+      throw new DBException("transaction", "change");
     }
-  } catch (error) {
-    console.error(error);
-
-    return false;
+  } catch (err) {
+    throw new DBException("connection", "change");
   }
 };
+
+exports.select = select;
+exports.change = change;
