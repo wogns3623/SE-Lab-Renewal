@@ -75,3 +75,6 @@ VALUES('CSE6050', 'Advanced Software Engineering', 1);
 
 -- INSERT INTO Course(ct_id, course_year, course_semester, p_id)
 -- VALUES(4, 2019, 2, num);
+
+INSERT INTO File(file_name, file_type, file_src)
+VALUES("default_user_profile", "image/png", "assets/user/profiles/default_user_profile.png");

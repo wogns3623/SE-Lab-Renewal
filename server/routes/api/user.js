@@ -1,11 +1,30 @@
 const express = require("express");
 const passport = require("passport");
+const multer = require("multer");
 const crypto = require("crypto");
 
 const { select, change } = require("db/index");
 const { idRegex, pwRegex, emailRegex } = require("useful/regex.js");
 const { pbkdf2Async } = require("useful/password.js");
 const config = require("config.json").crypto;
+
+const USER_PROFILE_SRC = "assets/user/profiles";
+const DEFAULT_USER_PROFILE_SRC =
+  "assets/user/profiles/default_user_profile.png";
+
+let getFileName = (id, mimetype) => {
+  return id + "_profile." + mimetype.split("/")[1];
+};
+
+const userStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, USER_PROFILE_SRC);
+  },
+  filename: (req, file, cb) => {
+    cb(null, getFileName(req.body.id, file.mimetype));
+  },
+});
+const userUpload = multer({ storage: userStorage });
 
 const userAPIRouter = express.Router();
 
@@ -14,7 +33,6 @@ let checkExist = async (dbTag, value) => {
   try {
     let user = await select(`SELECT * FROM User WHERE u_${dbTag} = ?`, [value]);
 
-    console.log("user :", user);
     if (user.length > 0) {
       console.log(dbTag, value, "dose exist");
       return true;
@@ -41,8 +59,6 @@ let checkUserInfoValid = async (info) => {
       throw "Id already exist!";
     } else if (!checkValid(pwRegex, info.pw)) {
       throw "Password is not valid!";
-    } else if (info.pw != info.pwCheck) {
-      throw "Password check is incorrect!";
     } else if (await checkExist("nick", info.nick)) {
       throw "Nickname already exist!";
     } else if (!checkValid(emailRegex, info.email)) {
@@ -68,12 +84,30 @@ let registerUser = async (info) => {
       config.digest
     );
 
-    console.log(salt.length, pw.length);
+    let fileSrc;
+    if (info.profile !== undefined) {
+      fileSrc =
+        USER_PROFILE_SRC + "/" + getFileName(info.id, info.profile.mimetype);
+
+      await change([
+        {
+          sql:
+            "INSERT INTO File(file_name, file_type, file_src) VALUES(?, ?, ?)",
+          args: [info.id + "_profile", info.profile.mimetype, fileSrc],
+        },
+      ]);
+    } else {
+      fileSrc = DEFAULT_USER_PROFILE_SRC;
+    }
+
+    let fileInfo = await select("SELECT * FROM File WHERE file_src = ?", [
+      fileSrc,
+    ]);
 
     await change([
       {
         sql:
-          "INSERT INTO User(u_id, u_pw, u_pw_salt, u_lname, u_fname, u_nick, u_email, u_perm) VALUES(?, ?, ?, ?, ?, ?, ?, ?);",
+          "INSERT INTO User(u_id, u_pw, u_pw_salt, u_lname, u_fname, u_nick, u_email, file_id, u_perm) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)",
         args: [
           info.id,
           pw,
@@ -82,12 +116,13 @@ let registerUser = async (info) => {
           info.fname,
           info.nick,
           info.email,
-          0,
+          fileInfo.file_id,
+          info.perm,
         ],
       },
     ]);
   } catch (err) {
-    console.log("Error in register user", err);
+    console.log("Error in register user\n", err);
     throw err;
   }
 };
@@ -118,19 +153,24 @@ userAPIRouter.post(
   })
 );
 
-userAPIRouter.post("/register", async (req, res) => {
+// express 4.x버전으로 넘어오면서 기본적으로 multipart/form-data 처리를 지원하지 않게 됨?
+// 따로 처리해줄 미들웨어 multer등이 필요함
+// Todo: https://github.com/expressjs/multer
+// 보고 저장되는 파일 이름 수정하기
+userAPIRouter.post("/register", userUpload.single("profile"), (req, res) => {
   let info = req.body;
+  info.profile = req.file;
 
   console.log(info);
 
   checkUserInfoValid(info)
     .then(registerUser)
     .then(() => {
-      res.redirect("/login");
+      res.send("complete");
     })
     .catch((err) => {
-      console.log(typeof err);
       if (typeof err === "string") {
+        console.log(err);
         res.status(400).send(err);
       } else {
         res.sendStatus(500);

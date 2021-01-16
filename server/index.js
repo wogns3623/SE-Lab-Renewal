@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -14,7 +15,7 @@ const port = process.env.PORT || 80;
 const secretKey = "thisIsSecret";
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(secretKey));
 app.use(
   session({
@@ -30,5 +31,7 @@ app.use(passport.session());
 passportConfig();
 
 app.use("/api", APIRouter);
+app.use("/assets", express.static(path.join(__dirname, "../assets")));
+app.use("/", express.static(path.join(__dirname, "../build")));
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

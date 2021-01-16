@@ -1,6 +1,6 @@
 #panel-body {
-  width: 438px;
-  height: 460px;
+  width: fit-content;
+  height: fit-content;
   margin-top: 30px;
   margin-bottom: 100px;
   margin-left: auto;
@@ -14,10 +14,13 @@
   h2 {
     font-size: 32pt;
   }
-  .input-group {
-    border: 1px solid black;
 
-    label {
+  .InputGroup {
+    margin-bottom: 20px;
+
+    &#profile {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

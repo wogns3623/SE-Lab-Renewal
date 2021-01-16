@@ -2,12 +2,12 @@ source delete.sql;
 
 CREATE TABLE `User` (
 	`u_no`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`u_id`	          VARCHAR(256)	NOT NULL  UNIQUE,
+	`u_id`	          VARCHAR(64)	NOT NULL  UNIQUE,
 	`u_pw_salt`	      VARCHAR(512)	NOT NULL,
 	`u_pw`	          VARCHAR(512)	NOT NULL,
-	`u_lname`	        VARCHAR(50)	  NOT NULL,
-	`u_fname`         VARCHAR(50)	  NOT NULL,
-	`u_nick`	        VARCHAR(50)	  NULL,
+	`u_lname`	        VARCHAR(64)	  NOT NULL,
+	`u_fname`         VARCHAR(64)	  NOT NULL,
+	`u_nick`	        VARCHAR(64)	  NULL,
 	`u_email`	        VARCHAR(256)	NULL      UNIQUE,
 	`file_id`	        INT           NULL      COMMENT 'user profile image',
 	`u_perm`	        TINYINT	      NOT NULL	DEFAULT 0	COMMENT '0: 학생, 1: 조교/대학원생, 2: 교수'
@@ -15,13 +15,13 @@ CREATE TABLE `User` (
 
 CREATE TABLE `Board` (
 	`bo_id`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`bo_name`	        VARCHAR(50)	  NOT NULL
+	`bo_name`	        VARCHAR(64)	  NOT NULL
 );
 
 CREATE TABLE `Category` (
 	`cat_id`	        INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	`bo_id`	          INT	          NOT NULL,
-	`cat_name`	      VARCHAR(50)	  NOT NULL,
+	`cat_name`	      VARCHAR(64)	  NOT NULL,
 	`cat_perm_read`	  TINYINT   	  NOT NULL,
 	`cat_perm_write`	TINYINT	      NOT NULL,
 	`cat_type`	      TINYINT	      NOT NULL  DEFAULT 0 COMMENT '0: default, 1: QA'
@@ -49,16 +49,16 @@ CREATE TABLE `Comment` (
 
 CREATE TABLE `File` (
 	`file_id`	        INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`file_name`	      INT	          NOT NULL,
-	`file_type`	      TINYINT	      NOT NULL  COMMENT 'image, file',
-	`file_src`	      VARCHAR(256)	NOT NULL,
-	`file_desc`	      VARCHAR(256)	NULL
+	`file_name`	      VARCHAR(256)  NOT NULL,
+	`file_type`	      VARCHAR(64)	  NOT NULL  COMMENT 'mimetype',
+	`file_src`	      VARCHAR(512)	NOT NULL,
+	`file_desc`	      VARCHAR(512)	NULL
 );
 
 CREATE TABLE `Course_type` (
   `ct_id`           INT           NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`ct_no`	          VARCHAR(20)	  NOT NULL  UNIQUE,
-	`ct_title`	      VARCHAR(50)	  NOT NULL,
+	`ct_no`	          VARCHAR(64)	  NOT NULL  UNIQUE,
+	`ct_title`	      VARCHAR(64)	  NOT NULL,
   `ct_type`         TINYINT       NOT NULL COMMENT '0:undergraduate, 1: postgraduate'
 );
 

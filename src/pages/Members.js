@@ -11,7 +11,7 @@ class Members extends Component {
       {
         name: "Scott Uk-Jin Lee",
         image: {
-          src: "assets/images/members/scott.png",
+          src: "assets/user/profiles/scott.png",
           alt: "Scott Uk-Jin Lee",
         },
         position: "Associate Professor",
@@ -38,7 +38,7 @@ class Members extends Component {
       {
         name: "Isma Farah",
         image: {
-          src: "assets/images/members/Isma.png",
+          src: "assets/user/profiles/Isma.png",
           alt: "Isma",
         },
         position: "Doctor of Philosophy",
@@ -61,7 +61,7 @@ class Members extends Component {
       {
         name: "Abdul Rahim",
         image: {
-          src: "assets/images/members/Abdul.png",
+          src: "assets/user/profiles/Abdul.png",
           alt: "Untitled",
         },
         position: "Doctor of Philosophy",
@@ -82,7 +82,7 @@ class Members extends Component {
       {
         name: "Asad Abbas",
         image: {
-          src: "assets/images/members/Untitled.jpg",
+          src: "assets/user/profiles/Untitled.jpg",
           alt: "Untitled",
         },
         position: "Doctor of Philosophy",
@@ -99,7 +99,7 @@ class Members extends Component {
       {
         name: "Gichan Lee",
         image: {
-          src: "assets/images/members/gichan.jpg",
+          src: "assets/user/profiles/gichan.jpg",
           alt: "gichan",
         },
         position: "Doctor of Philosophy",
@@ -119,7 +119,7 @@ class Members extends Component {
       {
         name: "Mohsin Javaid",
         image: {
-          src: "assets/images/members/mohsin.jpg",
+          src: "assets/user/profiles/mohsin.jpg",
           alt: "mohsin",
         },
         position: "Doctor of Philosophy",
@@ -142,7 +142,7 @@ class Members extends Component {
       {
         name: "Muhammad Umair Khan",
         image: {
-          src: "assets/images/members/khan.jpg",
+          src: "assets/user/profiles/khan.jpg",
           alt: "muhammad umair khan",
         },
         position: "Doctor of Philosophy",
@@ -163,7 +163,7 @@ class Members extends Component {
       {
         name: "Gayeon Kim",
         image: {
-          src: "assets/images/members/11.jpg",
+          src: "assets/user/profiles/11.jpg",
           alt: "gayeon Kim",
         },
         position: "Doctor of Philosophy",
@@ -184,7 +184,7 @@ class Members extends Component {
       {
         name: "Wu Zhiqiang",
         image: {
-          src: "assets/images/members/325115318014822206.jpg",
+          src: "assets/user/profiles/325115318014822206.jpg",
           alt: "wu zhiqiang",
         },
         position: "Doctor of Philosophy",
@@ -205,7 +205,7 @@ class Members extends Component {
       {
         name: "Gwanggyu Choi",
         image: {
-          src: "assets/images/members/gif.gif",
+          src: "assets/user/profiles/gif.gif",
           alt: "gwanggyu choi",
         },
         position: "Doctor of Philosophy",
@@ -222,7 +222,7 @@ class Members extends Component {
       {
         name: "Hyunglak Kim",
         image: {
-          src: "assets/images/members/140x175.jpg",
+          src: "assets/user/profiles/140x175.jpg",
           alt: "hyunglak kim",
         },
         position: "Doctor of Philosophy",
@@ -244,7 +244,7 @@ class Members extends Component {
       {
         name: "Dahae Sung",
         image: {
-          src: "assets/images/members/CAM00259.jpg",
+          src: "assets/user/profiles/CAM00259.jpg",
           alt: "dahae sung",
         },
         position: "Doctor of Philosophy",
@@ -295,7 +295,7 @@ class Members extends Component {
       {
         name: "Jiang Hua",
         image: {
-          src: "assets/images/members/1.jpg",
+          src: "assets/user/profiles/1.jpg",
           alt: "jiang hua",
         },
         position: "Doctor of Philosophy",
@@ -312,7 +312,7 @@ class Members extends Component {
       {
         name: "Jaeho Choi",
         image: {
-          src: "assets/images/members/IMG_2242.JPG",
+          src: "assets/user/profiles/IMG_2242.JPG",
           alt: "",
         },
         position: "Doctor of Philosophy",
@@ -335,7 +335,7 @@ class Members extends Component {
       {
         name: "Geunhwan Park",
         image: {
-          src: "assets/images/members/IMG_0889.jpg",
+          src: "assets/user/profiles/IMG_0889.jpg",
           alt: "",
         },
         position: "Doctor of Philosophy",

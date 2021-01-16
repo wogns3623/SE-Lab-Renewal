@@ -2,7 +2,7 @@
   {
     "title": "Web & Web security",
     "image": {
-      "src": "assets/images/research/web_security.png",
+      "src": "assets/research/images/web_security.png",
       "alt": "Internet_Security",
       "width": "150px"
     },
@@ -16,7 +16,7 @@
   {
     "title": "Formal Engineering Methods",
     "image": {
-      "src": "assets/images/research/formalmethod.png",
+      "src": "assets/research/images/formalmethod.png",
       "alt": "Abstract_interpretation",
       "width": "200px"
     },
@@ -29,7 +29,7 @@
   {
     "title": "Requirement Engineering",
     "image": {
-      "src": "assets/images/research/requirement_engineering.jpeg",
+      "src": "assets/research/images/requirement_engineering.jpeg",
       "alt": "GeneralRElogo",
       "width": "250px"
     },
@@ -43,7 +43,7 @@
   {
     "title": "Real-Time Software Engineering",
     "image": {
-      "src": "assets/images/research/Realtime.png",
+      "src": "assets/research/images/Realtime.png",
       "alt": "realtime_construction_software",
       "width": "200px"
     },
@@ -56,7 +56,7 @@
   {
     "title": "Semi-structured Data",
     "image": {
-      "src": "assets/images/research/XML.png",
+      "src": "assets/research/images/XML.png",
       "alt": "xml_icom",
       "width": "150px"
     },

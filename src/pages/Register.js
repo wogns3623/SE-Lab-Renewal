@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import PageTemplate from "component/common/template/PageTemplate.js";
-import InputField from "component/user/InputGroup.js";
 import { idRegex, pwRegex, emailRegex } from "lib/regex.js";
 
 class Register extends Component {
@@ -17,23 +16,80 @@ class Register extends Component {
       lname: "",
       nick: "",
       email: "",
-      file: "",
+      perm: 0,
       idWarning: "",
       pwWarning: "",
       pwCheckWarning: "",
-      fnameWarning: "",
-      lnameWarning: "",
+      nameWarning: "",
       nickWarning: "",
       emailWarning: "",
-      fileWarning: "",
+      profileSrc: "some default src",
     };
 
+    this.profileInput = React.createRef();
     // this.pwOnBlur = this.pwOnBlur.bind(this); // 콜백 함수 내부에서 사용할 함수가 아니라면 안해줘도 되는듯
     // this.emailOnBlur = this.emailOnBlur.bind(this);
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    let s = this.state;
+    if (s.id && s.pw && s.pwCheck && s.fname && s.lname && s.nick && s.email) {
+      if (
+        !s.idWarning &&
+        !s.pwWarning &&
+        !s.pwCheckWarning &&
+        !s.nameWarning &&
+        !s.nickWarning &&
+        !s.emailWarning
+      ) {
+        let formData = new FormData(event.target);
+        formData.delete("pwCheck");
+
+        // for (const iterator of formData.entries()) console.log(iterator);
+
+        axios
+          .post("/api/user/register", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          })
+          .then((res) => {
+            console.log(res);
+            console.log(this.props.history);
+            this.props.history.push("", "", "/login");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      } else {
+        alert("잘못된 값이 있습니다.");
+      }
+    } else {
+      alert("비어있는 값이 있습니다.");
+    }
+  };
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleProfileChange = (event) => {
+    let fileList = this.profileInput.current.files;
+    if (fileList && fileList[0]) {
+      let file = fileList[0];
+      // let file = event.target.files[0];
+      // Todo: 둘중에 무엇을 쓰는게 더 바람직한가
+      let reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.setState({ profileSrc: e.target.result });
+        // this.setState({ profileSrc: reader.result });
+      };
+
+      reader.readAsDataURL(file);
+    }
   };
 
   idOnBlur = (event) => {
@@ -70,7 +126,7 @@ class Register extends Component {
         })
         .catch((err) => {
           this.setState({
-            idWarning:
+            nickWarning:
               "알수 없는 오류가 발생했습니다. 이후에 다시 시도해주십시오.",
           });
         });
@@ -111,7 +167,7 @@ class Register extends Component {
           })
           .catch((err) => {
             this.setState({
-              idWarning:
+              emailWarning:
                 "알수 없는 오류가 발생했습니다. 이후에 다시 시도해주십시오.",
             });
           });
@@ -125,83 +181,132 @@ class Register extends Component {
     return (
       <PageTemplate className="Register">
         <div id="panel-body">
-          <form action="/api/user/register" method="post">
+          <form onSubmit={this.handleSubmit}>
             <h2>register</h2>
 
-            <InputField
-              name="id"
-              placeholder="id"
-              value={this.state.id}
-              warning={this.state.idWarning}
-              onChange={this.handleChange}
-              onBlur={this.idOnBlur}
-            />
+            <div className="InputGroup">
+              <input
+                type="text"
+                name="id"
+                placeholder="id"
+                value={this.state.id}
+                onChange={this.handleChange}
+                onBlur={this.idOnBlur}
+              />
+              <p>{this.state.idWarning}</p>
+            </div>
 
-            <InputField
-              name="pw"
-              placeholder="password"
-              type="password"
-              value={this.state.pw}
-              warning={this.state.pwWarning}
-              onChange={this.handleChange}
-              onBlur={this.pwOnBlur}
-            />
+            <div className="InputGroup">
+              <input
+                type="password"
+                name="pw"
+                placeholder="pw"
+                value={this.state.pw}
+                onChange={this.handleChange}
+                onBlur={this.pwOnBlur}
+              />
+              <p>{this.state.pwWarning}</p>
+            </div>
 
-            <InputField
-              name="pwCheck"
-              placeholder="check password"
-              type="password"
-              value={this.state.pwCheck}
-              warning={this.state.pwCheckWarning}
-              onChange={this.handleChange}
-              onBlur={this.pwCheckOnBlur}
-            />
+            <div className="InputGroup">
+              <input
+                type="password"
+                name="pwCheck"
+                placeholder="check password"
+                value={this.state.pwCheck}
+                onChange={this.handleChange}
+                onBlur={this.pwCheckOnBlur}
+              />
+              <p>{this.state.pwCheckWarning}</p>
+            </div>
 
-            <InputField
-              name="fname"
-              placeholder="first name"
-              value={this.state.fname}
-              onChange={this.handleChange}
-            />
+            <div className="InputGroup">
+              <input
+                type="text"
+                name="fname"
+                placeholder="first name"
+                value={this.state.fname}
+                onChange={this.handleChange}
+              />
+              <input
+                type="text"
+                name="lname"
+                placeholder="last name"
+                value={this.state.lname}
+                onChange={this.handleChange}
+              />
+              <p>{this.state.nameWarning}</p>
+            </div>
 
-            <InputField
-              name="lname"
-              placeholder="last name"
-              value={this.state.lname}
-              onChange={this.handleChange}
-            />
+            <div className="InputGroup">
+              <input
+                type="text"
+                name="nick"
+                placeholder="nickname"
+                value={this.state.nick}
+                onChange={this.handleChange}
+                onBlur={this.nickOnBlur}
+              />
+              <p>{this.state.nickWarning}</p>
+            </div>
 
-            <InputField
-              name="nick"
-              placeholder="nickname"
-              value={this.state.nick}
-              warning={this.state.nickWarning}
-              onChange={this.handleChange}
-              onBlur={this.nickOnBlur}
-            />
+            <div className="InputGroup">
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                onBlur={this.emailOnBlur}
+              />
+              <p>{this.state.emailWarning}</p>
+            </div>
 
-            <InputField
-              name="email"
-              type="email"
-              placeholder="email"
-              value={this.state.email}
-              warning={this.state.emailWarning}
-              onChange={this.handleChange}
-              onBlur={this.emailOnBlur}
-            />
+            <div className="InputGroup" id="profile">
+              <input
+                type="file"
+                name="profile"
+                placeholder="profile image"
+                accept="image/*"
+                ref={this.profileInput}
+                onChange={this.handleProfileChange}
+              />
+              <img
+                src={this.state.profileSrc}
+                alt="your profile"
+                id="profile_tmp"
+              />
+            </div>
 
-            <InputField
-              name="profile"
-              type="file"
-              placeholder="profile image"
-              onChange={this.handleChange}
-            />
+            <div className="InputGroup">
+              <input
+                type="radio"
+                id="perm0"
+                name="perm"
+                value="0"
+                defaultChecked
+                onChange={this.handleChange}
+              />
+              <label htmlFor="perm0">student</label>
 
-            <InputField
-              name="perm"
-              placeholder="perm(test)"
-              onChange={this.handleChange}
-            />
+              <input
+                type="radio"
+                id="perm1"
+                name="perm"
+                value="1"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="perm1">dobby</label>
+
+              <input
+                type="radio"
+                id="perm2"
+                name="perm"
+                value="2"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="perm2">professor</label>
+            </div>
 
             <button type="submit">register</button>
           </form>

@@ -52,11 +52,9 @@ class Gallery extends Component {
       let panelContent = tabInfo.list.map((listItem) => {
         return (
           <div className="Item">
-            <a href={listItem.address}>
-              <img src={listItem.address} alt=""></img>
-              <br></br>
-              {listItem.title}
-            </a>
+            <img src={listItem.src} alt=""></img>
+            <br></br>
+            {listItem.title}
           </div>
         );
       });
