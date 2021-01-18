@@ -9,5 +9,6 @@ DROP TABLE IF EXISTS `File`;
 DROP TABLE IF EXISTS `Course_type`;
 DROP TABLE IF EXISTS `Course`;
 DROP TABLE IF EXISTS `Slide`;
+DROP TABLE IF EXISTS `Usre_inter`;
 
 SET foreign_key_checks = 1;

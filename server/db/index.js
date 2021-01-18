@@ -30,6 +30,7 @@ let select = async (sql, values) => {
   }
 };
 
+// Todo: connection을 내가 관리할 수 있게 수정하기
 let change = async (rows) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
@@ -58,3 +59,4 @@ let change = async (rows) => {
 
 exports.select = select;
 exports.change = change;
+exports.pool = pool;

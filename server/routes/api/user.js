@@ -116,7 +116,7 @@ let registerUser = async (info) => {
           info.fname,
           info.nick,
           info.email,
-          fileInfo.file_id,
+          fileInfo[0].file_id,
           info.perm,
         ],
       },

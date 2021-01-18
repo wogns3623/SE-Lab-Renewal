@@ -1,18 +1,21 @@
-source delete.sql;
-
 CREATE TABLE `User` (
 	`u_no`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	`u_id`	          VARCHAR(64)	NOT NULL  UNIQUE,
+	`u_id`	          VARCHAR(64)	  NOT NULL  UNIQUE,
 	`u_pw_salt`	      VARCHAR(512)	NOT NULL,
 	`u_pw`	          VARCHAR(512)	NOT NULL,
 	`u_lname`	        VARCHAR(64)	  NOT NULL,
 	`u_fname`         VARCHAR(64)	  NOT NULL,
-	`u_nick`	        VARCHAR(64)	  NULL,
+	`u_nick`	        VARCHAR(64)	  NULL      UNIQUE,
 	`u_email`	        VARCHAR(256)	NULL      UNIQUE,
 	`file_id`	        INT           NULL      COMMENT 'user profile image',
-	`u_perm`	        TINYINT	      NOT NULL	DEFAULT 0	COMMENT '0: 학생, 1: 조교/대학원생, 2: 교수'
+	`u_perm`	        TINYINT	      NOT NULL	DEFAULT 0	COMMENT '0: 학생, 1: 조교/대학원생, 2: 교수',
+	`u_homepage`	    VARCHAR(256)	NULL
 );
 
+CREATE TABLE `User_inter` (
+	`u_no`	          INT	          NOT NULL  PRIMARY KEY,
+	`u_interest`	    VARCHAR(64)	  NOT NULL
+);
 CREATE TABLE `Board` (
 	`bo_id`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	`bo_name`	        VARCHAR(64)	  NOT NULL
@@ -52,7 +55,7 @@ CREATE TABLE `File` (
 	`file_name`	      VARCHAR(256)  NOT NULL,
 	`file_type`	      VARCHAR(64)	  NOT NULL  COMMENT 'mimetype',
 	`file_src`	      VARCHAR(512)	NOT NULL,
-	`file_desc`	      VARCHAR(512)	NULL
+	`file_desc`	      VARCHAR(512)	NULL      COMMENT 'alt'
 );
 
 CREATE TABLE `Course_type` (
@@ -62,8 +65,6 @@ CREATE TABLE `Course_type` (
   `ct_type`         TINYINT       NOT NULL COMMENT '0:undergraduate, 1: postgraduate'
 );
 
-DROP TABLE IF EXISTS `Course`;
-
 CREATE TABLE `Course` (
 	`course_id`	      INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	`ct_id`	          INT	          NOT NULL,
@@ -71,8 +72,6 @@ CREATE TABLE `Course` (
   `course_semester` TINYINT       NOT NULL,
 	`p_id`	          INT	          NOT NULL	COMMENT 'course_detail'
 );
-
-DROP TABLE IF EXISTS `Slide`;
 
 CREATE TABLE `Slide` (
 	`slide_id`	      INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
@@ -83,6 +82,12 @@ CREATE TABLE `Slide` (
 	`slide_content`	  TEXT	        NOT NULL
 );
 
+ALTER TABLE `User_inter` ADD CONSTRAINT `FK_User_TO_User_inter_1` FOREIGN KEY (
+	`u_no`
+)
+REFERENCES `User` (
+	`u_no`
+);
 
 ALTER TABLE `Post` ADD CONSTRAINT `FK_User_TO_Post_1` FOREIGN KEY (
 	`u_no`
@@ -139,5 +144,3 @@ ALTER TABLE `Slide` ADD CONSTRAINT `FK_Course_TO_Slide_1` FOREIGN KEY (
 REFERENCES `Course` (
 	`course_id`
 );
-
-source insert.sql;
