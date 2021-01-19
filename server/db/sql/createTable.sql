@@ -13,8 +13,9 @@ CREATE TABLE `User` (
 );
 
 CREATE TABLE `User_inter` (
-	`u_no`	          INT	          NOT NULL  PRIMARY KEY,
-	`u_interest`	    VARCHAR(64)	  NOT NULL
+  `u_inter_id`      INT           NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	`u_no`	          INT	          NOT NULL,
+	`u_interest`	    VARCHAR(256)	NOT NULL
 );
 CREATE TABLE `Board` (
 	`bo_id`	          INT	          NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
