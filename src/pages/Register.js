@@ -98,8 +98,11 @@ class Register extends Component {
         axios
           .get(`/api/users?id=${this.state.id}`)
           .then((res) => {
-            if (!res.data.isExist) this.setState({ idWarning: "" });
-            else this.setState({ idWarning: "이미 존재하는 아이디입니다." });
+            if (res.data.user === undefined) {
+              this.setState({ idWarning: "" });
+            } else {
+              this.setState({ idWarning: "이미 존재하는 아이디입니다." });
+            }
           })
           .catch((err) => {
             this.setState({
@@ -121,8 +124,11 @@ class Register extends Component {
       axios
         .get(`/api/users?nick=${this.state.nick}`)
         .then((res) => {
-          if (!res.data.isExist) this.setState({ nickWarning: "" });
-          else this.setState({ nickWarning: "이미 존재하는 닉네임입니다." });
+          if (res.data.user === undefined) {
+            this.setState({ nickWarning: "" });
+          } else {
+            this.setState({ nickWarning: "이미 존재하는 닉네임입니다." });
+          }
         })
         .catch((err) => {
           this.setState({
@@ -162,8 +168,11 @@ class Register extends Component {
         axios
           .get(`/api/users?email=${this.state.email}`)
           .then((res) => {
-            if (!res.data.isExist) this.setState({ emailWarning: "" });
-            else this.setState({ emailWarning: "이미 존재하는 이메일입니다." });
+            if (res.data.user === undefined) {
+              this.setState({ emailWarning: "" });
+            } else {
+              this.setState({ emailWarning: "이미 존재하는 이메일입니다." });
+            }
           })
           .catch((err) => {
             this.setState({

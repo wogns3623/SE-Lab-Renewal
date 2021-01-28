@@ -33,7 +33,7 @@ let getUserInfo = async (fragmentedUserInfo, serchOption = "AND") => {
     let dbTags = Object.keys(fragmentedUserInfo);
     let values = Object.values(fragmentedUserInfo);
     let user = await select(
-      `SELECT * FROM User WHERE u_${
+      `SELECT u_no, u_id, u_lname, u_fname, u_nick, u_email, file_id, u_perm, u_homepage FROM User WHERE u_${
         dbTags.join(" = ? " + serchOption + " u_") + " = ?"
       }`,
       values
@@ -49,7 +49,7 @@ let getUserInfo = async (fragmentedUserInfo, serchOption = "AND") => {
       return user;
     } else {
       console.log("user not exist");
-      return false;
+      return undefined;
     }
   } catch (err) {
     console.error("Error in getUserInfo function");
@@ -179,9 +179,6 @@ userAPIRouter.get("/", (req, res) => {
   } else {
     getUserInfo(frag)
       .then((user) => {
-        delete user.u_pw;
-        delete user.u_pw_salt;
-
         return res.json({
           user: user,
         });
@@ -198,9 +195,6 @@ userAPIRouter.get("/:userID", (req, res) => {
 
   getUserInfo({ id: id })
     .then((user) => {
-      delete user.u_pw;
-      delete user.u_pw_salt;
-
       return res.json({
         user: user,
       });
