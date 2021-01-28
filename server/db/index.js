@@ -23,6 +23,8 @@ let select = async (sql, values) => {
 };
 
 // Todo: connection을 내가 관리할 수 있게 수정하기
+// 아직 필요한 부분이 없어 보류하기로 함
+
 let change = async (rows) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);

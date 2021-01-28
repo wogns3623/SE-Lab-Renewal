@@ -1,9 +1,8 @@
 const express = require("express");
-const passport = require("passport");
 const multer = require("multer");
 const crypto = require("crypto");
 
-const { select, change } = require("db/index");
+const { select, change, pool } = require("db/index");
 const { idRegex, pwRegex, emailRegex } = require("useful/regex");
 const { pbkdf2Async } = require("useful/password");
 const { UserInfoException, DBException } = require("useful/exceptions");
@@ -101,43 +100,39 @@ let createUser = async (info) => {
       config.digest
     );
 
+    let querys = [];
     let fileSrc;
     if (info.profile !== undefined) {
       fileSrc =
         USER_PROFILE_SRC + "/" + getFileName(info.id, info.profile.mimetype);
 
-      await change([
-        {
-          sql:
-            "INSERT INTO File(file_name, file_type, file_src) VALUES(?, ?, ?)",
-          args: [info.id + "_profile", info.profile.mimetype, fileSrc],
-        },
-      ]);
+      querys.push({
+        sql: "INSERT INTO File(file_name, file_type, file_src) VALUES(?, ?, ?)",
+        args: [info.id + "_profile", info.profile.mimetype, fileSrc],
+      });
     } else {
       fileSrc = DEFAULT_USER_PROFILE_SRC;
     }
 
-    let fileInfo = await select("SELECT * FROM File WHERE file_src = ?", [
-      fileSrc,
-    ]);
+    querys.push({
+      sql:
+        "INSERT INTO User(u_id, u_pw, u_pw_salt, u_lname, u_fname, u_nick, u_email, u_perm, file_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?, (SELECT file_id FROM File WHERE file_src = ?))",
+      args: [
+        info.id,
+        pw,
+        salt,
+        info.lname,
+        info.fname,
+        info.nick,
+        info.email,
+        info.perm,
+        fileSrc,
+      ],
+    });
 
-    await change([
-      {
-        sql:
-          "INSERT INTO User(u_id, u_pw, u_pw_salt, u_lname, u_fname, u_nick, u_email, file_id, u_perm) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        args: [
-          info.id,
-          pw,
-          salt,
-          info.lname,
-          info.fname,
-          info.nick,
-          info.email,
-          fileInfo[0].file_id,
-          info.perm,
-        ],
-      },
-    ]);
+    await change(querys);
+
+    return true;
   } catch (err) {
     console.log("Error in create user\n", err);
     throw err;
