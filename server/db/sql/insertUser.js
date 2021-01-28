@@ -213,7 +213,7 @@ let userData = [
   {
     name: "Yongtaek Oh",
     image: {
-      src: "assets/user/profiles/140x175.png",
+      src: "assets/user/profiles/default_user_profile.png",
       alt: "yongtaek oh",
     },
 
@@ -227,7 +227,7 @@ let userData = [
   {
     name: "Namju Park",
     image: {
-      src: "assets/user/profiles/140x175.png",
+      src: "assets/user/profiles/default_user_profile.png",
       alt: "namju park",
     },
 
@@ -300,7 +300,7 @@ let insertUser = async (userData, config) => {
   try {
     const conn = await pool.getConnection(async (conn) => conn);
 
-    userData.forEach(async (userInfo) => {
+    for (const userInfo of userData) {
       try {
         console.log("insert user", userInfo.name);
         await conn.beginTransaction();
@@ -351,34 +351,31 @@ let insertUser = async (userData, config) => {
         );
 
         let userNo = userRes[0].u_no;
-
-        userInfo.interest.forEach(async (inter) => {
+        for (const inter of userInfo.interest) {
           try {
             await conn.query(interestSql, [userNo, inter]);
           } catch (err) {
             console.log("error in insert user", userInfo.name, "'s interest");
             console.error(err);
           }
-        });
+        }
 
         await conn.commit();
         console.log("end transection user ", userInfo.name);
       } catch (err) {
-        console.log(
-          "error in user ",
-          userInfo.name,
-          "because\n================"
-        );
         console.error(err);
         console.log("======================");
         await conn.rollback();
       }
-    });
+    }
 
     conn.release();
   } catch (err) {
     console.log(err);
   }
+
+  await pool.end();
+  console.log("end");
 };
 
 insertUser(userData, config);

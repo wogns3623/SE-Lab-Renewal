@@ -1,8 +1,10 @@
 const express = require("express");
 
 const APIRouter = express.Router();
-const userAPIRouter = require("./user");
+const userAPIRouter = require("./users");
+const authAPIRouter = require("./auth");
 
-APIRouter.use("/user", userAPIRouter);
+APIRouter.use("/users", userAPIRouter);
+APIRouter.use("/auth", authAPIRouter);
 
 module.exports = APIRouter;

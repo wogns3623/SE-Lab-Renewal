@@ -23,7 +23,7 @@ class Register extends Component {
       nameWarning: "",
       nickWarning: "",
       emailWarning: "",
-      profileSrc: "some default src",
+      profileSrc: "assets/users/profile/default_user_profile.png",
     };
 
     this.profileInput = React.createRef();
@@ -50,7 +50,7 @@ class Register extends Component {
         // for (const iterator of formData.entries()) console.log(iterator);
 
         axios
-          .post("/api/user/register", formData, {
+          .post("/api/users", formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -96,7 +96,7 @@ class Register extends Component {
     if (this.state.id) {
       if (idRegex.test(this.state.id)) {
         axios
-          .get(`/api/user/checkExist?type=id&value=${this.state.id}`)
+          .get(`/api/users?id=${this.state.id}`)
           .then((res) => {
             if (!res.data.isExist) this.setState({ idWarning: "" });
             else this.setState({ idWarning: "이미 존재하는 아이디입니다." });
@@ -119,7 +119,7 @@ class Register extends Component {
   nickOnBlur = (event) => {
     if (this.state.nick) {
       axios
-        .get(`/api/user/checkExist?type=nick&value=${this.state.nick}`)
+        .get(`/api/users?nick=${this.state.nick}`)
         .then((res) => {
           if (!res.data.isExist) this.setState({ nickWarning: "" });
           else this.setState({ nickWarning: "이미 존재하는 닉네임입니다." });
@@ -160,7 +160,7 @@ class Register extends Component {
     if (this.state.email) {
       if (emailRegex.test(this.state.email)) {
         axios
-          .get(`/api/user/checkExist?type=email&value=${this.state.email}`)
+          .get(`/api/users?email=${this.state.email}`)
           .then((res) => {
             if (!res.data.isExist) this.setState({ emailWarning: "" });
             else this.setState({ emailWarning: "이미 존재하는 이메일입니다." });

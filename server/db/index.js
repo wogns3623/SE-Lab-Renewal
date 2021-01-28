@@ -1,17 +1,9 @@
 const mysql = require("mysql2/promise");
+
 const config = require("config.json").db;
+const { DBException } = require("useful/exceptions.js");
 
 let pool = mysql.createPool(config);
-
-function DBException(type, value) {
-  this.name = "DBException";
-  this.type = type;
-  this.value = value;
-  this.message = `DBException error when ${this.type} in ${this.value} function`;
-}
-DBException.prototype.toString = function () {
-  return this.message;
-};
 
 let select = async (sql, values) => {
   try {

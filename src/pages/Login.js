@@ -8,7 +8,7 @@ class Login extends Component {
     return (
       <PageTemplate className="Login">
         <div id="panel-body">
-          <form action="/api/user/login" method="post">
+          <form action="/api/auth/login" method="post">
             <h2>Login</h2>
 
             <div>
